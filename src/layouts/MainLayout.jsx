@@ -6,7 +6,7 @@ export default function MainLayout() {
   return (
     <div className="min-h-screen flex flex-col bg-light text-black dark:bg-darkMode dark:text-white transition-all">
       <Navbar />
-      <main className="flex-grow container mx-auto">
+      <main className="container mx-auto">
         <Outlet />
       </main>
       <Footer />
