@@ -1,7 +1,5 @@
 import HeroSlider from "../components/Heroslider";
-import hero1 from "../assets/banner-1.jpg";
-import hero2 from "../assets/banner-2.jpg";
-import hero3 from "../assets/banner-3.jpg";
+
 import menu1 from "../assets/explore-menu-1.png";
 import menu2 from "../assets/explore-menu-2.png";
 import menu3 from "../assets/explore-menu-3.png";
@@ -21,11 +19,11 @@ import BestSeller from "../components/BestSeller";
 import TopDeal from "../components/TopDeal";
 
 const Home = function () {
-  const images = [hero1, hero2, hero3];
+  
   return (
     <section>
       <div>
-        <HeroSlider images={images} interval={4000} />
+        <HeroSlider interval={4000} />
       </div>
       <div className="mx-[20px]">
         <div className="flex justify-center items-center h-full">
