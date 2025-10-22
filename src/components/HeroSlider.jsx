@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function HeroSlider ({ images, interval = 5000 }) {
+export default function HeroSlider(props) {
+  const images = props.images || [];
+  const interval = props.interval || 5000;
+
   const [current, setCurrent] = useState(0);
   const length = images.length;
 
@@ -11,7 +14,7 @@ export default function HeroSlider ({ images, interval = 5000 }) {
   useEffect(() => {
     const timer = setInterval(nextSlide, interval);
     return () => clearInterval(timer);
-  }, [current, interval]);
+  }, [current, interval]); // dependencies unchanged
 
   return (
     <div className="relative w-full h-[78vh] overflow-hidden">
@@ -47,5 +50,4 @@ export default function HeroSlider ({ images, interval = 5000 }) {
       </button>
     </div>
   );
-};
-
+}
