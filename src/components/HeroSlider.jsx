@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const HeroSlider = ({ images, interval = 5000 }) => {
+export default function HeroSlider ({ images, interval = 5000 }) {
   const [current, setCurrent] = useState(0);
   const length = images.length;
 
@@ -14,7 +14,7 @@ const HeroSlider = ({ images, interval = 5000 }) => {
   }, [current, interval]);
 
   return (
-    <div className="relative w-full h-[90vh] overflow-hidden">
+    <div className="relative w-full h-[78vh] overflow-hidden">
       {images.map((img, index) => (
         <div
           key={index}
@@ -25,7 +25,7 @@ const HeroSlider = ({ images, interval = 5000 }) => {
           <img
             src={img}
             alt={`slide-${index}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </div>
       ))}
@@ -49,4 +49,3 @@ const HeroSlider = ({ images, interval = 5000 }) => {
   );
 };
 
-export default HeroSlider;
