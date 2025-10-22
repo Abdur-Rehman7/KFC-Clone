@@ -1,5 +1,4 @@
 import HeroSlider from "../components/Heroslider";
-
 import menu1 from "../assets/explore-menu-1.png";
 import menu2 from "../assets/explore-menu-2.png";
 import menu3 from "../assets/explore-menu-3.png";
@@ -19,12 +18,10 @@ import BestSeller from "../components/BestSeller";
 import TopDeal from "../components/TopDeal";
 
 const Home = function () {
-  
   return (
     <section>
-      <div>
-        <HeroSlider interval={4000} />
-      </div>
+      <HeroSlider interval={4000} />
+
       <div className="mx-[20px]">
         <div className="flex justify-center items-center h-full">
           <button className="bg-primary text-white font-semibold w-[428px] py-[6px] px-[16px]">
