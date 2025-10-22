@@ -1,4 +1,4 @@
-import HeroSlider from "../components/Heroslider";
+// import HeroSlider from "../components/Heroslider";
 import hero1 from "../assets/banner-1.jpg";
 import hero2 from "../assets/banner-2.jpg";
 import hero3 from "../assets/banner-3.jpg";
@@ -24,9 +24,9 @@ const Home = function () {
   const images = [hero1, hero2, hero3];
   return (
     <section>
-      <div>
+      {/* <div>
         <HeroSlider images={images} interval={4000} />
-      </div>
+      </div> */}
       <div className="mx-[20px]">
         <div className="flex justify-center items-center h-full">
           <button className="bg-primary text-white font-semibold w-[428px] py-[6px] px-[16px]">
