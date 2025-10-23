@@ -17,6 +17,7 @@ import SectionName from "../components/SectionName";
 import BestSeller from "../components/BestSeller";
 import TopDeal from "../components/TopDeal";
 import LastSection from "../components/LastSection";
+import ExploreMenuSlider from "../components/ExploreMenuSlider";
 
 const Home = function () {
   return (
@@ -32,12 +33,8 @@ const Home = function () {
 
         <div>
           <SectionName sectionname="EXPLORE MENU" viewall="VIEW ALL" />
-          <div className="flex justify-between mt-[16px]">
-            <ExploreMenu img={menu1} text="Promotion" />
-            <ExploreMenu img={menu2} text="Everyday Value" />
-            <ExploreMenu img={menu3} text="Ala-carte-&-Combos" />
-            <ExploreMenu img={menu4} text="Signature-Boxes" />
-            <ExploreMenu img={menu5} text="Sharing" />
+          <div className="mt-[16px]">
+                  <ExploreMenuSlider />
           </div>
         </div>
 
