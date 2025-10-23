@@ -3,9 +3,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import hero1 from "../assets/banner-1.jpg";
 import hero2 from "../assets/banner-2.jpg";
 import hero3 from "../assets/banner-3.jpg";
+import hero4 from "../assets/banner-4.jpg";
 
 const HeroSlider = (props) => {
-  const images = [hero1, hero2, hero3];
+  const images = [hero1, hero2, hero3, hero4];
   const interval = props.interval || 5000;
 
   const [current, setCurrent] = useState(0);

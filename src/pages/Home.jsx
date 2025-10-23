@@ -1,9 +1,4 @@
 // import HeroSlider from "../components/Heroslider";
-import menu1 from "../assets/explore-menu-1.png";
-import menu2 from "../assets/explore-menu-2.png";
-import menu3 from "../assets/explore-menu-3.png";
-import menu4 from "../assets/explore-menu-4.png";
-import menu5 from "../assets/explore-menu-5.png";
 import seller1 from "../assets/best-seller-1.png";
 import seller2 from "../assets/best-seller-2.png";
 import seller3 from "../assets/best-seller-3.png";
@@ -12,12 +7,12 @@ import deal1 from "../assets/top-deal-1.png";
 import deal2 from "../assets/top-deal-2.png";
 import deal3 from "../assets/top-deal-3.png";
 import deal4 from "../assets/top-deal-4.png";
-import ExploreMenu from "../components/ExploreMenu";
 import SectionName from "../components/SectionName";
 import BestSeller from "../components/BestSeller";
 import TopDeal from "../components/TopDeal";
 import LastSection from "../components/LastSection";
 import ExploreMenuSlider from "../components/ExploreMenuSlider";
+import BestSellerSlider from "../components/BestSellerSlider";
 
 const Home = function () {
   return (
@@ -40,11 +35,8 @@ const Home = function () {
 
         <div>
           <SectionName sectionname="BEST SELLERS" />
-          <div className="flex justify-between mt-[16px]">
-            <BestSeller name="Krunch Burger" price="310" img={seller1} />
-            <BestSeller name="Mighty Zinger" price="770" img={seller2} />
-            <BestSeller name="Chicken & Chips" price="620" img={seller3} />
-            <BestSeller name="Hot Wings Bucket" price="670" img={seller4} />
+          <div className="flex mt-[16px]">
+            <BestSellerSlider />
           </div>
         </div>
 

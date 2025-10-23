@@ -3,7 +3,7 @@ import React from "react";
 const BestSeller = (props) => {
   return (
     <>
-      <div className="w-[290px] h-[360px] bg-surface relative">
+      <div className="w-[290px] h-auto bg-surface relative">
         <div className="flex flex-row items-center justify-center gap-[7px] content-center">
           <span className="w-[15px] h-[22px] bg-primary rounded-tl-[0px] rounded-tr-[0px] rounded-br-[1px] rounded-bl-[1px]"></span>
           <span className="w-[15px] h-[22px] bg-primary rounded-tl-[0px] rounded-tr-[0px] rounded-br-[1px] rounded-bl-[1px]"></span>

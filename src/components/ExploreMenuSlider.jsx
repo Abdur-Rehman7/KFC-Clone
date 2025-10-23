@@ -5,6 +5,8 @@ import menu2 from "../assets/explore-menu-2.png";
 import menu3 from "../assets/explore-menu-3.png";
 import menu4 from "../assets/explore-menu-4.png";
 import menu5 from "../assets/explore-menu-5.png";
+import menu6 from "../assets/explore-menu-6.png";
+import menu7 from "../assets/explore-menu-7.png";
 import {
   IoChevronBackCircleSharp,
   IoChevronForwardCircleSharp,
@@ -23,6 +25,17 @@ const ExploreMenuSlider = () => {
       scrollRef.current.scrollBy({ left: 250, behavior: "smooth" });
   };
 
+  const menuItems = [
+    { img: menu1, text: "Promotion" },
+    { img: menu2, text: "Everyday Value" },
+    { img: menu3, text: "Ala-carte & Combos" },
+    { img: menu4, text: "Signature Boxes" },
+    { img: menu5, text: "Sharing" },
+    { img: menu6, text: "Family Deals" },
+    { img: menu7, text: "Midnight (Start at 12 am)" },
+    { img: menu3, text: "Drinks & Desserts" },
+  ];
+
   return (
     <div className="relative justify-items-between w-full max-w-[1200px] mx-auto my-8">
       <IoChevronBackCircleSharp
@@ -34,17 +47,12 @@ const ExploreMenuSlider = () => {
       {/* Scrollable container */}
       <div
         ref={scrollRef}
-        className="overflow-x-auto whitespace-nowrap scroll-smooth no-scrollbar"
+        className="overflow-x-hidden whitespace-nowrap scroll-smooth no-scrollbar"
       >
         <div className="inline-flex gap-5 mt-[16px]">
-          <ExploreMenu img={menu1} text="Promotion" />
-          <ExploreMenu img={menu2} text="Everyday Value" />
-          <ExploreMenu img={menu3} text="Ala-carte & Combos" />
-          <ExploreMenu img={menu4} text="Signature Boxes" />
-          <ExploreMenu img={menu5} text="Sharing" />
-          <ExploreMenu img={menu1} text="Family Deals" />
-          <ExploreMenu img={menu2} text="Bucket Offers" />
-          <ExploreMenu img={menu3} text="Drinks & Desserts" />
+          {menuItems.map((item, index) => (
+            <ExploreMenu key={index} img={item.img} text={item.text} />
+          ))}
         </div>
       </div>
 

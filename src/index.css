@@ -44,3 +44,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
