@@ -21,7 +21,7 @@ const HeroSlider = (props) => {
 
   return (
     <div className="relative w-full h-[78vh] overflow-hidden">
-      {images.map((img, index) => (
+      {images.map((images, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -29,7 +29,7 @@ const HeroSlider = (props) => {
           }`}
         >
           <img
-            src={img}
+            src={images}
             alt={`slide-${index}`}
             className="w-full h-full object-contain"
           />

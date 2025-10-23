@@ -1,4 +1,4 @@
-import HeroSlider from "../components/Heroslider";
+// import HeroSlider from "../components/Heroslider";
 import menu1 from "../assets/explore-menu-1.png";
 import menu2 from "../assets/explore-menu-2.png";
 import menu3 from "../assets/explore-menu-3.png";
@@ -16,11 +16,12 @@ import ExploreMenu from "../components/ExploreMenu";
 import SectionName from "../components/SectionName";
 import BestSeller from "../components/BestSeller";
 import TopDeal from "../components/TopDeal";
+import LastSection from "../components/LastSection";
 
 const Home = function () {
   return (
     <section>
-      <HeroSlider interval={4000} />
+      {/* <HeroSlider interval={4000} /> */}
 
       <div className="mx-[20px]">
         <div className="flex justify-center items-center h-full">
@@ -80,6 +81,9 @@ const Home = function () {
             />
           </div>
         </div>
+      </div>
+      <div>
+        <LastSection />
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import React from "react";
 const ExploreMenu = (props) => {
   return (
     <>
-      <div className="relative justify-items-center w-[220px] h-[200px] bg-surface rounded-tl-[50%] rounded-tr-[50%] rounded-br-[3%] rounded-bl-[50%]">
+      <div className="relative justify-items-center w-[220px] h-[200px] bg-surface rounded-tl-[50%] rounded-tr-[50%] rounded-br-[3%] rounded-bl-[50%] transition-all duration-300 hover:-translate-y-3">
         <img className="w-[180x] h-[146px]" src={props.img} />
 
         <p className="mb-[6px] text-[16px] font-medium">{props.text}</p>
