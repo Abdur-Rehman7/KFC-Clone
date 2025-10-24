@@ -17,7 +17,7 @@ const BestSellerSlider = () => {
   ];
 
   return (
-    <div className="w-full mx-auto my-8">
+    <div className="w-full mx-auto">
       <div
         className="
           relative overflow-x-auto scroll-smooth whitespace-nowrap

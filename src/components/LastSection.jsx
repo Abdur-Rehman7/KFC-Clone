@@ -29,7 +29,7 @@ const LastSection = () => {
         {/* second div (card) */}
         <div
           className="w-full md:w-[49%] mt-[16px] inline-block align-top text-center bg-white rounded-[8px] shadow-sm border border-gray-200
-                     md:h-[calc(100%)]" // keeps consistent height baseline
+                     " // keeps consistent height baseline
           style={{
             minHeight: "100%", // ensures consistency when text wraps
           }}
