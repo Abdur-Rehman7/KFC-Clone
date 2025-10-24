@@ -1,18 +1,14 @@
 // import HeroSlider from "../components/Heroslider";
-import seller1 from "../assets/best-seller-1.png";
-import seller2 from "../assets/best-seller-2.png";
-import seller3 from "../assets/best-seller-3.png";
-import seller4 from "../assets/best-seller-4.png";
 import deal1 from "../assets/top-deal-1.png";
 import deal2 from "../assets/top-deal-2.png";
 import deal3 from "../assets/top-deal-3.png";
 import deal4 from "../assets/top-deal-4.png";
 import SectionName from "../components/SectionName";
-import BestSeller from "../components/BestSeller";
 import TopDeal from "../components/TopDeal";
 import LastSection from "../components/LastSection";
 import ExploreMenuSlider from "../components/ExploreMenuSlider";
 import BestSellerSlider from "../components/BestSellerSlider";
+import ExploreMenuGrid from "../components/ExploreMenuGrid";
 
 const Home = function () {
   return (
@@ -26,12 +22,20 @@ const Home = function () {
           </button>
         </div>
 
-        <div>
-          <SectionName sectionname="EXPLORE MENU" viewall="VIEW ALL" />
-          <div className="mt-[16px]">
-                  <ExploreMenuSlider />
-          </div>
-        </div>
+         <div>
+      {/* Section Header */}
+      <SectionName sectionname="EXPLORE MENU" viewall="VIEW ALL" />
+
+      {/* Desktop View → Show Slider */}
+      <div className="hidden lg:block mt-[16px]">
+        <ExploreMenuSlider />
+      </div>
+
+      {/* Tablet & Mobile View → Show Grid */}
+      <div className="block lg:hidden mt-[16px]">
+        <ExploreMenuGrid />
+      </div>
+    </div>
 
         <div>
           <SectionName sectionname="BEST SELLERS" />
