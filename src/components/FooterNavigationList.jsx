@@ -17,11 +17,11 @@ function FooterNavigationList(props) {
               )}
             </li>
           </ul>
-          <li className="mt-[10px] text-[18px] text-black">{props.item1}</li>
-          <li className="mt-[10px] text-[18px] text-black">{props.item2}</li>
-          <li className="mt-[10px] text-[18px] text-black">{props.item3}</li>
-          <li className="mt-[10px] text-[18px] text-black">{props.item4}</li>
-          <li className="mt-[10px] text-[18px] text-black">{props.item5}</li>
+          <li className="mt-[10px] text-[18px] text-text">{props.item1}</li>
+          <li className="mt-[10px] text-[18px] text-text">{props.item2}</li>
+          <li className="mt-[10px] text-[18px] text-text">{props.item3}</li>
+          <li className="mt-[10px] text-[18px] text-text">{props.item4}</li>
+          <li className="mt-[10px] text-[18px] text-text">{props.item5}</li>
         </ul>
       </div>
     </>

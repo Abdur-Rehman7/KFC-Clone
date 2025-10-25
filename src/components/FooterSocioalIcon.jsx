@@ -8,7 +8,7 @@ function FooterSocialIcon() {
         <FaYoutube className="text-[#FF0000]" size={26} />
       </div>
       <div className="w-[40px] h-[40px] bg-[white] rounded-[100%] flex items-center justify-center cursor-pointer ">
-        <FaInstagram size={26} />
+        <FaInstagram className="text-[#000000]" size={26} />
       </div>
       <div className="w-[40px] h-[40px] bg-[white] rounded-[100%] flex items-center justify-center cursor-pointer ">
         <FaFacebookF className="text-[#4267B2]" size={26} />

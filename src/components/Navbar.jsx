@@ -23,7 +23,7 @@ export default function Navbar() {
             {/* Hamburger Button */}
             <button
               onClick={() => setOpen(true)}
-              className="text-black dark:text-white hover:text-primary transition"
+              className="text-text dark:text-white hover:text-primary transition"
             >
               <Menu size={28} />
             </button>
@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-4">
             {/* Cart */}
-            <button className="relative text-black dark:text-white hover:text-primary transition">
+            <button className="relative text-text dark:text-white hover:text-primary transition">
               <img className="w-[40px] h-[40px]" src={cartimg} alt="" />
               <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 0
@@ -78,25 +78,25 @@ export default function Navbar() {
 
       {/* 🧭 Sidebar Drawer (now slides from the LEFT) */}
       <aside
-        className={`fixed top-0 left-0 h-full w-72 bg-light dark:bg-second shadow-2xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-72 bg-light bg-card shadow-2xl z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Sidebar Header */}
         <div className="flex justify-between items-center p-4 border-b border-borderTheme">
-          <h2 className="text-xl font-semibold text-black dark:text-white">
+          <h2 className="text-xl font-semibold text-text dark:text-white">
             Menu
           </h2>
           <button
             onClick={() => setOpen(false)}
-            className="text-black dark:text-white hover:text-primary transition"
+            className="text-text dark:text-white hover:text-primary transition"
           >
             <X size={26} />
           </button>
         </div>
 
         {/* Sidebar Content */}
-        <div className="flex flex-col gap-5 p-4 text-black dark:text-white">
+        <div className="flex flex-col gap-5 p-4 text-text dark:text-white">
           {/* Login */}
           <button className="text-left font-medium hover:text-primary transition">
             Login

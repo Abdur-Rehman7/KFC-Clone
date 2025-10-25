@@ -4,7 +4,7 @@ function ExploreMenu({ img, text }) {
   return (
     <>
       {/* 🖥️ Desktop View — Original Curved Style */}
-      <div className="hidden lg:flex relative justify-items-center w-[220px] h-[200px] bg-surface rounded-tl-[50%] rounded-tr-[50%] rounded-br-[3%] rounded-bl-[50%] transition-all duration-300 hover:-translate-y-3">
+      <div className="hidden lg:flex relative justify-items-center w-[220px] h-[200px] bg-card rounded-tl-[50%] rounded-tr-[50%] rounded-br-[3%] rounded-bl-[50%] transition-all duration-300 hover:-translate-y-3">
         <img
           className="w-[180px] h-[146px] object-contain mx-auto mt-2"
           src={img}

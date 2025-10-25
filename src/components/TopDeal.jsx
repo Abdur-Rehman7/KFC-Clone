@@ -5,7 +5,7 @@ const TopDeal = (props) => {
   const [isFav, setIsFav] = useState(false);
 
   return (
-    <div className="w-[300px] h-[450px] lg:w-[w-200px]  bg-surface relative rounded-lg shadow-sm group">
+    <div className="w-[300px] h-[450px] lg:w-[w-200px]  bg-card relative rounded-lg shadow-sm group">
       {/* Top bars */}
       <div className="pt-[15px] px-[5px] pb-[35px] mx-auto">
         <div className="flex flex-row items-center absolute top-0 left-[41%] justify-center gap-[7px]">
@@ -39,7 +39,7 @@ const TopDeal = (props) => {
           </button>
         </div>
 
-        <div className="truncate-2-lines text-black text-[15px] leading-snug mb-[16px]">
+        <div className="truncate-2-lines text-text text-[15px] leading-snug mb-[16px]">
           {props.discription}
         </div>
 

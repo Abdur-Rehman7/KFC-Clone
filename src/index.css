@@ -6,7 +6,7 @@
 :root {
   --body-bg: #F1F3F6;
   --surface-bg: #ffffff;
-  --card-bg: #000000;
+  --card-bg: #ffffff;
   --text-color: #000000;
   --primary: #EA002A;
   --border-color: #e5e7eb;
@@ -16,7 +16,7 @@
 .dark {
   --body-bg: #000000;           /* Background stays pure black */
   --surface-bg: #000000;        /* Navbar / footer */
-  --card-bg: #949304;   /* Card color — slightly warm dark brown-black */
+  --card-bg: #1c1816;   /* Card color — slightly warm dark brown-black */
   --text-color: #ffffff;
   --primary: #EA002A;
   --border-color: #2c2c2c;      /* Softer border */

@@ -34,7 +34,7 @@ export default function Footer() {
         <FooterNavigationList image1={appstore} image2={googleplay} />
       </div>
       <div className="container mx-auto mt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
-        <div className="text-black text-[16px] font-medium">
+        <div className="text-text text-[16px] font-medium">
           © {new Date().getFullYear()} KFC Clone. All Rights Reserved.
         </div>
         <div>
@@ -43,7 +43,7 @@ export default function Footer() {
             <a
               href="https://www.linkedin.com/in/abdur-rehman-0a3623318/"
               target="_blank"
-              className="border-b border-black"
+              className="border-b border-text"
             >
               Abdur Rehman
             </a>
