@@ -18,7 +18,7 @@ function ExploreMenuGrid() {
     <div className="w-full mx-auto">
       <div className="grid grid-cols-3 grid-rows-2 gap-4 sm:gap-5">
         {/* 01 — Tall Left Card */}
-        <div className="row-span-2 flex flex-col justify-between border border-dashed border-black rounded-[10px] p-3 shadow-sm h-[280px] sm:h-[320px]">
+        <div className="row-span-2 flex flex-col justify-between border border-dashed border-text rounded-[10px] p-3 shadow-sm h-[280px] sm:h-[320px]">
           <p className="text-[14px] sm:text-[16px] font-semibold mb-2">
             {menuItems[0].text}
           </p>
@@ -30,7 +30,7 @@ function ExploreMenuGrid() {
         </div>
 
         {/* 02 — Top Row Middle */}
-        <div className="flex flex-col justify-between border border-dashed border-black rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
+        <div className="flex flex-col justify-between border border-dashed border-text rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
           <p className="text-[14px] sm:text-[16px] font-semibold mb-2">
             {menuItems[1].text}
           </p>
@@ -42,7 +42,7 @@ function ExploreMenuGrid() {
         </div>
 
         {/* 04 — Top Row Right */}
-        <div className="flex flex-col justify-between border border-dashed border-black rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
+        <div className="flex flex-col justify-between border border-dashed border-text rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
           <p className="text-[14px] sm:text-[16px] font-semibold mb-2">
             {menuItems[3].text}
           </p>
@@ -54,7 +54,7 @@ function ExploreMenuGrid() {
         </div>
 
         {/* 03 — Bottom Row Middle */}
-        <div className="flex flex-col justify-between border border-dashed border-black rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
+        <div className="flex flex-col justify-between border border-dashed border-text rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
           <p className="text-[14px] sm:text-[16px] font-semibold mb-2">
             {menuItems[2].text}
           </p>
@@ -66,7 +66,7 @@ function ExploreMenuGrid() {
         </div>
 
         {/* 05 — Bottom Row Right */}
-        <div className="flex flex-col justify-between border border-dashed border-black rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
+        <div className="flex flex-col justify-between border border-dashed border-text rounded-[10px] p-3 shadow-sm h-[130px] sm:h-[150px]">
           <p className="text-[14px] sm:text-[16px] font-semibold mb-2">
             {menuItems[4].text}
           </p>

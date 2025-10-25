@@ -98,7 +98,7 @@ export default function Navbar() {
         {/* Sidebar Content */}
         <div className="flex flex-col gap-5 p-4 text-text dark:text-white">
           {/* Login */}
-          <button className="text-left font-medium hover:text-primary transition">
+          <button className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition">
             Login
           </button>
 
