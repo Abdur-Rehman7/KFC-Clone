@@ -9,7 +9,7 @@ import TopDealsSectionMap from "../components/TopDealsSectionMap";
 const Home = function () {
   return (
     <section>
-      {/* <HeroSlider interval={4000} /> */}
+      <HeroSlider interval={4000} />
 
       <div className="mx-[10px]">
         <div className="flex justify-center items-center h-full">
