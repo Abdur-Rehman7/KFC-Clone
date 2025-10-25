@@ -18,29 +18,29 @@ export default function ThemeToggle() {
   }, [theme]);
 
   return (
-    <div className="flex gap-2">
+    <div className="flex bg-body rounded-[25px]">
       {/* ☀️ Light Button */}
       <button
         onClick={() => setTheme("light")}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition-all duration-300 
+        className={`px-[10px] py-[8px] rounded-[25px] text-[13px] font-bold transition-all duration-300 
           ${theme === "light"
             ? "bg-[#EA002A] text-white shadow-md"
-            : "bg-transparent border border-border text-black dark:text-white hover:bg-[#EA002A] hover:text-white"
+            : "bg-transparent text-black rounded-[25px] dark:text-white"
           }`}
       >
-        ☀️
+        Day
       </button>
 
       {/* 🌙 Dark Button */}
       <button
         onClick={() => setTheme("dark")}
-        className={`px-3 py-1 rounded-md text-sm font-medium transition-all duration-300 
+        className={`px-[10px] py-[8px] rounded-[25px] text-[13px] font-bold transition-all duration-300 
           ${theme === "dark"
             ? "bg-[#EA002A] text-white shadow-md"
-            : "bg-transparent border border-border text-black dark:text-white hover:bg-[#EA002A] hover:text-white"
+            : "bg-transparent  text-black rounded-[25px] dark:text-white"
           }`}
       >
-        🌙
+        Night
       </button>
     </div>
   );

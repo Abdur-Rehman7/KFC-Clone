@@ -31,10 +31,12 @@ body {
 /* In your global CSS or Tailwind layer */
 .truncate-2-lines {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.4; /* optional, improves spacing */
+  max-height: calc(1.4em * 2); /* ensures 2 lines fit visually */
 }
 
 .no-scrollbar::-webkit-scrollbar {

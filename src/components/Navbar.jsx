@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { RiMenu2Line } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
 import logo from "../assets/logo.png";
 import delivery from "../assets/Delivery.png";
 import pickup from "../assets/pickup.png";
 import cartimg from "../assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
+import SidebarLinkMaping from "./SidebarLinkMaping";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  // ✅ Make the first button active by default
   const [activeBtn, setActiveBtn] = useState("car1");
 
   return (
@@ -23,9 +24,10 @@ export default function Navbar() {
             {/* Hamburger Button */}
             <button
               onClick={() => setOpen(true)}
-              className="text-text dark:text-white hover:text-primary transition"
+              className="text-text transition"
             >
-              <Menu size={28} />
+              
+              <RiMenu2Line  size={28} />
             </button>
 
             {/* Logo */}
@@ -78,22 +80,10 @@ export default function Navbar() {
 
       {/* 🧭 Sidebar Drawer (now slides from the LEFT) */}
       <aside
-        className={`fixed top-0 left-0 h-full w-72 bg-light bg-card shadow-2xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full overflow-x-auto w-72 bg-light bg-card shadow-2xl z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Sidebar Header */}
-        <div className="flex justify-between items-center p-4 border-b border-borderTheme">
-          <h2 className="text-xl font-semibold text-text dark:text-white">
-            Menu
-          </h2>
-          <button
-            onClick={() => setOpen(false)}
-            className="text-text dark:text-white hover:text-primary transition"
-          >
-            <X size={26} />
-          </button>
-        </div>
 
         {/* Sidebar Content */}
         <div className="flex flex-col gap-5 p-4 text-text dark:text-white">
@@ -103,33 +93,14 @@ export default function Navbar() {
           </button>
 
           {/* Theme Switch */}
-          <ThemeToggle />
+          <div className="flex justify-end">
+            <ThemeToggle />
+          </div>
 
           <hr className="border-borderTheme my-2" />
 
           {/* Main Links */}
-          <NavLink to="/store" className="hover:text-primary transition">
-            📍 Store Locator
-          </NavLink>
-          <NavLink to="/track-order" className="hover:text-primary transition">
-            🚚 Track Order
-          </NavLink>
-          <NavLink to="/menu" className="hover:text-primary transition">
-            🍔 Explore Menu
-          </NavLink>
-
-          <hr className="border-borderTheme my-2" />
-
-          {/* Footer Links */}
-          <NavLink to="/about" className="hover:text-primary transition">
-            📄 About Us
-          </NavLink>
-          <NavLink to="/terms" className="hover:text-primary transition">
-            ⚖️ Terms & Conditions
-          </NavLink>
-          <NavLink to="/privacy" className="hover:text-primary transition">
-            🔒 Privacy Policy
-          </NavLink>
+          <SidebarLinkMaping/>
         </div>
       </aside>
     </>
