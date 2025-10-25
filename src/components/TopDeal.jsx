@@ -5,7 +5,7 @@ const TopDeal = (props) => {
   const [isFav, setIsFav] = useState(false);
 
   return (
-<div className="w-[186px] lg:w-[300px] md:w-[212px] bg-card relative rounded-lg shadow-sm group">
+<div className="w-[186px] lg:w-[300px] lg:h-[450px] md:w-[212px] md:h-[340px] bg-card relative rounded-lg shadow-sm group">
       {/* Top bars */}
       <div className="pt-[15px] px-[5px] pb-[35px] mx-auto">
         <div className="flex flex-row items-center absolute top-0 left-[41%] justify-center gap-[7px]">

@@ -1,10 +1,5 @@
-// import HeroSlider from "../components/Heroslider";
-import deal1 from "../assets/top-deal-1.png";
-import deal2 from "../assets/top-deal-2.png";
-import deal3 from "../assets/top-deal-3.png";
-import deal4 from "../assets/top-deal-4.png";
+import HeroSlider from "../components/Heroslider";
 import SectionName from "../components/SectionName";
-import TopDeal from "../components/TopDeal";
 import LastSection from "../components/LastSection";
 import ExploreMenuSlider from "../components/ExploreMenuSlider";
 import BestSellerSlider from "../components/BestSellerSlider";
