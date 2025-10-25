@@ -1,4 +1,4 @@
-import HeroSlider from "../components/Heroslider";
+// import HeroSlider from "../components/Heroslider";
 import SectionName from "../components/SectionName";
 import LastSection from "../components/LastSection";
 import ExploreMenuSlider from "../components/ExploreMenuSlider";
@@ -9,7 +9,7 @@ import TopDealsSectionMap from "../components/TopDealsSectionMap";
 const Home = function () {
   return (
     <section>
-      <HeroSlider interval={4000} />
+      {/* <HeroSlider interval={4000} /> */}
 
       <div className="mx-[10px]">
         <div className="flex justify-center items-center h-full">
