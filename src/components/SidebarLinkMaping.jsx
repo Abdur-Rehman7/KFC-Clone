@@ -10,17 +10,17 @@ function SidebarLinkMaping(props) {
   const sidebariconlink = [
     {
       icon: icon2,
-      link: "storelocater",
+      link: "storeLocater",
       title: "Store Locator",
     },
     {
       icon: icon3,
-      link: "trackorder",
+      link: "TrackOrder",
       title: "Track Order",
     },
     {
       icon: icon1,
-      link: "exploremenu",
+      link: "ExploreMenu",
       title: "Explore Menu",
     },
   ];
