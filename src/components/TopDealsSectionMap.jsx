@@ -41,7 +41,6 @@ const TopDealsSectionMap = () => {
 
   return (
     <div className="w-full mx-auto">
-
       {/* ✅ Horizontal scroll, no vertical overflow */}
       <div
         className="

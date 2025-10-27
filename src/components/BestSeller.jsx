@@ -15,7 +15,8 @@ const BestSeller = (props) => {
         </p>
 
         <div className="absolute top-[80px] right-0 flex items-center bg-[#E4002B] text-white font-bold text-[18px] px-4 py-[6px] rounded-l-sm">
-          <span className="text-[14px] font-medium mr-1">Rs</span>{props.price}
+          <span className="text-[14px] font-medium mr-1">Rs</span>
+          {props.price}
         </div>
 
         <img className="w-[290px] h-[290px]" src={props.img} />

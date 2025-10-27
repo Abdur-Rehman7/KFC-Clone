@@ -21,7 +21,7 @@ const BestSellerSlider = () => {
       <div
         className="
           relative overflow-x-auto scroll-smooth whitespace-nowrap
-          custom-scrollbar
+          custom-scrollbarF
         "
       >
         <div className="inline-flex gap-5 items-end relative z-10">

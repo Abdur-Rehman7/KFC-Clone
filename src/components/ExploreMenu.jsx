@@ -11,9 +11,7 @@ function ExploreMenu({ img, text }) {
           alt={text}
         />
         <div className="absolute bottom-4 w-full flex flex-col items-center">
-          <p className="mb-[6px] text-[16px] font-medium text-center">
-            {text}
-          </p>
+          <p className="mb-[6px] text-[16px] font-medium text-center">{text}</p>
           <hr className="w-[60px] h-[3px] rounded-lg bg-primary border-0" />
         </div>
         <span className="w-[17px] h-[17px] rounded-[100%] bg-body absolute right-[5px] bottom-[5px]" />
