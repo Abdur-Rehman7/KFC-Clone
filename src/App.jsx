@@ -3,7 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Storelocater from "./pages/Storelocater";
+import Storelocater from "./pages/StoreLocater";
 import TrackOrder from "./pages/TrackOrder";
 import ExploreMenuPage from "./pages/ExploreMenuPage";
 import TermsAndCondition from "./pages/TermsAndCondition";
