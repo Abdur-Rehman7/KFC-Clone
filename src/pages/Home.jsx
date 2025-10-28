@@ -1,4 +1,4 @@
-// import HeroSlider from "../components/Heroslider";
+// import HeroSlider from "../components/HeroSlider";
 import SectionName from "../components/SectionName";
 import LastSection from "../components/LastSection";
 import ExploreMenuSlider from "../components/ExploreMenuSlider";
