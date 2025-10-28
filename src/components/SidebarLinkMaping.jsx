@@ -6,7 +6,7 @@ import icon3 from "../assets/sidebar-track-order-icon.jpg";
 
 
 
-function SidebarLinkMaping(props) {
+function SidebarLinkMaping({ onCloseSidebar }) {
   const sidebariconlink = [
     {
       icon: icon2,
@@ -58,14 +58,14 @@ function SidebarLinkMaping(props) {
     <>
       <div>
         {sidebariconlink.map((index, i) => (
-          <SidebarLink key={i} link={index.link} icon={index.icon} title={index.title} />
+          <SidebarLink key={i} link={index.link} icon={index.icon} title={index.title} onCloseSidebar={onCloseSidebar} />
         ))}
       </div>
       <hr className="border-borderTheme my-2" />
 
       <div>
         {sidebarsimplelink.map((index, i) => (
-          <SidebarLink key={i} link={index.link} icon={index.icon} title={index.title} />
+          <SidebarLink key={i} link={index.link} icon={index.icon} title={index.title} onCloseSidebar={onCloseSidebar} />
         ))}
       </div>
     </>

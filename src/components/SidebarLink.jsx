@@ -1,21 +1,34 @@
 import React from "react";
-import { NavLink } from "react-router-dom"; // ✅ Use this if you're using React Router
+import { NavLink } from "react-router-dom";
 
-function SidebarLink({ link, icon, title }) {
+function SidebarLink(props) {
+  const handleClick = () => {
+    if (props.onCloseSidebar) {
+      props.onCloseSidebar(); // 👈 Close sidebar when clicked
+    }
+  };
+
   return (
-    <li>
-      <NavLink
-        to={link}
-        className={({ isActive }) =>
-          `flex items-center gap-2 py-[11px] px-[12px] rounded-md cursor-pointer 
-          transition-all duration-300 ease-in-out 
-          ${isActive ? "bg-primary text-white" : "hover:bg-gray-200 text-gray-700"}`
-        }
-      >
-        {icon && <img src={icon} alt={title} className="w-[22px] h-[22px]" />}
-        <span className="text-[15px] font-medium">{title}</span>
-      </NavLink>
-    </li>
+    <>
+      <ul>
+        <li>
+          <NavLink
+            to={props.link}
+            onClick={handleClick}
+            className="flex gap-[7px] py-[11px] px-[10px] hover:pl-[2px] hover:bg-[#A3A3A3] cursor-pointer transition-all duration-300 ease-in-out"
+          >
+            {props.icon && (
+              <img
+                className="w-[25px] h-[25px]"
+                src={props.icon}
+                alt={props.title}
+              />
+            )}
+            {props.title}
+          </NavLink>
+        </li>
+      </ul>
+    </>
   );
 }
 

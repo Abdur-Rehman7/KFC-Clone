@@ -14,6 +14,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeBtn, setActiveBtn] = useState("car1");
 
+  const handleCloseSidebar = () => {
+  setOpen(false);
+  };
+
+
   return (
     <>
       {/* 🌍 Main Navbar */}
@@ -100,7 +105,7 @@ export default function Navbar() {
           <hr className="border-borderTheme my-2" />
 
           {/* Main Links */}
-          <SidebarLinkMaping/>
+          <SidebarLinkMaping onCloseSidebar={handleCloseSidebar} />
         </div>
       </aside>
     </>
