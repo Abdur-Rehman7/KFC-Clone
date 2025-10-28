@@ -26,7 +26,7 @@ function SidebarLinkMaping(props) {
   ];
   const sidebarsimplelink = [
     {
-      link: "about",
+      link: "About",
       title: "About Us",
     },
     {
