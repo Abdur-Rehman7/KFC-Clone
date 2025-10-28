@@ -6,7 +6,6 @@ function SidebarLink(props) {
       <ul>
         <a href={props.link}>
           <li
-            to="/store"
             className=" flex gap-[7px] py-[11px] px-[10px] hover:pl-[2px] hover:bg-[#A3A3A3] cursor-pointer transition-all duration-300 ease-in-out"
           >
             {props.icon && (
