@@ -9,7 +9,7 @@ import ExploreMenuPage from "./pages/ExploreMenuPage";
 import TermsAndCondition from "./pages/TermsAndCondition";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import MitaoBhook from "./pages/MitaoBhook";
-import MitaoBhookScholership from "./pages/MitaoBhookScholerShip";
+import MitaoBhookScholership from "./pages/MitaoBhookScholership";
 import Careers from "./pages/Careers";
 
 
