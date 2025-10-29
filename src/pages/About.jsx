@@ -11,7 +11,6 @@ export default function About() {
   return (
     <section className="text-center mx-[32px]">
       <div className="relative flex items-center justify-center mb-[35px]">
-        {/* Arrow - positioned on the left */}
         <div className="absolute left-0 top-2">
           <Link
             to="/"
