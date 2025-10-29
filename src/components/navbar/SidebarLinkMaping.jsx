@@ -1,8 +1,8 @@
 import React from "react";
 import SidebarLink from "./SidebarLink";
-import icon1 from "../assets/sidebar-explore-menu-icon.jpg";
-import icon2 from "../assets/sidebar-store-locater-icon.jpg";
-import icon3 from "../assets/sidebar-track-order-icon.jpg";
+import icon1 from "./assets/sidebar-explore-menu-icon.jpg";
+import icon2 from "./assets/sidebar-store-locater-icon.jpg";
+import icon3 from "./assets/sidebar-track-order-icon.jpg";
 
 
 

@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
-import logo from "../assets/logo.png";
-import delivery from "../assets/Delivery.png";
-import pickup from "../assets/pickup.png";
-import cartimg from "../assets/cart-bucket.png";
+import logo from "./assets/logo.png";
+import delivery from "./assets/Delivery.png";
+import pickup from "./assets/pickup.png";
+import cartimg from "./assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
 import SidebarLinkMaping from "./SidebarLinkMaping";
 
