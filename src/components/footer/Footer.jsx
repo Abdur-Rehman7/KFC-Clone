@@ -1,6 +1,6 @@
-import logo from "../assets/logo.png";
-import appstore from "../assets/footer-appstore-image.png";
-import googleplay from "../assets/footer-googleplay-image.png";
+import logo from "./assets/logo.png";
+import appstore from "./assets/footer-appstore-image.png";
+import googleplay from "./assets/footer-googleplay-image.png";
 import FooterSocialIcon from "./FooterSocioalIcon";
 import FooterNavigationList from "./FooterNavigationList";
 
