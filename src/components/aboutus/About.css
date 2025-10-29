@@ -1,0 +1,7 @@
+.aboutus-bucket {
+  background-image: url("./assets/about-us-basket.png");
+  background-size: contain;
+  width: 197px;
+  height: 205px;
+  background-repeat: no-repeat;
+}

@@ -1,7 +1,7 @@
 import React from "react";
-import bucketarrow from "../assets/about-us-basket-arrow.png";
-import "../App.css";
-import AboutUsBucket from "../components/AboutUsBucket";
+import bucketarrow from "./assets/about-us-basket-arrow.png";
+import "./About.css";
+import AboutUsBucket from "./AboutUsBucket";
 
 const AboutUsBucketSection = (props) => {
   const aboutUsData = [

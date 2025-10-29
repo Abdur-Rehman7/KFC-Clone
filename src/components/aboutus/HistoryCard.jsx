@@ -1,6 +1,6 @@
 import React from "react";
-import "../App.css";
-import kfcowner from "../assets/kfc-history.png";
+import "./About.css";
+import kfcowner from "./assets/kfc-history.png";
 
 const HistoryCard = (props) => {
   return (

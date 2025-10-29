@@ -1,5 +1,5 @@
 import React from "react";
-import mitaobhookimg from "../assets/about-us-mitaobhook.png";
+import mitaobhookimg from "./assets/about-us-mitaobhook.png";
 
 const AboutUsMitaoBhook = (props) => {
   return (

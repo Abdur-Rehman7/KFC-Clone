@@ -1,8 +1,8 @@
 import React from "react";
-import fact1 from "../assets/fact-image-1.png";
-import fact2 from "../assets/fact-image-2.png";
-import fact3 from "../assets/fact-image-3.png";
-import fact4 from "../assets/fact-image-4.png";
+import fact1 from "./assets/fact-image-1.png";
+import fact2 from "./assets/fact-image-2.png";
+import fact3 from "./assets/fact-image-3.png";
+import fact4 from "./assets/fact-image-4.png";
 
 const AboutUsFact = (props) => {
   const facts = [
