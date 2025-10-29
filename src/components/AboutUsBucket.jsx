@@ -4,7 +4,7 @@ import "../App.css";
 const AboutUsBucket = (props) => {
   return (
     <>
-      <div className="aboutus-bucket items-center justify-center">
+      <div className="aboutus-bucket mt-[40px] items-center justify-center">
         <div className=" pt-[35px] p-[25px]">
           <p className="text-[34px] font-bold mb-[8px] text-text">
             {props.year}

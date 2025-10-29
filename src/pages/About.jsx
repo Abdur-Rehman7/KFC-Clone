@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import AboutUsCard from "../components/AboutUsCard";
 import HistoryCard from "../components/HistoryCard";
 import AboutUsBucketSection from "../components/AboutUsBucketSection";
+import AboutUsFact from "../components/AboutUsFact";
+import AboutUsMitaoBhook from "../components/AboutUsMitaoBhook";
 
 export default function About() {
   return (
@@ -28,11 +30,18 @@ export default function About() {
         <HistoryCard />
       </div>
 
-      <div className="mt-[70px]">
-        <p className="text-[24px] mb-[16px] lg:text-[38px] text-left">
+      <div className="mt-[70px] ">
+        <p className="text-[24px] mb-[16px] lg:text-[38px] text-left font-bold">
           The Story of World’s Best Chicken
         </p>
         <AboutUsBucketSection />
+      </div>
+
+      <div className="bg-card py-[50px] mt-[70px]">
+        <AboutUsFact />
+      </div>
+      <div className="bg-card py-[40px] px-[110px] mt-[70px] mb-[20px]">
+        <AboutUsMitaoBhook />
       </div>
     </section>
   );
