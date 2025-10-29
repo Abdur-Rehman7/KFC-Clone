@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import ExploreMenu from "./ExploreMenu";
-import menu1 from "../assets/explore-menu-1.png";
-import menu2 from "../assets/explore-menu-2.png";
-import menu3 from "../assets/explore-menu-3.png";
-import menu4 from "../assets/explore-menu-4.png";
-import menu5 from "../assets/explore-menu-5.png";
-import menu6 from "../assets/explore-menu-6.png";
-import menu7 from "../assets/explore-menu-7.png";
+import menu1 from "./assets/explore-menu-1.png";
+import menu2 from "./assets/explore-menu-2.png";
+import menu3 from "./assets/explore-menu-3.png";
+import menu4 from "./assets/explore-menu-4.png";
+import menu5 from "./assets/explore-menu-5.png";
+import menu6 from "./assets/explore-menu-6.png";
+import menu7 from "./assets/explore-menu-7.png";
 import {
   IoChevronBackCircleSharp,
   IoChevronForwardCircleSharp,

@@ -1,11 +1,9 @@
 import React from "react";
 import TopDeal from "./TopDeal";
-import SectionName from "./SectionName";
-
-import deal1 from "../assets/top-deal-1.png";
-import deal2 from "../assets/top-deal-2.png";
-import deal3 from "../assets/top-deal-3.png";
-import deal4 from "../assets/top-deal-4.png";
+import deal1 from "./assets/top-deal-1.png";
+import deal2 from "./assets/top-deal-2.png";
+import deal3 from "./assets/top-deal-3.png";
+import deal4 from "./assets/top-deal-4.png";
 
 const TopDealsSectionMap = () => {
   const deals = [

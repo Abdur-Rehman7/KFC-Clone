@@ -1,10 +1,10 @@
-import HeroSlider from "../components/HeroSlider";
+import HeroSlider from "../components/home/HeroSlider";
 import SectionName from "../components/SectionName";
-import LastSection from "../components/LastSection";
-import ExploreMenuSlider from "../components/ExploreMenuSlider";
-import BestSellerSlider from "../components/BestSellerSlider";
-import ExploreMenuGrid from "../components/ExploreMenuGrid";
-import TopDealsSectionMap from "../components/TopDealsSectionMap";
+import LastSection from "../components/home/LastSection"; 
+import ExploreMenuSlider from "../components/home/ExploreMenuSlider";
+import BestSellerSlider from "../components/home/BestSellerSlider";
+import ExploreMenuGrid from "../components/home/ExploreMenuGrid";
+import TopDealsSectionMap from "../components/home/TopDealsSectionMap";
 
 const Home = function () {
   return (

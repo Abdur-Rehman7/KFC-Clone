@@ -1,9 +1,9 @@
 import React from "react";
-import img1 from "../assets/explore-menu-1.png";
-import img2 from "../assets/explore-menu-2.png";
-import img3 from "../assets/explore-menu-3.png";
-import img4 from "../assets/explore-menu-4.png";
-import img5 from "../assets/explore-menu-5.png";
+import img1 from "./assets/explore-menu-1.png";
+import img2 from "./assets/explore-menu-2.png";
+import img3 from "./assets/explore-menu-3.png";
+import img4 from "./assets/explore-menu-4.png";
+import img5 from "./assets/explore-menu-5.png";
 
 function ExploreMenuGrid() {
   const menuItems = [

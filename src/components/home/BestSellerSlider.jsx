@@ -1,10 +1,10 @@
 import React from "react";
 import BestSeller from "./BestSeller";
-import img1 from "../assets/best-seller-1.png";
-import img2 from "../assets/best-seller-2.png";
-import img3 from "../assets/best-seller-3.png";
-import img4 from "../assets/best-seller-4.png";
-import img5 from "../assets/best-seller-5.png";
+import img1 from "./assets/best-seller-1.png";
+import img2 from "./assets/best-seller-2.png";
+import img3 from "./assets/best-seller-3.png";
+import img4 from "./assets/best-seller-4.png";
+import img5 from "./assets/best-seller-5.png";
 
 const BestSellerSlider = () => {
   const products = [

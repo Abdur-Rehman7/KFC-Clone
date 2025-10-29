@@ -1,8 +1,8 @@
 import React from "react";
-import lastsection1 from "../assets/last-section-1.jpg";
-import lastsection2 from "../assets/last-section-2.jpg";
-import lastsection3 from "../assets/last-section-3.png";
-import lastsection4 from "../assets/last-section-4.jpg";
+import lastsection1 from "./assets/last-section-1.jpg";
+import lastsection2 from "./assets/last-section-2.jpg";
+import lastsection3 from "./assets/last-section-3.png";
+import lastsection4 from "./assets/last-section-4.jpg";
 
 const LastSection = () => {
   const images = [lastsection1, lastsection2, lastsection3];
