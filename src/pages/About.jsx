@@ -40,7 +40,7 @@ export default function About() {
       <div className="bg-card py-[50px] mt-[70px]">
         <AboutUsFact />
       </div>
-      <div className="bg-card py-[40px] px-[110px] mt-[70px] mb-[20px]">
+      <div className="bg-card py-[40px] px-[15px] lg:px-[110px] mt-[70px] mb-[20px]">
         <AboutUsMitaoBhook />
       </div>
     </section>
