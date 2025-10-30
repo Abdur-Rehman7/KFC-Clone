@@ -96,10 +96,10 @@ const MitaoBhook = () => {
         <p className="text-[34px] font-semibold">
           KFC SCORE A SCHOLARSHIP PROGRAM
         </p>
-        <p className="text-[34px] font-semibold" >
+        <p className="text-[34px] font-semibold">
           READY TO FULFIL YOUR EDUCATION DREAMS!
         </p>
-        <p className="text-[20px] mt-[30px]">
+        <p className="text-[20px]/[24px] font-semibold mt-[30px]">
           We are providing 200+ higher education scholarships to deserving
           students across all HEC recognized institutes in Pakistan. This is
           done in collaboration with the Orange Tree Foundation, an education
