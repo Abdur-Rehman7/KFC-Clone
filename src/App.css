@@ -1,3 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.mitao-bhook {
+  background-image: url("./assets/mitaobhook-lastsection.png");
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+}
