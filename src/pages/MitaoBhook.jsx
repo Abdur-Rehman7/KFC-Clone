@@ -3,7 +3,7 @@ import diversity2 from "../assets/diversity-2.png";
 import education2 from "../assets/education-2.png";
 import inclusion2 from "../assets/inclusion-2.png";
 import "../App.css";
-import Education from "../components/reuseable/education";
+import Education from "../components/reuseable/Education";
 const MitaoBhook = () => {
   return (
     <>

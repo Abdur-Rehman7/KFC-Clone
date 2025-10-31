@@ -1,7 +1,7 @@
 // MitaoBhookScholership.jsx
 import scholarship from "../assets/kfc-scholarship-hero.png";
 import chatcsr from "../assets/chatCSR_scholarship.png";
-import Education from "../components/reuseable/education";
+import Education from "../components/reuseable/Education";
 import applyimg from "../assets/bucket-apply-img.png";
 const MitaoBhookScholership = () => {
   return (
