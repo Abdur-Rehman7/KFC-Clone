@@ -70,7 +70,7 @@ const MitaoBhookScholership = () => {
               Complete policy document available here.
             </li>
           </ul>
-          <button className="bg-primary py-[15px] px-[30px] mx-[-32px]  font-bold rounded-[4px]">
+          <button className="bg-primary py-[15px] px-[30px] mx-[-32px] my-[48px] font-bold rounded-[4px]">
             Apply Now
           </button>
         </div>
