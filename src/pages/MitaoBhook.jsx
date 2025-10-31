@@ -1,11 +1,9 @@
 import hero from "../assets/mitaobhook-hero.png";
-import diversity from "../assets/diversity.png";
-import education from "../assets/education.png";
-import inclusion from "../assets/inclusion.png";
 import diversity2 from "../assets/diversity-2.png";
 import education2 from "../assets/education-2.png";
 import inclusion2 from "../assets/inclusion-2.png";
 import "../App.css";
+import Education from "../components/reuseable/education";
 const MitaoBhook = () => {
   return (
     <>
@@ -17,16 +15,8 @@ const MitaoBhook = () => {
           positive impact on society, by focusing on three key pillars
         </p>
 
-        <div className="grid grid-cols lg:grid-cols-3 md:grid-cols-3 gap-5">
-          <div>
-            <img src={diversity} />
-          </div>
-          <div>
-            <img src={education} />
-          </div>
-          <div>
-            <img src={inclusion} />
-          </div>
+        <div>
+          <Education />
         </div>
         <p className="mt-[70px] mb-[110px] text-text text-[40px]/[1.2] font-bold">
           We <span className="text-primary">donate Rs. 50</span> from every
