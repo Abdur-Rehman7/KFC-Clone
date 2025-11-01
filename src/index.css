@@ -50,3 +50,38 @@ body {
   scrollbar-width: thin;
   scrollbar-color: black white;
 }
+
+@layer utilities {
+  .numbered-list {
+    @apply list-none pl-0;
+    counter-reset: main-counter;
+  }
+
+  .numbered-item {
+    counter-increment: main-counter;
+    counter-reset: sub-counter;
+    @apply relative pl-10 mb-12;
+  }
+
+  .numbered-item::before {
+    content: counter(main-counter) ". ";
+    @apply absolute left-0 top-0 text-[20px] text-text;
+  }
+
+  .numbered-paragraph {
+    counter-increment: sub-counter;
+    /* Added padding so number doesn't overlap text */
+    @apply relative pl-10 my-[15px] text-[20px] leading-relaxed;
+  }
+
+  .numbered-paragraph::before {
+    content: counter(main-counter) "." counter(sub-counter) " ";
+    /* Aligns number neatly to the left of paragraph text */
+    @apply absolute left-0 text-[20px] text-text;
+  }
+
+  /* Skip numbering for the first paragraph (the section title) */
+  .numbered-paragraph:first-of-type::before {
+    content: none;
+  }
+}
