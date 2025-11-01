@@ -1,7 +1,7 @@
 // TermsAndCondition.jsx
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import CommenPage from "../components/reuseable/Commenpage";
+import CommenPage from "../components/reuseable/CommenPage";
 const TermsAndCondition = () => {
 
 
