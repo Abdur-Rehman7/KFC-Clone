@@ -4,6 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import { IoStar } from "react-icons/io5";
 import { SiEducative } from "react-icons/si";
 import { TfiBag } from "react-icons/tfi";
+import kfcvideo from "../assets/kfc_video.mp4";
 
 import OurValue from "../components/careers/OurValue";
 const Careers = () => {
@@ -13,16 +14,16 @@ const Careers = () => {
       title: "Personnel Info",
       icon: IoPersonSharp,
       fields: [
-        { id: "fullName", label: "Full Name" },
-        { id: "dateOfBirth", label: "Date of Birth" },
-        { id: "countryOfBirth", label: "country of Birth" },
-        { id: "cityOfBirth", label: "City of Birth" },
-        { id: "cnic", label: "CNIC" },
-        { id: "cnicExpiryDate", label: "CNIC Experiy Date" },
-        { id: "maritalStatus", label: "Marital Status" },
-        { id: "gender", label: "Gender" },
-        { id: "religion", label: "Religion" },
-        { id: "disablity", label: "Disablity" },
+        { id: "fullName", label: "Full Name *" },
+        { id: "dateOfBirth", label: "Date of Birth *" },
+        { id: "countryOfBirth", label: "country of Birth *" },
+        { id: "cityOfBirth", label: "City of Birth *" },
+        { id: "cnic", label: "CNIC *" },
+        { id: "cnicExpiryDate", label: "CNIC Experiy Date *" },
+        { id: "maritalStatus", label: "Marital Status *" },
+        { id: "gender", label: "Gender *" },
+        { id: "religion", label: "Religion *" },
+        { id: "disablity", label: "Disablity *" },
       ],
     },
     {
@@ -30,11 +31,11 @@ const Careers = () => {
       title: "Address",
       icon: MdLocationOn,
       fields: [
-        { id: "phone", label: "Phone" },
-        { id: "adress", label: "Adress" },
-        { id: "country", label: "Country" },
-        { id: "stateProvince", label: "State / Province" },
-        { id: "city", label: "City" },
+        { id: "phone", label: "Phone *" },
+        { id: "adress", label: "Adress *" },
+        { id: "country", label: "Country *" },
+        { id: "stateProvince", label: "State / Province *" },
+        { id: "city", label: "City *" },
       ],
     },
     {
@@ -89,17 +90,12 @@ const Careers = () => {
   return (
     <>
       <section className="text-center mx-[32px] px-[12px]">
-        <iframe
-          className="w-full"
-          height="340"
-          src="https://www.youtube-nocookie.com/embed/rehRWlQy9WE?modestbranding=1&rel=0&controls=1"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        <video width="100%" className="mt-[30px]" controls src={kfcvideo} />
+
         <div>
-          <p>Our Values</p>
+          <p className="text-[40px] mt-[100px] mb-[8px] font-semibold">
+            Our Values
+          </p>
           <OurValue />
         </div>
         <div>
@@ -186,7 +182,9 @@ const Careers = () => {
               </span>
             </label>
 
-            <button className="font-semibold p-[8px] mt-[24px] bg-red-100 px-8">Apply</button>
+            <button className="font-semibold p-[8px] mt-[24px] bg-red-100 px-8">
+              Apply
+            </button>
           </div>
         </div>
       </section>
