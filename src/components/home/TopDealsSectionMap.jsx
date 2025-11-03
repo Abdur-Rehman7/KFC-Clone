@@ -36,7 +36,6 @@ const TopDealsSectionMap = () => {
       price: "1350",
     },
   ];
-
   return (
     <div className="w-full mx-auto">
       {/* ✅ Horizontal scroll, no vertical overflow */}
@@ -52,6 +51,7 @@ const TopDealsSectionMap = () => {
           {deals.map((deal, i) => (
             <TopDeal
               key={i}
+              cardsize="w-[186px] lg:w-[300px] lg:h-[450px] md:w-[212px] md:h-[340px] bg-card relative rounded-lg shadow-sm group"
               img={deal.img}
               name={deal.name}
               discription={deal.discription}

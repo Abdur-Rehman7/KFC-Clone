@@ -5,7 +5,7 @@ const TopDeal = (props) => {
   const [isFav, setIsFav] = useState(false);
 
   return (
-<div className="w-[186px] lg:w-[300px] lg:h-[450px] md:w-[212px] md:h-[340px] bg-card relative rounded-lg shadow-sm group">
+<div className={props.cardsize}>
       {/* Top bars */}
       <div className="pt-[15px] px-[5px] pb-[35px] mx-auto">
         <div className="flex flex-row items-center absolute top-0 left-[41%] justify-center gap-[7px]">
@@ -17,7 +17,7 @@ const TopDeal = (props) => {
         {/* Image with hover zoom effect */}
         <div className="rounded-md">
           <img
-            className="w-full mx-auto object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
+            className="w-full mx-auto sm:w-[200px] object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
             src={props.img}
             alt={props.name}
           />
@@ -45,11 +45,33 @@ const TopDeal = (props) => {
 
         <div className="text-[18px] font-bold">Rs {props.price}</div>
         {/* Floating button */}
-        <div className="absolute bottom-[-20px] right-1/2 translate-x-1/2 z-10 transition-all duration-300 ease-in-out hover:bottom-[-15px]">
-          <button className="text-[15px] font-semibold text-white bg-primary px-[8px] py-[8px] rounded-[6px] shadow-md">
-            + <span className="px-[2px]">ADD TO BUCKET</span>
-          </button>
-        </div>
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 z-10 transition-all duration-300 ease-in-out hover:bottom-[-15px]">
+  <button
+    className="
+      font-semibold
+      text-white
+      bg-primary
+      border
+      border-primary
+      rounded-md
+      shadow-md
+      active:scale-95
+      transition-all
+      duration-200
+      ease-in-out
+      whitespace-nowrap
+      [font-size:clamp(0.75rem,2vw,1rem)]
+      [padding-inline:clamp(0.5rem,2vw,1rem)]
+      [padding-block:clamp(0.25rem,1vw,0.75rem)]
+      hover:text-primary
+      hover:bg-white
+      
+    "
+  >
+    + <span className="px-1">ADD TO BUCKET</span>
+  </button>
+</div>
+
       </div>
     </div>
   );

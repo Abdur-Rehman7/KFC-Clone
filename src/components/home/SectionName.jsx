@@ -8,10 +8,13 @@ const SectionName = (props) => {
           <p>{props.sectionname}</p>
           <hr className="w-[70px] h-[3px] bg-primary border-0" />
         </div>
-        <div className="mb-[8px] font-semibold">
-          <p>{props.viewall}</p>
-          <hr className="w-[70px] h-[3px] bg-primary border-0" />
-        </div>
+
+        {props.viewall && (
+          <div className="mb-[8px] font-semibold">
+            <p>{props.viewall}</p>
+            <hr className="w-[70px] h-[3px] bg-primary border-0" />
+          </div>
+        )}
       </div>
     </>
   );
