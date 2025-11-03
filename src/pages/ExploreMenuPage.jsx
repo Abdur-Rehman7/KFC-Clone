@@ -308,7 +308,7 @@ export default function Layout() {
   ];
 
   return (
-    <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[32px]">
+    <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px]">
       {/* Main Content */}
       <article className=" p-5 overflow-auto">
         <div className="mt-8 space-y-12">
