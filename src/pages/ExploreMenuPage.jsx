@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TopDeal from "../components/home/TopDeal";
 import menu1 from "../assets/explore-menu-page-1.png";
 import menu2 from "../assets/explore-menu-page-2.png";
@@ -34,10 +34,43 @@ import menu31 from "../assets/explore-menu-page-31.png";
 import menu32 from "../assets/explore-menu-page-32.png";
 import menu33 from "../assets/explore-menu-page-33.png";
 import menu34 from "../assets/explore-menu-page-34.png";
+import menu35 from "../assets/explore-menu-page-35.png";
+import menu36 from "../assets/explore-menu-page-36.png";
+import menu37 from "../assets/explore-menu-page-37.png";
+import menu38 from "../assets/explore-menu-page-38.png";
+import menu39 from "../assets/explore-menu-page-39.png";
+import menu40 from "../assets/explore-menu-page-40.png";
+import menu41 from "../assets/explore-menu-page-41.png";
+import menu42 from "../assets/explore-menu-page-42.png";
+import menu43 from "../assets/explore-menu-page-43.png";
+import menu44 from "../assets/explore-menu-page-44.png";
+import menu45 from "../assets/explore-menu-page-45.png";
+import menu46 from "../assets/explore-menu-page-46.png";
+import menu47 from "../assets/explore-menu-page-47.png";
+import menu48 from "../assets/explore-menu-page-48.png";
+import menu49 from "../assets/explore-menu-page-49.png";
+import menu50 from "../assets/explore-menu-page-50.png";
+import menu51 from "../assets/explore-menu-page-51.png";
+import menu52 from "../assets/explore-menu-page-52.png";
+import menu53 from "../assets/explore-menu-page-53.png";
+import menu54 from "../assets/explore-menu-page-54.png";
+import menu55 from "../assets/explore-menu-page-55.png";
+import menu56 from "../assets/explore-menu-page-56.png";
+import menu57 from "../assets/explore-menu-page-57.png";
+import menu58 from "../assets/explore-menu-page-58.png";
+import menu59 from "../assets/explore-menu-page-59.png";
+import menu60 from "../assets/explore-menu-page-60.png";
+import menu61 from "../assets/explore-menu-page-61.png";
+import menu62 from "../assets/explore-menu-page-62.png";
+import menu63 from "../assets/explore-menu-page-63.png";
+import menu64 from "../assets/explore-menu-page-64.png";
 import SectionName from "../components/home/SectionName";
 
-export default function Layout() {
+export default function ExploreMenuPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const sectionRefs = useRef([]);
+
   const sections = [
     {
       id: 1,
@@ -278,49 +311,331 @@ export default function Layout() {
         {
           img: menu31,
           name: "Corn On The Cob",
-          discription:
-            "Boiled sweet corn brushed with butter",
+          discription: "Boiled sweet corn brushed with butter",
           price: "290",
         },
         {
           img: menu32,
           name: "One Piece Chicken ",
-          discription:
-            "1 piece of Hot & Crispy Fried Chicken",
+          discription: "1 piece of Hot & Crispy Fried Chicken",
           price: "320",
         },
         {
           img: menu33,
           name: "Hot Shots",
-          discription:
-            "9 Pcs of hand-breaded Hot Shots",
+          discription: "9 Pcs of hand-breaded Hot Shots",
           price: "480",
         },
         {
           img: menu34,
           name: "Chicky Meal 1 ",
-          discription:
-            "Krunch + Chicky Fries + Drink",
+          discription: "Krunch + Chicky Fries + Drink",
           price: "550",
+        },
+        {
+          img: menu35,
+          name: "Chicky Meal 2",
+          discription: "4 Nuggets + 1 CHICKY FRIES+ Slice",
+          price: "290",
+        },
+        {
+          img: menu36,
+          name: "Plain Nuggets",
+          discription:
+            "1Plain Nuggets: Indulge in 6 pieces of tender and delicious chicken nuggets",
+          price: "580",
+        },
+        {
+          img: menu37,
+          name: "Buffalo Wings",
+          discription:
+            "8 Pcs of Hot Wings coated with a spicy Buffalo sauce, topped with chili flakes",
+          price: "640",
+        },
+        {
+          img: menu38,
+          name: "Thai Sweet Chili Wings",
+          discription:
+            "8 Pcs of Hot Wings coated with a Sweet Thai Chili sauce, topped with sesame seeds",
+          price: "640",
+        },
+        {
+          img: menu39,
+          name: "Tangy Masala Wings",
+          discription:
+            "8 pcs of Hot Wings coated in a sweet and tangy sauce, dusted with chaat masala",
+          price: "640",
+        },
+        {
+          img: menu40,
+          name: "Salsa Sprinkle Wings",
+          discription: "8 Pcs Salsa Sprinkle Wings Bucket",
+          price: "640",
+        },
+        {
+          img: menu41,
+          name: "Snack Bucket",
+          discription:
+            "4 Hot Wings + 4 Hot Shots + 2 Strips and 1 Dip. Satisfy your cravings with our snack bucket.",
+          price: "650",
+        },
+        {
+          img: menu42,
+          name: "Hot Wings Bucket",
+          discription: "10 Pcs of our Signature Hot & Crispy Wings",
+          price: "670",
+        },
+        {
+          img: menu43,
+          name: "Fries",
+          discription: "Crispy and Golden Fries",
+          price: "340",
+        },
+        {
+          img: menu44,
+          name: "Masala Fries",
+          discription: "Masala Crispy and Golden Fries",
+          price: "360",
+        },
+        {
+          img: menu45,
+          name: "Fries Bucket ",
+          discription: "Fries Bucket Without Dip",
+          price: "450",
+        },
+        {
+          img: menu46,
+          name: "Fries Bucket with Dip",
+          discription: "Fries Bucket with Dip ",
+          price: "470",
+        },
+        {
+          img: menu47,
+          name: "Masala Fries Bucket",
+          discription: "Masala Crispy and Golden Fries Bucket",
+          price: "490",
+        },
+        {
+          img: menu48,
+          name: "Cheesy Chicken Loaded Fries",
+          discription:
+            "Topped with crispy hot shots, cheese sauce and spicy jalapeños—it's the ultimate flavor-packed treat!",
+          price: "650",
+        },
+        {
+          img: menu49,
+          name: "Coleslaw",
+          discription: "Sliced cabbage and carrots tossed in mayo",
+          price: "150",
+        },
+        {
+          img: menu50,
+          name: "Dinner Roll",
+          discription: "Soft and fluffy, it complements any meal perfectly",
+          price: "50",
+        },
+        {
+          img: menu51,
+          name: "Mayo Dip",
+          discription: "Creamy mayo for your dipping needs",
+          price: "75",
+        },
+        {
+          img: menu52,
+          name: "Vietnamese Dip",
+          discription:
+            "Our spicy and sour signature sauce. Pair it with our fried chicken and fries for the win",
+          price: "75",
+        },
+        {
+          img: menu53,
+          name: "Garlic Mayo",
+          discription: "Creamy Garlic Mayo Dip served fresh in a small cup",
+          price: "75",
+        },
+        {
+          img: menu54,
+          name: "Creamy Ranch",
+          discription: "Smooth and tangy Creamy Ranch Dip served with meals",
+          price: "75",
+        },
+        {
+          img: menu55,
+          name: "Spicy Mayo",
+          discription: "Spicy Mayo Dip with creamy texture and fiery flavor",
+          price: "100",
+        },
+        {
+          img: menu56,
+          name: "Smoke Show",
+          discription: "Bold and smoky flavored Smoke Show Dip in a cup",
+          price: "75",
+        },
+        {
+          img: menu57,
+          name: "Mineral Water 500ml",
+          discription:
+            "Mineral Water 500ml: Stay hydrated with our refreshing and pure mineral water in a convenient 500ml bottle",
+          price: "90",
+        },
+        {
+          img: menu58,
+          name: "Pepsi Regular",
+          discription:
+            "Quench your thirst with the classic taste of Pepsi in a regular-sized bottle 345ml",
+          price: "180",
+        },
+        {
+          img: menu59,
+          name: "7UP Regular",
+          discription:
+            "Experience the crisp and refreshing taste of 7UP in a regular-sized bottle 345ml",
+          price: "180",
+        },
+        {
+          img: menu60,
+          name: "Mirinda Regular",
+          discription:
+            "Mirinda Regular: Satisfy your taste buds with the vibrant and fizzy flavor of Mirinda in a regular-sized bottle 345ml",
+          price: "180",
+        },
+        {
+          img: menu61,
+          name: "Sting Berry Blast",
+          discription:
+            "Power up with the bold, electrifying taste of Sting energy drink in a 345ml bottle.",
+          price: "180",
+        },
+        {
+          img: menu62,
+          name: "Mountain Dew Regular",
+          discription:
+            "Energize yourself with the bold and exhilarating taste of Mountain Dew in a regular-sized bottle 345ml",
+          price: "180",
+        },
+        {
+          img: menu63,
+          name: "7UP Mint",
+          discription:
+            "Enjoy the refreshing burst of lemon-lime with a cool mint twist in a 345ml bottle.",
+          price: "180",
+        },
+        {
+          img: menu64,
+          name: "1.5 Ltr Drink",
+          discription:
+            "Get a large serving of refreshment with our 1.5 Ltr Drink. Perfect for sharing.",
+          price: "250",
+        },
+      ],
+    },
+    {
+      id: 7,
+      title: "Midnight (Start at 12 am)",
+      deals: [
+        {
+          img: menu27,
+          name: "Value Bucket",
+          discription:
+            "Enjoy 9 pcs of our Signature Crispy Fried Chicken, hand-breaded in-house. Rs. 50 from every bucket goes to the Mitao Bhook Foundation.",
+          price: "2050",
+        },
+        {
+          img: menu28,
+          name: "Family Festival 1",
+          discription:
+            "A feel-good meal for the fam. It includes 4 Krunch burgers+ 4 pieces Hot and Crispy Chicken+ 2 Dinner Rolls + 1.5 Liter drink",
+          price: "2190",
+        },
+        {
+          img: menu29,
+          name: "Family Festival 2",
+          discription:
+            "A hearty meal for the fam. It includes 2 Zinger burgers + 2 Krunch burgers + 4 pieces Hot and Crispy Chicken + 2 Dinner rolls + 1.5 Liter drink",
+          price: "2390",
         },
       ],
     },
   ];
 
+  // 🧭 Scroll tracking
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      let current = "";
+
+      sectionRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const { offsetTop, offsetHeight } = ref;
+          if (
+            scrollPosition >= offsetTop - 150 &&
+            scrollPosition < offsetTop + offsetHeight - 150
+          ) {
+            current = sections[index].title;
+          }
+        }
+      });
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [sections]);
+
+  // 🪄 Smooth scroll on click
+  const handleScrollToSection = (index) => {
+    const section = sectionRefs.current[index];
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px]">
-      {/* Main Content */}
-      <article className=" p-5 overflow-auto">
-        <div className="mt-8 space-y-12">
-          {sections.map((section) => (
-            <div key={section.id}>
-              <SectionName sectionname={section.title} />
+      {/* 🔝 Scroll-Tracking Header */}
+      <div className="fixed top-[64px] left-0 w-full bg-white shadow-md z-40 p-4">
+        {/* ↓ Adjusted position so it sits below layout Navbar */}
+        <div className="flex flex-wrap justify-between items-center gap-3">
+          <h1 className="font-bold text-lg text-gray-800"> Explore Menu</h1>
 
+          <div className="flex flex-wrap gap-2 overflow-x-auto">
+            {sections.map((section, index) => (
+              <button
+                key={section.id}
+                onClick={() => handleScrollToSection(index)}
+                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 whitespace-nowrap
+              ${
+                activeSection === section.title
+                  ? "bg-red-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
+              >
+                {section.title.replace(/-/g, " ")}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 📰 Main Content */}
+      <article className="p-5 overflow-auto mt-[30px]">
+        {/* ↑ 64px navbar + ~76px header = 140px */}
+        <div className="mt-8 space-y-12">
+          {sections.map((section, index) => (
+            <div
+              key={section.id}
+              ref={(el) => (sectionRefs.current[index] = el)}
+            >
+              <SectionName sectionname={section.title} />
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
-                {section.deals.map((deal, index) => (
+                {section.deals.map((deal, i) => (
                   <TopDeal
+                    key={i}
                     cardsize="w-auto lg:w-auto lg:h-auto md:w-auto md:h-auto bg-card mt-8 relative rounded-lg shadow-sm group"
-                    key={index}
                     img={deal.img}
                     name={deal.name}
                     discription={deal.discription}
@@ -333,17 +648,15 @@ export default function Layout() {
         </div>
       </article>
 
-      {/* Sidebar (Large screens only) */}
-      <nav className="hidden lg:block bg-gray-300 p-5 h-screen fixed right-5 top-20 overflow-auto w-1/3">
-        <p className="font-semibold mb-4">Sidebar content</p>
-        <ul className="space-y-2">
-          <li>Menu Item 1</li>
-          <li>Menu Item 2</li>
-          <li>Menu Item 3</li>
-        </ul>
+      {/* 🧭 Sidebar */}
+      <nav className="hidden lg:block bg-gray-300 p-5 h-screen fixed right-5 top-[140px] overflow-auto w-1/3">
+        <div>
+          <p className="font-semibold mb-4">Order Details</p>
+          <img />
+        </div>
       </nav>
 
-      {/* Accordion (Small screens only) */}
+      {/* 📱 Accordion */}
       <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-gray-300 border-t shadow-md">
         <button
           onClick={() => setIsOpen(!isOpen)}
