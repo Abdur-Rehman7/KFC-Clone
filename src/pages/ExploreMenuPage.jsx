@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import TopDeal from "../components/home/TopDeal";
 import menu1 from "../assets/explore-menu-page-1.png";
 import menu2 from "../assets/explore-menu-page-2.png";
@@ -64,6 +65,9 @@ import menu61 from "../assets/explore-menu-page-61.png";
 import menu62 from "../assets/explore-menu-page-62.png";
 import menu63 from "../assets/explore-menu-page-63.png";
 import menu64 from "../assets/explore-menu-page-64.png";
+import sidenav from "../assets/sidenav-img.png";
+import { MdArrowForwardIos } from "react-icons/md";
+
 import SectionName from "../components/home/SectionName";
 
 export default function ExploreMenuPage() {
@@ -594,13 +598,19 @@ export default function ExploreMenuPage() {
     }
   };
 
+  const navigate = useNavigate();
+
+  const handleGoToBucket = () => {
+    navigate("/bucket"); // 👈 navigates to the Contact page
+  };
+
   return (
     <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px]">
       {/* 🔝 Scroll-Tracking Header */}
-      <div className="fixed top-[64px] left-0 w-full bg-white shadow-md z-40 p-4">
+      <div className="fixed top-[64px] left-0 w-full bg-card shadow-md z-40 p-4">
         {/* ↓ Adjusted position so it sits below layout Navbar */}
         <div className="flex flex-wrap justify-between items-center gap-3">
-          <h1 className="font-bold text-lg text-gray-800"> Explore Menu</h1>
+          <h1 className="font-bold text-lg text-text"> Explore Menu</h1>
 
           <div className="flex flex-wrap gap-2 overflow-x-auto">
             {sections.map((section, index) => (
@@ -610,7 +620,7 @@ export default function ExploreMenuPage() {
                 className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 whitespace-nowrap
               ${
                 activeSection === section.title
-                  ? "bg-red-600 text-white"
+                  ? "bg-primary text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
               >
@@ -649,10 +659,46 @@ export default function ExploreMenuPage() {
       </article>
 
       {/* 🧭 Sidebar */}
-      <nav className="hidden lg:block bg-gray-300 p-5 h-screen fixed right-5 top-[140px] overflow-auto w-1/3">
-        <div>
-          <p className="font-semibold mb-4">Order Details</p>
-          <img />
+      <nav className="hidden lg:block h-screen fixed right-5 top-[140px] bg-card overflow-auto w-1/3">
+        <div className="flex  justify-between border-b border-primary p-3 ">
+          <p className="font-semibold text-[20px]">Order Details</p>
+          <div className="flex flex-row absolute top-0 right-5 gap-[7px]">
+            <span className="w-[15px] h-[22px] bg-primary rounded-[1px]"></span>
+            <span className="w-[15px] h-[22px] bg-primary rounded-[1px]"></span>
+            <span className="w-[15px] h-[22px] bg-primary rounded-[1px]"></span>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px]">
+          <img src={sidenav} />
+          <p className="mt-[24px] mb-[8px] text-center font-bold text-[22px]">
+            You haven’t added any items in bucket yet
+          </p>
+        </div>
+        <div className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md">
+          <button
+            onClick={handleGoToBucket}
+            className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
+          >
+            <p className="text-white ">
+              0 Item <span className="font-bold text-[22px]"> | Rs 0</span>
+            </p>
+            <p className="flex gap-2 font-bold text-[22px] text-white">
+              Checkout
+              <span className="w-[25px] h-[25px] bg-white rounded-full flex justify-center items-center mt-[5px]">
+                <MdArrowForwardIos size={18} className="text-black bold " />
+              </span>
+            </p>
+          </button>
+
+          {isOpen && (
+            <div className="p-5 border-t border-gray-400">
+              <ul className="space-y-2">
+                <li>Menu Item 1</li>
+                <li>Menu Item 2</li>
+                <li>Menu Item 3</li>
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
 

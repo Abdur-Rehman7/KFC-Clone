@@ -3,7 +3,7 @@ import React from "react";
 function FooterNavigationList(props) {
   return (
     <>
-      <div className="text-left w-full px-[12px]">
+      <div className="text-left w-full px-[12px] ">
         <ul className="pl-[32px]">
           <ul className="flex flex flex-row justify-center lg:flex-col md:flex-col gap-2">
             <li>
@@ -17,11 +17,11 @@ function FooterNavigationList(props) {
               )}
             </li>
           </ul>
-          <li className="mt-[10px] text-[18px] text-text">{props.item1}</li>
-          <li className="mt-[10px] text-[18px] text-text">{props.item2}</li>
-          <li className="mt-[10px] text-[18px] text-text">{props.item3}</li>
-          <li className="mt-[10px] text-[18px] text-text">{props.item4}</li>
-          <li className="mt-[10px] text-[18px] text-text">{props.item5}</li>
+          <li className="mt-[10px] text-[18px] text-text hover:text-primary hover:cursor-pointer">{props.item1}</li>
+          <li className="mt-[10px] text-[18px] text-text hover:text-primary hover:cursor-pointer">{props.item2}</li>
+          <li className="mt-[10px] text-[18px] text-text hover:text-primary hover:cursor-pointer">{props.item3}</li>
+          <li className="mt-[10px] text-[18px] text-text hover:text-primary hover:cursor-pointer">{props.item4}</li>
+          <li className="mt-[10px] text-[18px] text-text hover:text-primary hover:cursor-pointer">{props.item5}</li>
         </ul>
       </div>
     </>
