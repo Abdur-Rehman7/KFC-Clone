@@ -689,38 +689,25 @@ export default function ExploreMenuPage() {
               </span>
             </p>
           </button>
-
-          {isOpen && (
-            <div className="p-5 border-t border-gray-400">
-              <ul className="space-y-2">
-                <li>Menu Item 1</li>
-                <li>Menu Item 2</li>
-                <li>Menu Item 3</li>
-              </ul>
-            </div>
-          )}
         </div>
       </nav>
 
       {/* 📱 Accordion */}
-      <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-gray-300 border-t shadow-md">
+      <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md">
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={handleGoToBucket}
           className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
         >
-          <span>Menu</span>
-          <span>{isOpen ? "−" : "+"}</span>
+          <p className="text-white ">
+            0 Item <span className="font-bold text-[22px]"> | Rs 0</span>
+          </p>
+          <p className="flex gap-2 font-bold text-[22px] text-white">
+            Checkout
+            <span className="w-[25px] h-[25px] bg-white rounded-full flex justify-center items-center mt-[5px]">
+              <MdArrowForwardIos size={18} className="text-black bold " />
+            </span>
+          </p>
         </button>
-
-        {isOpen && (
-          <div className="p-5 border-t border-gray-400">
-            <ul className="space-y-2">
-              <li>Menu Item 1</li>
-              <li>Menu Item 2</li>
-              <li>Menu Item 3</li>
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );
