@@ -81,7 +81,7 @@ const Bucket = () => {
               <div className="flex border-b border-text gap-3 p-3">
                 <div className="">
                   <Link
-                    onClick={handleGoToexploremenu}
+                    to="/exploremenu"
                     className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary"
                   >
                     <IoIosArrowBack size={20} />

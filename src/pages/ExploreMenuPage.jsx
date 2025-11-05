@@ -71,7 +71,6 @@ import { MdArrowForwardIos } from "react-icons/md";
 import SectionName from "../components/home/SectionName";
 
 export default function ExploreMenuPage() {
-  const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const sectionRefs = useRef([]);
 
