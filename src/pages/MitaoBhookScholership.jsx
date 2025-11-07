@@ -6,10 +6,10 @@ import applyimg from "../assets/bucket-apply-img.png";
 const MitaoBhookScholership = () => {
   return (
     <>
-      <div className="grid grid-cols-1 w-full">
+      <section className="text-center mx-[32px] ">
+      <div className="grid grid-cols mx-[-32px]">
         <img src={scholarship} />
       </div>
-      <section className="text-center mx-[32px]">
         <div className="grid grid-cols-1 w-full mt-[110px]">
           <img src={chatcsr} />
         </div>
@@ -34,7 +34,7 @@ const MitaoBhookScholership = () => {
         <p className="bg-card text-[100px] font-bold text-center py-[60px] mx-[-32px]  mt-[110px]">
           ELIGIBILITY CRITERIA
         </p>
-        <div className="mx-[32px] mb-[ px-[12px]">
+        <div className="mx-[32px] mb-[ px-[12px] font-bold">
           <ul className="list-disc text-[39px] text-text text-left">
             <li className="mt-[50px]">
               Applicant must be a resident of Pakistan.
@@ -50,12 +50,12 @@ const MitaoBhookScholership = () => {
             </li>
           </ul>
         </div>
-        <div className="bg-primary mt-[50px] mx-[-32px] ">
+        <div className="bg-primary mt-[50px] mx-[-32px]">
           <p className=" text-text font-bold text-[100px] py-[50px] px-[12px] ">
             FIELDS SUPPORTED FOR THE SCHOLARSHIP
           </p>
         </div>
-        <div className="mx-[32px] mb-[ px-[12px]">
+        <div className="mx-[32px] mb-[ px-[12px]  font-bold">
           <ul className="text-[39px] text-text text-left">
             <li className="mt-[50px]">
               Business, Engineering, Medical, IT, Mathematics, Physical

@@ -1,5 +1,4 @@
-import { IoIosArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import PageName from "../components/reuseable/PageName";
 import AboutUsCard from "../components/aboutus/AboutUsCard";
 import HistoryCard from "../components/aboutus/HistoryCard";
 import AboutUsBucketSection from "../components/aboutus/AboutUsBucketSection";
@@ -10,18 +9,7 @@ import AboutLastSection from "../components/aboutus/AboutLastSection";
 export default function About() {
   return (
     <section className="text-center mx-[32px]">
-      <div className="relative flex items-center justify-center mb-[35px]">
-        <div className="absolute left-0 top-2">
-          <Link
-            to="/"
-            className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary"
-          >
-            <IoIosArrowBack size={20} />
-          </Link>
-        </div>
-        <span className="text-4xl font-bold text-text">About Us</span>
-      </div>
-
+      <PageName title="About Us" />
       <div className="bg-card">
         <AboutUsCard />
       </div>
