@@ -82,7 +82,7 @@ const Bucket = () => {
                 <div className="">
                   <Link
                     to="/exploremenu"
-                    className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary"
+                    className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary"
                   >
                     <IoIosArrowBack size={20} />
                   </Link>
@@ -146,7 +146,6 @@ const Bucket = () => {
 
                   <div className="">
                     <div
-                      key={1}
                       className="relative bg-gray-300 pt-6 rounded-md"
                     >
                       <span className="absolute left-2 top-10 -translate-y-3 font-bold text-black pointer-events-none">

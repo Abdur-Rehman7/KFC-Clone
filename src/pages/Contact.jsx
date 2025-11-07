@@ -1,5 +1,4 @@
-import { IoIosArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import PageName from "../components/reuseable/PageName";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
@@ -29,31 +28,21 @@ export default function Contact() {
   ];
 
   const basicContact = [
-  {
-    title: "Phone",
-    value: "0213-5877976",
-    icon: <FaPhoneAlt className="text-primary" />,
-  },
-  {
-    title: "Email",
-    value: "kabdurrehman111@gmail.com",
-    icon: <MdEmail className="text-primary" />,
-  },
-]
+    {
+      title: "Phone",
+      value: "0213-5877976",
+      icon: <FaPhoneAlt className="text-primary" />,
+    },
+    {
+      title: "Email",
+      value: "kabdurrehman111@gmail.com",
+      icon: <MdEmail className="text-primary" />,
+    },
+  ];
 
   return (
     <section className="mx-[32px] mt-4 text-text">
-      <div className="relative flex items-center justify-center mb-[35px]">
-        <div className="absolute left-0 top-2">
-          <Link
-            to="/"
-            className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary"
-          >
-            <IoIosArrowBack size={20} />
-          </Link>
-        </div>
-        <span className="text-4xl font-bold text-text">Contact Us</span>
-      </div>
+      <PageName title="Contact Us" />
 
       <div className="grid grid-cols xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 gap-2">
         {contactInfo.map((item, index) => (
@@ -82,7 +71,6 @@ export default function Contact() {
           </div>
         ))}
       </div>
-
 
       <div className="grid grid-cols lg:grid-cols-2 md:grid-cols-2 gap-2 mt-[10px] ">
         {basicContact.map((item, index) => (
