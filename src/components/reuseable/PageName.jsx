@@ -4,7 +4,8 @@ import { IoIosArrowBack } from "react-icons/io";
 const PageName = (props) => {
   return (
     <>
-     <div className="relative flex items-center justify-center mb-[35px]">
+      <div className={props.style}>
+        <div className="relative flex items-center justify-center mb-[35px]">
           <div className="absolute left-0 top-2">
             <Link
               to="/"
@@ -15,7 +16,7 @@ const PageName = (props) => {
           </div>
           <span className="text-4xl font-bold text-text">{props.title}</span>
         </div>
-     
+      </div>
     </>
   );
 };

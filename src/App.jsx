@@ -12,6 +12,7 @@ import MitaoBhook from "./pages/MitaoBhook";
 import MitaoBhookScholership from "./pages/MitaoBhookScholership";
 import Careers from "./pages/Careers";
 import Bucket from "./pages/Bucket";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
       <Route element={<MainLayout hideFooter={true} />}>
         <Route path="/exploremenu" element={<ExploreMenuPage />} />
         <Route path="/bucket" element={<Bucket />} />
+        <Route path="/login" element={<Login />} />
       </Route>
     </Routes>
   );

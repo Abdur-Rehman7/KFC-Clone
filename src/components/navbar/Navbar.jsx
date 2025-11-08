@@ -8,16 +8,21 @@ import pickup from "./assets/pickup.png";
 import cartimg from "./assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
 import SidebarLinkMaping from "./SidebarLinkMaping";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeBtn, setActiveBtn] = useState("car1");
 
   const handleCloseSidebar = () => {
-  setOpen(false);
+    setOpen(false);
   };
 
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/login"); // navigates to /login route
+  };
 
   return (
     <>
@@ -31,8 +36,7 @@ export default function Navbar() {
               onClick={() => setOpen(true)}
               className="text-text transition"
             >
-              
-              <RiMenu2Line  size={28} />
+              <RiMenu2Line size={28} />
             </button>
 
             {/* Logo */}
@@ -68,7 +72,10 @@ export default function Navbar() {
             </button>
 
             {/* Login */}
-            <button className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition">
+            <button
+              onClick={handleLoginClick}
+              className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition"
+            >
               Login
             </button>
           </div>
@@ -89,11 +96,13 @@ export default function Navbar() {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-
         {/* Sidebar Content */}
         <div className="flex flex-col gap-5 p-4 text-text dark:text-white">
           {/* Login */}
-          <button className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition">
+          <button
+            onClick={handleLoginClick}
+            className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition"
+          >
             Login
           </button>
 
