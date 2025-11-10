@@ -12,11 +12,13 @@ import img5 from "../assets/bucket-img-5.png";
 import img6 from "../assets/bucket-img-6.png";
 import img7 from "../assets/bucket-img-7.png";
 import img8 from "../assets/bucket-img-8.png";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../redux/slices/cartSlice";
 
 const Bucket = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
 
   const handleGoToexploremenu = () => {
     navigate("/exploremenu"); // 👈 navigates to the Contact page
@@ -77,7 +79,7 @@ const Bucket = () => {
         <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] gap-10 md:mx-[24px]">
           {/* 📰 Main Content */}
           <article className="p-3  mt-[30px]">
-            <div className="bg-card rounded-[5px] p-2 h-[409px] ">
+            <div className="bg-card rounded-[5px] p-2 h-[409px] overflow-hidden flex flex-col">
               <div className="flex border-b border-text gap-3 p-3">
                 <div className="">
                   <Link
@@ -92,18 +94,55 @@ const Bucket = () => {
                   Items from your Cart
                 </p>
               </div>
-
-              <div className="flex flex-col justify-center items-center overflow-y-auto">
-                <img src={sidenav} />
-                <p className="mt-[24px] mb-[8px] text-center font-bold text-[22px]">
-                  You haven’t added any items in bucket yet
-                </p>
-                <button
-                  onClick={handleGoToexploremenu}
-                  className="text-[20px] text-white font-bold mt-[10px] py-[10px] px-[38px] bg-primary rounded-[6px]"
-                >
-                  EXPLORE MENU
-                </button>
+              <div className="overflow-y-auto">
+                {cartItems.length === 0 ? (
+                  <div className="flex flex-col justify-center items-center overflow-y-auto">
+                    <img src={sidenav} />
+                    <p className="mt-[24px] mb-[8px] text-center font-bold text-[22px]">
+                      You haven’t added any items in bucket yet
+                    </p>
+                    <button
+                      onClick={handleGoToexploremenu}
+                      className="text-[20px] text-white font-bold mt-[10px] py-[10px] px-[38px] bg-primary rounded-[6px]"
+                    >
+                      EXPLORE MENU
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-4 overflow-y-auto p-4 h-full custom-scrollbar">
+                    {cartItems.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex justify-between items-center bg-gray-100 p-3 rounded-md shadow"
+                      >
+                        <div className="flex items-center gap-4">
+                          <img
+                            src={item.img}
+                            alt={item.name}
+                            className="w-20 h-20 object-contain"
+                          />
+                          <div className="text-left">
+                            <p className="font-semibold">{item.name}</p>
+                            <p className="text-sm text-gray-600">
+                              Rs {item.price} × {item.quantity}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => dispatch(removeFromCart(item.id))}
+                            className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
+                          >
+                            🗑️
+                          </button>
+                          <p className="font-semibold text-[18px]">
+                            Rs {item.price * item.quantity}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
             <div>
@@ -145,9 +184,7 @@ const Bucket = () => {
                   />
 
                   <div className="">
-                    <div
-                      className="relative bg-gray-300 pt-6 rounded-md"
-                    >
+                    <div className="relative bg-gray-300 pt-6 rounded-md">
                       <span className="absolute left-2 top-10 -translate-y-3 font-bold text-black pointer-events-none">
                         +92&nbsp;|
                       </span>
@@ -189,7 +226,7 @@ const Bucket = () => {
           </article>
 
           {/* 🧭 Sidebar */}
-          <nav className="hidden lg:block h-screen fixed right-5 top-[120px] rounded-[5px] bg-card overflow-y-auto w-1/3">
+          <nav className="hidden lg:block h-screen fixed right-5 top-[120px] rounded-[5px] bg-card overflow-y-auto w-1/3 ">
             <div className="flex  justify-between border-b border-primary p-3 ">
               <p className="font-semibold text-[20px]">Order Details</p>
               <div className="flex flex-row absolute top-0 right-5 gap-[7px]">

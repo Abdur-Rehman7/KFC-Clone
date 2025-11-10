@@ -67,12 +67,16 @@ import menu63 from "../assets/explore-menu-page-63.png";
 import menu64 from "../assets/explore-menu-page-64.png";
 import sidenav from "../assets/sidenav-img.png";
 import { MdArrowForwardIos } from "react-icons/md";
-
 import SectionName from "../components/home/SectionName";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../redux/slices/cartSlice";
 
 export default function ExploreMenuPage() {
   const [activeSection, setActiveSection] = useState("");
   const sectionRefs = useRef([]);
+  const cartItems = useSelector((state) => state.cart.items || []);
+   const dispatch = useDispatch();
+    
 
   const sections = [
     {
@@ -735,12 +739,48 @@ export default function ExploreMenuPage() {
             <span className="w-[15px] h-[22px] bg-primary rounded-[1px]"></span>
           </div>
         </div>
-        <div className="flex flex-col justify-center m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px]">
-          <img src={sidenav} />
-          <p className="mt-[24px] mb-[8px] text-center font-bold text-[22px]">
-            You haven’t added any items in bucket yet
-          </p>
-        </div>
+        {cartItems.length === 0 ? (
+          <div className="flex flex-col justify-center m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px]">
+            <img src={sidenav} alt="empty bucket" />
+            <p className="mt-[24px] mb-[8px] text-center font-bold text-[22px]">
+              You haven’t added any items in bucket yet
+            </p>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-3 m-4 h-[409px] overflow-y-auto">
+            {cartItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between bg-light p-2 rounded-md shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-[50px] h-[50px]"
+                  />
+                  <div>
+                    <p className="font-semibold text-[15px]">{item.name}</p>
+                    <p className="text-sm text-gray-600">Rs {item.price}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+  <button
+    onClick={() => dispatch(removeFromCart(item.id))}
+    className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
+  >
+    🗑️
+  </button>
+  <p className="font-semibold text-[18px]">
+    Rs {item.price * item.quantity}
+  </p>
+</div>
+
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md">
           <button
             onClick={handleGoToBucket}
