@@ -15,6 +15,7 @@ import { logout } from "../../redux/slices/userSlice";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeBtn, setActiveBtn] = useState("car1");
+  const cartItems = useSelector((state) => state.cart.items);
 
   const handleCloseSidebar = () => {
     setOpen(false);
@@ -83,7 +84,8 @@ export default function Navbar() {
                 alt=""
               />
               <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                0
+                {cartItems.reduce((total, item) => total + item.quantity, 0)}
+
               </span>
             </button>
 

@@ -8,6 +8,7 @@ import deal4 from "./assets/top-deal-4.png";
 const TopDealsSectionMap = () => {
   const deals = [
     {
+      id: 1,
       img: deal1,
       name: "Value Bucket",
       discription:
@@ -15,6 +16,7 @@ const TopDealsSectionMap = () => {
       price: "2050",
     },
     {
+      id: 2,
       img: deal2,
       name: "Family Festival 3",
       discription:
@@ -22,6 +24,7 @@ const TopDealsSectionMap = () => {
       price: "2590",
     },
     {
+      id: 3,
       img: deal3,
       name: "Xtreme Duo Box",
       discription:
@@ -29,6 +32,7 @@ const TopDealsSectionMap = () => {
       price: "1560",
     },
     {
+      id: 4,
       img: deal4,
       name: "Crispy Duo Box",
       discription:
@@ -51,6 +55,7 @@ const TopDealsSectionMap = () => {
           {deals.map((deal, i) => (
             <TopDeal
               key={i}
+              id={deal.id}
               cardsize="w-[186px] lg:w-[300px] lg:h-[450px] md:w-[212px] md:h-[340px] bg-card relative rounded-lg shadow-sm group"
               img={deal.img}
               name={deal.name}

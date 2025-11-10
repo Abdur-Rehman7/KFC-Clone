@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Heart } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/slices/cartSlice";
 
 const TopDeal = (props) => {
   const [isFav, setIsFav] = useState(false);
+  const dispatch = useDispatch();
 
   return (
-<div className={props.cardsize}>
+    <div className={props.cardsize}>
       {/* Top bars */}
       <div className="pt-[15px] px-[5px] pb-[35px] mx-auto">
         <div className="flex flex-row items-center absolute top-0 left-[41%] justify-center gap-[7px]">
@@ -46,8 +49,26 @@ const TopDeal = (props) => {
         <div className="text-[18px] font-bold">Rs {props.price}</div>
         {/* Floating button */}
         <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 z-10 transition-all duration-300 ease-in-out hover:bottom-[-15px]">
-  <button
-    className="
+          <button
+            onClick={() => {
+              // debug log to confirm id and props
+              console.log("Add clicked for:", props.id, props.name);
+              if (typeof props.id === "undefined") {
+                console.error(
+                  "TopDeal: missing props.id — provide a unique id for each item."
+                );
+                return;
+              }
+              dispatch(
+                addToCart({
+                  id: props.id,
+                  name: props.name,
+                  price: props.price,
+                  img: props.img,
+                })
+              );
+            }}
+            className="
       font-semibold
       text-white
       bg-primary
@@ -67,11 +88,10 @@ const TopDeal = (props) => {
       hover:bg-white
       
     "
-  >
-    + <span className="px-1">ADD TO BUCKET</span>
-  </button>
-</div>
-
+          >
+            + <span className="px-1">ADD TO BUCKET</span>
+          </button>
+        </div>
       </div>
     </div>
   );

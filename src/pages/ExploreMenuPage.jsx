@@ -80,6 +80,7 @@ export default function ExploreMenuPage() {
       title: "Promotion",
       deals: [
         {
+          id: 5,
           img: menu1,
           name: "Ramen Wings",
           discription:
@@ -87,6 +88,7 @@ export default function ExploreMenuPage() {
           price: "775",
         },
         {
+          id: 6,
           img: menu2,
           name: "Zinger Got Wings",
           discription:
@@ -100,6 +102,7 @@ export default function ExploreMenuPage() {
       title: "Everyday Value",
       deals: [
         {
+          id: 7,
           img: menu3,
           name: "Krunch Burger",
           discription:
@@ -107,6 +110,7 @@ export default function ExploreMenuPage() {
           price: "310",
         },
         {
+          id: 8,
           img: menu4,
           name: "Zingeratha",
           discription:
@@ -114,6 +118,7 @@ export default function ExploreMenuPage() {
           price: "390",
         },
         {
+          id: 9,
           img: menu5,
           name: "Rice & Spice",
           discription:
@@ -121,6 +126,7 @@ export default function ExploreMenuPage() {
           price: "390",
         },
         {
+          id: 10,
           img: menu6,
           name: "Boneless Strips",
           discription:
@@ -128,6 +134,7 @@ export default function ExploreMenuPage() {
           price: "440",
         },
         {
+          id: 11,
           img: menu7,
           name: "Twister",
           discription:
@@ -135,6 +142,7 @@ export default function ExploreMenuPage() {
           price: "440",
         },
         {
+          id: 12,
           img: menu8,
           name: "Chicken & Chips",
           discription:
@@ -142,24 +150,28 @@ export default function ExploreMenuPage() {
           price: "620",
         },
         {
+          id: 13,
           img: menu9,
           name: "3 Pcs Chicken",
           discription: "3 pieces of Hot and Crispy Fried Chicken",
           price: "690",
         },
         {
+          id: 14,
           img: menu10,
           name: "Krunch Burger + Drink",
           discription: "1 Krunch burger + 1 Regular drink",
           price: "410",
         },
         {
+          id: 15,
           img: menu11,
           name: "Krunch Combo",
           discription: "1 Krunch burger + 1 Regular fries + 1 Regular drink",
           price: "590",
         },
         {
+          id: 16,
           img: menu12,
           name: "Krunch Chicken Combo",
           discription:
@@ -167,6 +179,7 @@ export default function ExploreMenuPage() {
           price: "620",
         },
         {
+          id: 17,
           img: menu13,
           name: "Twister Combo",
           discription: "Twister + 1 Regular fries + 1 Regular drink ",
@@ -179,6 +192,7 @@ export default function ExploreMenuPage() {
       title: "Ala-Carte-&-Combos",
       deals: [
         {
+          id: 18,
           img: menu14,
           name: "Zinger Burger",
           discription:
@@ -186,6 +200,7 @@ export default function ExploreMenuPage() {
           price: "600",
         },
         {
+          id: 19,
           img: menu15,
           name: "Zinger Stacker",
           discription:
@@ -193,6 +208,7 @@ export default function ExploreMenuPage() {
           price: "660",
         },
         {
+          id: 20,
           img: menu16,
           name: "Kentucky Burger",
           discription:
@@ -200,6 +216,7 @@ export default function ExploreMenuPage() {
           price: "660",
         },
         {
+          id: 21,
           img: menu17,
           name: "Mighty Zinger",
           discription:
@@ -207,24 +224,28 @@ export default function ExploreMenuPage() {
           price: "770",
         },
         {
+          id: 22,
           img: menu18,
           name: "Zinger Combo",
           discription: "Zinger burger + 1 Regular fries+ 1 Regular drink",
           price: "910",
         },
         {
+          id: 23,
           img: menu19,
           name: "Zinger Stacker Combo",
           discription: "1 Zinger Stacker + 1 Regular fries + 1 Regular drink",
           price: "950",
         },
         {
+          id: 24,
           img: menu20,
           name: "Kentucky Burger Combo",
           discription: "Kentucky burger + 1 Regular fries+ 1 Regular drink",
           price: "950",
         },
         {
+          id: 25,
           img: menu21,
           name: "Mighty Zinger Combo",
           discription: "Mighty Zinger+ 1 Regular fries + 1 Regular drink ",
@@ -237,6 +258,7 @@ export default function ExploreMenuPage() {
       title: "Signature-Boxes",
       deals: [
         {
+          id: 26,
           img: menu22,
           name: "Crispy Box",
           discription:
@@ -244,6 +266,7 @@ export default function ExploreMenuPage() {
           price: "750",
         },
         {
+          id: 27,
           img: menu23,
           name: "Strips Chips N' Dips",
           discription:
@@ -251,6 +274,7 @@ export default function ExploreMenuPage() {
           price: "750",
         },
         {
+          id: 28,
           img: menu24,
           name: "Wow Box",
           discription:
@@ -258,6 +282,7 @@ export default function ExploreMenuPage() {
           price: "1050",
         },
         {
+          id: 29,
           img: menu25,
           name: "Crispy Duo Box",
           discription:
@@ -265,6 +290,7 @@ export default function ExploreMenuPage() {
           price: "1350",
         },
         {
+          id: 30,
           img: menu26,
           name: "Xtreme Duo Box",
           discription:
@@ -278,6 +304,7 @@ export default function ExploreMenuPage() {
       title: "Sharing",
       deals: [
         {
+          id: 31,
           img: menu27,
           name: "Value Bucket",
           discription:
@@ -285,6 +312,7 @@ export default function ExploreMenuPage() {
           price: "2050",
         },
         {
+          id: 32,
           img: menu28,
           name: "Family Festival 1",
           discription:
@@ -292,6 +320,7 @@ export default function ExploreMenuPage() {
           price: "2190",
         },
         {
+          id: 33,
           img: menu29,
           name: "Family Festival 2",
           discription:
@@ -299,6 +328,7 @@ export default function ExploreMenuPage() {
           price: "2390",
         },
         {
+          id: 34,
           img: menu30,
           name: "Family Festival 3",
           discription:
@@ -312,36 +342,42 @@ export default function ExploreMenuPage() {
       title: "Snacks-&-Beverages",
       deals: [
         {
+          id: 35,
           img: menu31,
           name: "Corn On The Cob",
           discription: "Boiled sweet corn brushed with butter",
           price: "290",
         },
         {
+          id: 36,
           img: menu32,
           name: "One Piece Chicken ",
           discription: "1 piece of Hot & Crispy Fried Chicken",
           price: "320",
         },
         {
+          id: 37,
           img: menu33,
           name: "Hot Shots",
           discription: "9 Pcs of hand-breaded Hot Shots",
           price: "480",
         },
         {
+          id: 38,
           img: menu34,
           name: "Chicky Meal 1 ",
           discription: "Krunch + Chicky Fries + Drink",
           price: "550",
         },
         {
+          id: 39,
           img: menu35,
           name: "Chicky Meal 2",
           discription: "4 Nuggets + 1 CHICKY FRIES+ Slice",
           price: "290",
         },
         {
+          id: 40,
           img: menu36,
           name: "Plain Nuggets",
           discription:
@@ -349,6 +385,7 @@ export default function ExploreMenuPage() {
           price: "580",
         },
         {
+          id: 41,
           img: menu37,
           name: "Buffalo Wings",
           discription:
@@ -356,6 +393,7 @@ export default function ExploreMenuPage() {
           price: "640",
         },
         {
+          id: 42,
           img: menu38,
           name: "Thai Sweet Chili Wings",
           discription:
@@ -363,6 +401,7 @@ export default function ExploreMenuPage() {
           price: "640",
         },
         {
+          id: 43,
           img: menu39,
           name: "Tangy Masala Wings",
           discription:
@@ -370,12 +409,14 @@ export default function ExploreMenuPage() {
           price: "640",
         },
         {
+          id: 44,
           img: menu40,
           name: "Salsa Sprinkle Wings",
           discription: "8 Pcs Salsa Sprinkle Wings Bucket",
           price: "640",
         },
         {
+          id: 45,
           img: menu41,
           name: "Snack Bucket",
           discription:
@@ -383,42 +424,49 @@ export default function ExploreMenuPage() {
           price: "650",
         },
         {
+          id: 46,
           img: menu42,
           name: "Hot Wings Bucket",
           discription: "10 Pcs of our Signature Hot & Crispy Wings",
           price: "670",
         },
         {
+          id: 47,
           img: menu43,
           name: "Fries",
           discription: "Crispy and Golden Fries",
           price: "340",
         },
         {
+          id: 48,
           img: menu44,
           name: "Masala Fries",
           discription: "Masala Crispy and Golden Fries",
           price: "360",
         },
         {
+          id: 49,
           img: menu45,
           name: "Fries Bucket ",
           discription: "Fries Bucket Without Dip",
           price: "450",
         },
         {
+          id: 50,
           img: menu46,
           name: "Fries Bucket with Dip",
           discription: "Fries Bucket with Dip ",
           price: "470",
         },
         {
+          id: 51,
           img: menu47,
           name: "Masala Fries Bucket",
           discription: "Masala Crispy and Golden Fries Bucket",
           price: "490",
         },
         {
+          id: 52,
           img: menu48,
           name: "Cheesy Chicken Loaded Fries",
           discription:
@@ -426,24 +474,28 @@ export default function ExploreMenuPage() {
           price: "650",
         },
         {
+          id: 53,
           img: menu49,
           name: "Coleslaw",
           discription: "Sliced cabbage and carrots tossed in mayo",
           price: "150",
         },
         {
+          id: 54,
           img: menu50,
           name: "Dinner Roll",
           discription: "Soft and fluffy, it complements any meal perfectly",
           price: "50",
         },
         {
+          id: 55,
           img: menu51,
           name: "Mayo Dip",
           discription: "Creamy mayo for your dipping needs",
           price: "75",
         },
         {
+          id: 56,
           img: menu52,
           name: "Vietnamese Dip",
           discription:
@@ -451,30 +503,35 @@ export default function ExploreMenuPage() {
           price: "75",
         },
         {
+          id: 57,
           img: menu53,
           name: "Garlic Mayo",
           discription: "Creamy Garlic Mayo Dip served fresh in a small cup",
           price: "75",
         },
         {
+          id: 58,
           img: menu54,
           name: "Creamy Ranch",
           discription: "Smooth and tangy Creamy Ranch Dip served with meals",
           price: "75",
         },
         {
+          id: 59,
           img: menu55,
           name: "Spicy Mayo",
           discription: "Spicy Mayo Dip with creamy texture and fiery flavor",
           price: "100",
         },
         {
+          id: 60,
           img: menu56,
           name: "Smoke Show",
           discription: "Bold and smoky flavored Smoke Show Dip in a cup",
           price: "75",
         },
         {
+          id: 61,
           img: menu57,
           name: "Mineral Water 500ml",
           discription:
@@ -482,6 +539,7 @@ export default function ExploreMenuPage() {
           price: "90",
         },
         {
+          id: 62,
           img: menu58,
           name: "Pepsi Regular",
           discription:
@@ -489,6 +547,7 @@ export default function ExploreMenuPage() {
           price: "180",
         },
         {
+          id: 63,
           img: menu59,
           name: "7UP Regular",
           discription:
@@ -496,6 +555,7 @@ export default function ExploreMenuPage() {
           price: "180",
         },
         {
+          id: 64,
           img: menu60,
           name: "Mirinda Regular",
           discription:
@@ -503,6 +563,7 @@ export default function ExploreMenuPage() {
           price: "180",
         },
         {
+          id: 65,
           img: menu61,
           name: "Sting Berry Blast",
           discription:
@@ -510,6 +571,7 @@ export default function ExploreMenuPage() {
           price: "180",
         },
         {
+          id: 66,
           img: menu62,
           name: "Mountain Dew Regular",
           discription:
@@ -517,6 +579,7 @@ export default function ExploreMenuPage() {
           price: "180",
         },
         {
+          id: 67,
           img: menu63,
           name: "7UP Mint",
           discription:
@@ -524,6 +587,7 @@ export default function ExploreMenuPage() {
           price: "180",
         },
         {
+          id: 68,
           img: menu64,
           name: "1.5 Ltr Drink",
           discription:
@@ -533,10 +597,11 @@ export default function ExploreMenuPage() {
       ],
     },
     {
-      id: 7,
+      id: 69,
       title: "Midnight (Start at 12 am)",
       deals: [
         {
+          id: 1,
           img: menu27,
           name: "Value Bucket",
           discription:
@@ -544,6 +609,7 @@ export default function ExploreMenuPage() {
           price: "2050",
         },
         {
+          id: 70,
           img: menu28,
           name: "Family Festival 1",
           discription:
@@ -551,6 +617,7 @@ export default function ExploreMenuPage() {
           price: "2190",
         },
         {
+          id: 71,
           img: menu29,
           name: "Family Festival 2",
           discription:
@@ -644,6 +711,7 @@ export default function ExploreMenuPage() {
                 {section.deals.map((deal, i) => (
                   <TopDeal
                     key={i}
+                    id={deal.id}
                     cardsize="w-auto lg:w-auto lg:h-auto md:w-auto md:h-auto bg-card mt-8 relative rounded-lg shadow-sm group"
                     img={deal.img}
                     name={deal.name}
