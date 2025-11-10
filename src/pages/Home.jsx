@@ -1,6 +1,6 @@
 import HeroSlider from "../components/home/HeroSlider";
 import SectionName from "../components/home/SectionName";
-import LastSection from "../components/home/LastSection"; 
+import LastSection from "../components/home/LastSection";
 import ExploreMenuSlider from "../components/home/ExploreMenuSlider";
 import BestSellerSlider from "../components/home/BestSellerSlider";
 import ExploreMenuGrid from "../components/home/ExploreMenuGrid";

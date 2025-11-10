@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
 import logo from "./assets/logo.png";
@@ -9,6 +9,8 @@ import cartimg from "./assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
 import SidebarLinkMaping from "./SidebarLinkMaping";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../redux/slices/userSlice";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,6 +24,15 @@ export default function Navbar() {
 
   const handleLoginClick = () => {
     navigate("/login"); // navigates to /login route
+  };
+  const handleBucket = () => {
+    navigate("/bucket"); // navigates to /login route
+  };
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -65,19 +76,36 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             {/* Cart */}
             <button className="relative text-text dark:text-white hover:text-primary transition">
-              <img className="w-[40px] h-[40px]" src={cartimg} alt="" />
+              <img
+                onClick={handleBucket}
+                className="w-[40px] h-[40px]"
+                src={cartimg}
+                alt=""
+              />
               <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 0
               </span>
             </button>
 
             {/* Login */}
-            <button
-              onClick={handleLoginClick}
-              className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition"
-            >
-              Login
-            </button>
+            {!user ? (
+              <button
+                onClick={handleLoginClick}
+                className="py-[6px] w-[64px] rounded-md bg-primary text-white font-semibold transition"
+              >
+                Login
+              </button>
+            ) : (
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium">{user.name}</span>
+                <button
+                  onClick={handleLogout}
+                  className="py-[6px] px-3 rounded-md bg-gray-300 dark:bg-gray-700 text-black dark:text-white font-semibold transition"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         </nav>
       </header>
@@ -99,12 +127,23 @@ export default function Navbar() {
         {/* Sidebar Content */}
         <div className="flex flex-col gap-5 p-4 text-text dark:text-white">
           {/* Login */}
-          <button
-            onClick={handleLoginClick}
-            className="py-[6px] w-[64px] rounded-md bg-primary text-[#ffffff]  font-semibold transition"
-          >
-            Login
-          </button>
+          {!user ? (
+            <button
+              onClick={handleLoginClick}
+              className="py-[6px] w-[64px] rounded-md bg-primary text-white font-semibold transition"
+            >
+              Login
+            </button>
+          ) : (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleLogout}
+                className="py-[6px] px-3 rounded-md bg-gray-300 dark:bg-gray-700 text-black dark:text-white font-semibold transition"
+              >
+                Logout
+              </button>
+            </div>
+          )}
 
           {/* Theme Switch */}
           <div className="flex justify-end">
