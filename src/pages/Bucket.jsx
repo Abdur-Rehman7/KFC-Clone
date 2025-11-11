@@ -40,13 +40,13 @@ const Bucket = () => {
     // Base items list (same as your original)
     const allItems = [
       { id: 1, name: "Corn On The Cob (1 Pc)", price: 290, img: img1 },
-      { id: 2, name: "One Piece Chicken (One Piece)", price: 290, img: img2 },
-      { id: 3, name: "Hot Shots (9 Pcs )", price: 290, img: img3 },
-      { id: 4, name: "Hot Wings Bucket (10 Pcs)", price: 290, img: img4 },
-      { id: 5, name: "Coleslaw (Coleslaw)", price: 290, img: img5 },
-      { id: 6, name: "Dinner Roll (1 Pc)", price: 290, img: img6 },
-      { id: 7, name: "7UP Regular (7UP Regular)", price: 290, img: img7 },
-      { id: 8, name: "Mountain Dew Regular (Regular)", price: 290, img: img8 },
+      { id: 2, name: "One Piece Chicken (One Piece)", price: 320, img: img2 },
+      { id: 3, name: "Hot Shots (9 Pcs )", price: 480, img: img3 },
+      { id: 4, name: "Hot Wings Bucket (10 Pcs)", price: 670, img: img4 },
+      { id: 5, name: "Coleslaw (Coleslaw)", price: 150, img: img5 },
+      { id: 6, name: "Dinner Roll (1 Pc)", price: 50, img: img6 },
+      { id: 7, name: "7UP Regular (7UP Regular)", price: 180, img: img7 },
+      { id: 8, name: "Mountain Dew Regular (Regular)", price: 180, img: img8 },
     ];
 
     // Filter out items that are already in the cart
@@ -207,12 +207,12 @@ const Bucket = () => {
                 </div>
                 <div className="flex justify-between">
                   <p>Delivery Fee :</p>
-                  <p>Rs 0</p>
+                  <p>Rs {tax.toFixed(0)}</p>
                 </div>
                 <hr className="text-text" />
                 <div className="flex justify-between">
                   <p>Total :</p>
-                  <p>Rs </p>
+                  <p>Rs {totalPrice.toLocaleString()}</p>
                 </div>
               </div>
             </div>
