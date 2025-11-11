@@ -76,6 +76,10 @@ export default function ExploreMenuPage() {
   const sectionRefs = useRef([]);
   const cartItems = useSelector((state) => state.cart.items || []);
   const dispatch = useDispatch();
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   const sections = [
     {
@@ -85,10 +89,10 @@ export default function ExploreMenuPage() {
         {
           id: 5,
           img: menu1,
-          name: "Ramen Wings",
+          name: "Crazy Tuesday",
           discription:
             "Hot and crispy 8 pcs of wings glazed in spicy Ramen Sauce and topped with crunchy noodles",
-          price: "775",
+          price: "350",
         },
         {
           id: 6,
@@ -787,7 +791,7 @@ export default function ExploreMenuPage() {
             className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
           >
             <p className="text-white ">
-              0 Item <span className="font-bold text-[22px]"> | Rs 0</span>
+              {cartItems.reduce((total, item) => total + item.quantity, 0)} Item <span className="font-bold text-[22px]"> | Rs {totalPrice.toLocaleString()}</span>
             </p>
             <p className="flex gap-2 font-bold text-[22px] text-white">
               Checkout
@@ -806,7 +810,7 @@ export default function ExploreMenuPage() {
           className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
         >
           <p className="text-white ">
-            0 Item <span className="font-bold text-[22px]"> | Rs 0</span>
+            {cartItems.reduce((total, item) => total + item.quantity, 0)} Item <span className="font-bold text-[22px]"> | Rs {totalPrice.toLocaleString()}</span>
           </p>
           <p className="flex gap-2 font-bold text-[22px] text-white">
             Checkout

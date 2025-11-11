@@ -19,6 +19,12 @@ const Bucket = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+  const tax = totalPrice * 0.16; // 16% tax
+  // const grandTotal = totalPrice + tax;
 
   const handleGoToexploremenu = () => {
     navigate("/exploremenu"); // 👈 navigates to the Contact page
@@ -210,7 +216,7 @@ const Bucket = () => {
                 <p className="text-[31px] font-bold">Your Order</p>
                 <div className="flex justify-between">
                   <p>Sub Total :</p>
-                  <p>Rs 0</p>
+                  <p>Rs {totalPrice.toLocaleString()}</p>
                 </div>
                 <div className="flex justify-between">
                   <p>Delivery Fee :</p>
@@ -219,7 +225,7 @@ const Bucket = () => {
                 <hr className="text-text" />
                 <div className="flex justify-between">
                   <p>Total :</p>
-                  <p>Rs 0</p>
+                  <p>Rs </p>
                 </div>
               </div>
             </div>
@@ -271,23 +277,28 @@ const Bucket = () => {
                 <p className="text-[31px] font-bold">Your Order</p>
                 <div className="flex justify-between">
                   <p>Sub Total :</p>
-                  <p>Rs 0</p>
+                  <p>Rs {totalPrice.toLocaleString()}</p>
                 </div>
                 <div className="flex justify-between">
-                  <p>Delivery Fee :</p>
-                  <p>Rs 0</p>
+                  <p>GST (16%) :</p>
+                  <p>Rs {tax.toFixed(0)}</p>
                 </div>
                 <hr className="text-text" />
                 <div className="flex justify-between">
                   <p>Total :</p>
-                  <p>Rs 0</p>
+                  <p>Rs {totalPrice.toLocaleString()}</p>
                 </div>
               </div>
             </div>
             <div className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md">
               <button className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
                 <p className="text-white ">
-                  0 Item <span className="font-bold text-[22px]"> | Rs 0</span>
+                  {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
+                  Item{" "}
+                  <span className="font-bold text-[22px]">
+                    {" "}
+                    | Rs {totalPrice.toLocaleString()}
+                  </span>
                 </p>
                 <p className="flex gap-2 font-bold text-[22px] text-white">
                   Checkout
@@ -303,7 +314,12 @@ const Bucket = () => {
           <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md">
             <button className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
               <p className="text-white ">
-                0 Item <span className="font-bold text-[22px]"> | Rs 0</span>
+                {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
+                Item{" "}
+                <span className="font-bold text-[22px]">
+                  {" "}
+                  | Rs {totalPrice.toLocaleString()}
+                </span>
               </p>
               <p className="flex gap-2 font-bold text-[22px] text-white">
                 Checkout
