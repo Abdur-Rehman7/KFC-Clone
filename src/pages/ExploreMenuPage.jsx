@@ -75,8 +75,7 @@ export default function ExploreMenuPage() {
   const [activeSection, setActiveSection] = useState("");
   const sectionRefs = useRef([]);
   const cartItems = useSelector((state) => state.cart.items || []);
-   const dispatch = useDispatch();
-    
+  const dispatch = useDispatch();
 
   const sections = [
     {
@@ -677,12 +676,12 @@ export default function ExploreMenuPage() {
   return (
     <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px]">
       {/* 🔝 Scroll-Tracking Header */}
-      <div className="fixed top-[64px] left-0 w-full bg-card shadow-md z-40 p-4">
+      <div className="fixed top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
         {/* ↓ Adjusted position so it sits below layout Navbar */}
         <div className="flex flex-wrap justify-between items-center gap-3">
           <h1 className="font-bold text-lg text-text"> Explore Menu</h1>
 
-          <div className="flex flex-wrap gap-2 overflow-x-auto">
+          <div className="flex  overflow-x-auto no-scrollbar gap-2 ">
             {sections.map((section, index) => (
               <button
                 key={section.id}
@@ -761,21 +760,22 @@ export default function ExploreMenuPage() {
                   />
                   <div>
                     <p className="font-semibold text-[15px]">{item.name}</p>
-                    <p className="text-sm text-gray-600">Rs {item.price}</p>
+                    <p className="text-sm text-gray-600">
+                      Rs {item.price} x {item.quantity}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-  <button
-    onClick={() => dispatch(removeFromCart(item.id))}
-    className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
-  >
-    🗑️
-  </button>
-  <p className="font-semibold text-[18px]">
-    Rs {item.price * item.quantity}
-  </p>
-</div>
-
+                  <button
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
+                  >
+                    🗑️
+                  </button>
+                  <p className="font-semibold text-[18px]">
+                    Rs {item.price * item.quantity}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
