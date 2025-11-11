@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdArrowForwardIos } from "react-icons/md";
 import sidenav from "../assets/sidenav-img.png";
@@ -14,6 +13,8 @@ import img7 from "../assets/bucket-img-7.png";
 import img8 from "../assets/bucket-img-8.png";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
+import { addToCart } from "../redux/slices/cartSlice";
+import { useState, useEffect } from "react";
 
 const Bucket = () => {
   const navigate = useNavigate();
@@ -25,60 +26,37 @@ const Bucket = () => {
   );
   const tax = totalPrice * 0.16; // 16% tax
   // const grandTotal = totalPrice + tax;
+  const handleAddToBucket = (item) => {
+    dispatch(addToCart(item));
+    // The list will auto-update from useEffect when cartItems change
+  };
 
   const handleGoToexploremenu = () => {
     navigate("/exploremenu"); // 👈 navigates to the Contact page
   };
-  const items = [
-    {
-      id: 1,
-      name: "Corn On The Cob (1 Pc)",
-      price: 290,
-      img: img1,
-    },
-    {
-      id: 2,
-      name: "One Piece Chicken (One Piece)",
-      price: 290,
-      img: img2,
-    },
-    {
-      id: 3,
-      name: "Hot Shots (9 Pcs )",
-      price: 290,
-      img: img3,
-    },
-    {
-      id: 4,
-      name: "Hot Wings Bucket (10 Pcs)",
-      price: 290,
-      img: img4,
-    },
-    {
-      id: 5,
-      name: "Coleslaw (Coleslaw)",
-      price: 290,
-      img: img5,
-    },
-    {
-      id: 6,
-      name: "Dinner Roll (1 Pc)",
-      price: 290,
-      img: img6,
-    },
-    {
-      id: 7,
-      name: "7UP Regular (7UP Regular)",
-      price: 290,
-      img: img7,
-    },
-    {
-      id: 8,
-      name: "Mountain Dew Regular (Regular)",
-      price: 290,
-      img: img8,
-    },
-  ];
+  const [suggestedItems, setSuggestedItems] = useState([]);
+
+  useEffect(() => {
+    // Base items list (same as your original)
+    const allItems = [
+      { id: 1, name: "Corn On The Cob (1 Pc)", price: 290, img: img1 },
+      { id: 2, name: "One Piece Chicken (One Piece)", price: 290, img: img2 },
+      { id: 3, name: "Hot Shots (9 Pcs )", price: 290, img: img3 },
+      { id: 4, name: "Hot Wings Bucket (10 Pcs)", price: 290, img: img4 },
+      { id: 5, name: "Coleslaw (Coleslaw)", price: 290, img: img5 },
+      { id: 6, name: "Dinner Roll (1 Pc)", price: 290, img: img6 },
+      { id: 7, name: "7UP Regular (7UP Regular)", price: 290, img: img7 },
+      { id: 8, name: "Mountain Dew Regular (Regular)", price: 290, img: img8 },
+    ];
+
+    // Filter out items that are already in the cart
+    const filtered = allItems.filter(
+      (item) => !cartItems.some((cartItem) => cartItem.id === item.id)
+    );
+
+    setSuggestedItems(filtered);
+  }, [cartItems]);
+
   return (
     <>
       <section className="text-center ">
@@ -153,28 +131,37 @@ const Bucket = () => {
             </div>
             <div>
               <div className="mt-[15px] pt-[10px] ">
-                {/* <p>You may also like</p> */}
-                <div className="w-auto lg:max-w-[600px] xl:max-w-[755px] overflow-x-auto scroll-smooth custom-scrollbar ">
-                  <div className="flex gap-4 min-w-max">
-                    {items.map((item) => (
-                      <div
-                        key={item.id}
-                        className="w-[180px] rounded-md flex flex-col text-left bg-card flex-shrink-0"
-                      >
-                        <img src={item.img} alt={item.name} />
-                        <div className="p-[8px]">
-                          <p className="h-[34px] mb-[8px]">{item.name}</p>
-                          <div className="flex justify-between mt-4">
-                            <p>Rs {item.price}</p>
-                            <button className="bg-primary text-white text-[10px] font-semibold py-[5px] px-[8px] rounded-[4px]">
-                              + Add TO BUCKET
-                            </button>
+                {suggestedItems.length > 0 && (
+                  <>
+                    <p className="text-[31px] font-semibold text-left mb-[16px]">
+                      You may also like
+                    </p>
+                    <div className="w-auto lg:max-w-[600px] xl:max-w-[755px] overflow-x-auto scroll-smooth custom-scrollbar ">
+                      <div className="flex gap-4 min-w-max">
+                        {suggestedItems.map((item) => (
+                          <div
+                            key={item.id}
+                            className="w-[180px] rounded-md flex flex-col text-left bg-card flex-shrink-0"
+                          >
+                            <img src={item.img} alt={item.name} />
+                            <div className="p-[8px]">
+                              <p className="h-[34px] mb-[8px]">{item.name}</p>
+                              <div className="flex justify-between mt-4">
+                                <p>Rs {item.price}</p>
+                                <button
+                                  onClick={() => handleAddToBucket(item)}
+                                  className="bg-primary text-white text-[10px] font-semibold py-[5px] px-[8px] rounded-[4px]"
+                                >
+                                  + Add TO BUCKET
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
