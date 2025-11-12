@@ -40,9 +40,7 @@ const MitaoBhook = () => {
       </section>
 
       <div className="mitao-bhook text-center text-white mt-[100px] mx-auto py-[90px] px-[60px] ">
-        <p className="text-[34px] font-bold">
-          KFC SCORE A SCHOLARSHIP PROGRAM
-        </p>
+        <p className="text-[34px] font-bold">KFC SCORE A SCHOLARSHIP PROGRAM</p>
         <p className="text-[34px] font-bold">
           READY TO FULFIL YOUR EDUCATION DREAMS!
         </p>
