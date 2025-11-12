@@ -14,22 +14,22 @@ const AboutUsFact = (props) => {
     {
       img: fact2,
       number: "133",
-      text: "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      text: "Today KFC has grown to over 133 restaurants across the country",
     },
     {
       img: fact3,
       number: "9",
-      text: "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      text: "Giving back to the community, KFC runs 9 restaurants operated by deaf, Hearing With Heart team members",
     },
     {
       img: fact4,
       number: "9000+",
-      text: "The first KFC restaurant in Pakistan opened in 1997 and was located in Gulshan-e-Iqbal Karachi.",
+      text: "Our Finger Lickin’ Chicken is brought to you by the hardwork of a team of 9000+ people across Pakistan",
     },
   ];
   return (
     <>
-      <p className="text-left text-text mb-[16px] text-[32px] font-semibold">
+      <p className="text-left text-text mb-[16px] text-[25px] mb-[16px] lg:text-[32px] md:text-[28px]  font-semibold">
         Fast Facts about KFC Pakistan
       </p>
 
@@ -42,8 +42,8 @@ const AboutUsFact = (props) => {
                 src={fact.img}
                 alt={`Fact ${index + 1}`}
               />
-              <p>{fact.number}</p>
-              <p>{fact.text}</p>
+              <p className="text-[34px] font-bold mb-[8px]">{fact.number}</p>
+              <p className="text-[13px]">{fact.text}</p>
             </div>
           </div>
         ))}
