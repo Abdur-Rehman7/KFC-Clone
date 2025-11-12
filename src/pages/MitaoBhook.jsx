@@ -9,7 +9,7 @@ const MitaoBhook = () => {
     <>
       <img className="w-full" src={hero} />
       <section className="text-center mx-[12px] lg:mx-[32px] md:mx-[32px]">
-        <p className="mt-[70px] mb-[110px] text-text text-[22px]/[1.2] lg:text-[40px]/[1.2] md:text-[40px]/[1.2] font-bold">
+        <p className="mt-[30px] mb-[52px] lg:mb-[110px] lg:mt-[70px] md:mb-[110px] md:mt-[70px] text-text text-[22px]/[1.2] lg:text-[40px]/[1.2] md:text-[40px]/[1.2] font-bold">
           <span className="text-primary">Mitao Bhook</span> is our social
           purpose platform committed to create a sustainable, long lasting
           positive impact on society, by focusing on three key pillars
