@@ -3,7 +3,6 @@ import React from "react";
 const AboutUsCard = (props) => {
   return (
     <>
-      {" "}
       <div className="grid grid-cols-12 gap-2 p-[20px] lg:p-[35px] md:p-[35px]">
         {/* First column (col-lg-7 col-md-6) */}
         <div className="col-span-12 md:col-span-6 lg:col-span-7 px-[12px]">

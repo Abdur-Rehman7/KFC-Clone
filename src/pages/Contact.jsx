@@ -29,25 +29,25 @@ export default function Contact() {
 
   const basicContact = [
     {
-      title: "Phone",
-      value: "0213-5877976",
+      title: "Helpline",
+      value: "UAN: 111 532 532",
       icon: <FaPhoneAlt className="text-primary" />,
     },
     {
-      title: "Email",
-      value: "kabdurrehman111@gmail.com",
+      title: "Complaints Email",
+      value: "customercare@kfcpakistan.com",
       icon: <MdEmail className="text-primary" />,
     },
   ];
 
   return (
-    <section className="mx-[32px] mt-4 text-text">
+    <section className="mt-4 text-text lg:mx-[32px] md:mx-[12px]">
       <PageName title="Contact Us" />
 
       <div className="grid grid-cols xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 gap-2">
         {contactInfo.map((item, index) => (
           <div key={index} className="px-[12px]">
-            <div className="bg-card p-[20px] rounded-[5px] h-[230px] lg:h-[230px] md:h-[250px]">
+            <div className="bg-card p-[20px] rounded-[5px] h-[220px] lg:h-[230px] md:h-[280px]">
               <p className="flex flex-row items-center">
                 <FaPhoneAlt className="text-primary" />
                 <span className="text-[20px] font-bold ml-[10px]">
