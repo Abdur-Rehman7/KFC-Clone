@@ -13,7 +13,7 @@ const Home = function () {
 
       <div className="mx-[10px]">
         <div className="flex justify-center items-center h-full">
-          <button className="bg-primary text-white font-semibold w-[428px] py-[6px] px-[16px]">
+          <button className="bg-primary text-white font-semibold w-[428px] py-[6px] px-[16px] mt-[32px]">
             REORDER
           </button>
         </div>

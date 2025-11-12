@@ -21,7 +21,7 @@ const HeroSlider = (props) => {
   }, [current, interval]);
 
   return (
-    <div className="relative w-full h-[78vh] overflow-hidden">
+    <div className="relative w-full h-[35vh] lg:h-[78vh] md:h-[56vh] overflow-hidden">
       {images.map((images, index) => (
         <div
           key={index}
@@ -40,17 +40,17 @@ const HeroSlider = (props) => {
       {/* Left arrow */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 -translate-y-1/2 left-6 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition"
+        className="absolute top-1/2 -translate-y-1/2 left-6 bg-red-500 hover:bg-primary text-white p-[1px] rounded-full transition"
       >
-        <ChevronLeft size={28} />
+        <ChevronLeft size={18} className="text-black" />
       </button>
 
       {/* Right arrow */}
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 -translate-y-1/2 right-6 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition"
+        className="absolute top-1/2 -translate-y-1/2 right-6 bg-red-500 hover:bg-primary text-white p-[1px] rounded-full transition"
       >
-        <ChevronRight size={28} />
+        <ChevronRight size={18} className="text-black" />
       </button>
     </div>
   );
