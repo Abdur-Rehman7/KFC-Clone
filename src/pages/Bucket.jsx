@@ -206,7 +206,7 @@ const Bucket = () => {
                   <p>Rs {totalPrice.toLocaleString()}</p>
                 </div>
                 <div className="flex justify-between">
-                  <p>Delivery Fee :</p>
+                  <p>GST (16%) :</p>
                   <p>Rs {tax.toFixed(0)}</p>
                 </div>
                 <hr className="text-text" />
