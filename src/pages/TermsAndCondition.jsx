@@ -4,7 +4,7 @@ import CommenPage from "../components/reuseable/CommenPage";
 const TermsAndCondition = () => {
   return (
     <>
-      <section className="text-center mx-[32px]">
+      <section className="text-center mx-[12px] lg:mx-[32px] md:mx-[12px]">
         <PageName title="Terms and Conditions" />
         <p className="text-[20px] font-semibold">USER AGREEMENT</p>
         <p className="text-[20px] font-semibold">

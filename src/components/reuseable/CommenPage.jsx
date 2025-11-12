@@ -139,7 +139,7 @@ const CommenPage = (props) => {
           {sections.map((section, index) => (
             <li key={index} className="mb-[50px] numbered-item">
               {/* Title */}
-              <p className="my-[15px] font-semibold">{section.title}</p>
+              <p className="my-[15px] font-semibold text-[20px]">{section.title}</p>
 
               {/* Paragraphs */}
               {section.paragraphs.map((text, i) => {

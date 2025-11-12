@@ -48,7 +48,8 @@ export default function Navbar() {
               onClick={() => setOpen(true)}
               className="text-text transition"
             >
-              <RiMenu2Line size={28} />
+              <RiMenu2Line className="block sm:hidden" size={20} />
+              <RiMenu2Line className="hidden sm:block" size={28} />
             </button>
 
             {/* Logo */}
@@ -85,7 +86,6 @@ export default function Navbar() {
               />
               <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 {cartItems.reduce((total, item) => total + item.quantity, 0)}
-
               </span>
             </button>
 
@@ -93,12 +93,12 @@ export default function Navbar() {
             {!user ? (
               <button
                 onClick={handleLoginClick}
-                className="py-[6px] w-[64px] rounded-md bg-primary text-white font-semibold transition"
+                className="py-[6px] w-[64px] rounded-md bg-primary text-white font-semibold transition hidden sm:block"
               >
                 Login
               </button>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 hidden sm:block">
                 <span className="text-sm font-medium">{user.name}</span>
                 <button
                   onClick={handleLogout}
@@ -122,7 +122,7 @@ export default function Navbar() {
 
       {/* 🧭 Sidebar Drawer (now slides from the LEFT) */}
       <aside
-        className={`fixed top-0 left-0 h-full overflow-x-auto w-72 bg-light bg-card shadow-2xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full overflow-x-auto custom-scrollbar w-72 bg-light bg-card shadow-2xl z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

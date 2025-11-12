@@ -5,9 +5,9 @@ import kfcowner from "./assets/kfc-history.png";
 const HistoryCard = (props) => {
   return (
     <>
-      <div className="grid grid-cols-12 gap-2 p-[35px]">
+      <div className="grid grid-cols-12 gap-2 p-[20px] lg:p-[35px] md:p-[35px]">
         <div className="col-span-12 md:col-span-4 lg:col-span-4 px-[12px] font-bold text-white rounded-[5px]">
-          <img className="w-[full]" src={kfcowner} />
+          <img className="w-[100%]" src={kfcowner} />
         </div>
 
         <div className="col-span-12 md:col-span-8 lg:col-span-8 px-[12px] flex flex-col justify-center">

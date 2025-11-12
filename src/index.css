@@ -60,7 +60,7 @@ body {
   .numbered-item {
     counter-increment: main-counter;
     counter-reset: sub-counter;
-    @apply relative pl-10 mb-12;
+    @apply relative pl-7 mb-12;
   }
 
   .numbered-item::before {
@@ -71,7 +71,7 @@ body {
   .numbered-paragraph {
     counter-increment: sub-counter;
     /* Added padding so number doesn't overlap text */
-    @apply relative pl-10 my-[15px] text-[20px] leading-relaxed;
+    @apply relative pl-10 text-[20px] leading-relaxed;
   }
 
   .numbered-paragraph::before {
@@ -87,13 +87,13 @@ body {
 }
 
 @layer utilities {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-     /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

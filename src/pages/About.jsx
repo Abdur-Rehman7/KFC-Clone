@@ -8,7 +8,7 @@ import AboutLastSection from "../components/aboutus/AboutLastSection";
 
 export default function About() {
   return (
-    <section className="text-center mx-[32px]">
+    <section className="text-center mx-[12px] lg:mx-[32px] md:mx-[12px]">
       <PageName title="About Us" />
       <div className="bg-card">
         <AboutUsCard />

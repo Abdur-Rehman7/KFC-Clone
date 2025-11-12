@@ -39,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-card text-left grid grid-cols-1 md:grid-cols-2 mx-auto my-20 w-[90%] md:w-[70%] rounded-md">
+    <section className="bg-card text-left grid grid-cols-1 md:grid-cols-2 mx-auto my-20 w-[90%] md:w-[80%] rounded-md">
   {/* Left side */}
   <div className="flex justify-center  flex-col p-4">
     <PageName className="ml-[10px] mt-[10px]" />
