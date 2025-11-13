@@ -680,10 +680,13 @@ export default function ExploreMenuPage() {
   return (
     <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px] mb-20">
       {/* 🔝 Scroll-Tracking Header */}
-      <div className="fixed top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
+      <div className="fixed top-[115px] lg:top-[64px] md:top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
         {/* ↓ Adjusted position so it sits below layout Navbar */}
         <div className="flex flex-wrap justify-between items-center gap-3">
-          <h1 className="font-bold text-lg text-text hidden sm:block"> Explore Menu</h1>
+          <h1 className="font-bold text-lg text-text hidden sm:block">
+            {" "}
+            Explore Menu
+          </h1>
 
           <div className="flex  overflow-x-auto no-scrollbar gap-2 ">
             {sections.map((section, index) => (
@@ -791,7 +794,11 @@ export default function ExploreMenuPage() {
             className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
           >
             <p className="text-white">
-              {cartItems.reduce((total, item) => total + item.quantity, 0)} Item <span className="font-bold text-[22px]"> | Rs {totalPrice.toLocaleString()}</span>
+              {cartItems.reduce((total, item) => total + item.quantity, 0)} Item{" "}
+              <span className="font-bold text-[22px]">
+                {" "}
+                | Rs {totalPrice.toLocaleString()}
+              </span>
             </p>
             <p className="flex gap-2 font-bold text-[22px] text-white">
               Checkout
@@ -810,7 +817,11 @@ export default function ExploreMenuPage() {
           className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
         >
           <p className="text-white ">
-            {cartItems.reduce((total, item) => total + item.quantity, 0)} Item <span className="font-bold text-[22px]"> | Rs {totalPrice.toLocaleString()}</span>
+            {cartItems.reduce((total, item) => total + item.quantity, 0)} Item{" "}
+            <span className="font-bold text-[22px]">
+              {" "}
+              | Rs {totalPrice.toLocaleString()}
+            </span>
           </p>
           <p className="flex gap-2 font-bold text-[22px] text-white">
             Checkout

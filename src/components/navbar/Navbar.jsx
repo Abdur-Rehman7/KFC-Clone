@@ -40,77 +40,125 @@ export default function Navbar() {
     <>
       {/* 🌍 Main Navbar */}
       <header className="sticky top-0 z-50 border-b border-borderTheme bg-light dark:bg-second/95 backdrop-blur-lg transition-all">
-        <nav className="container mx-auto flex items-center justify-between py-3 px-4">
-          {/* LEFT SIDE */}
-          <div className="flex items-center gap-4">
-            {/* Hamburger Button */}
+  <nav className="container mx-auto py-3 px-4">
+    {/* ===== Desktop / Tablet Layout ===== */}
+    <div className="hidden sm:flex items-center justify-between">
+      {/* LEFT SIDE */}
+      <div className="flex items-center gap-4">
+        {/* Hamburger Button */}
+        <button onClick={() => setOpen(true)} className="text-text transition">
+          <RiMenu2Line className="hidden sm:block" size={28} />
+        </button>
+
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold text-primary">
+          <img src={logo} alt="Logo" />
+        </Link>
+
+        {/* Delivery / Pickup */}
+        <div className="flex items-center gap-2 ml-4">
+          <Dpbtn
+            img={delivery}
+            text="Delivery"
+            active={activeBtn === "car1"}
+            onClick={() => setActiveBtn("car1")}
+          />
+          <Dpbtn
+            img={pickup}
+            text="Pickup"
+            active={activeBtn === "car2"}
+            onClick={() => setActiveBtn("car2")}
+          />
+        </div>
+      </div>
+
+      {/* RIGHT SIDE */}
+      <div className="flex items-center gap-4">
+        {/* Cart */}
+        <button className="relative text-text dark:text-white hover:text-primary transition">
+          <img
+            onClick={handleBucket}
+            className="w-[40px] h-[40px]"
+            src={cartimg}
+            alt="Cart"
+          />
+          <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+            {cartItems.reduce((total, item) => total + item.quantity, 0)}
+          </span>
+        </button>
+
+        {/* Login */}
+        {!user ? (
+          <button
+            onClick={handleLoginClick}
+            className="py-[6px] w-[64px] rounded-md bg-primary text-white font-semibold transition"
+          >
+            Login
+          </button>
+        ) : (
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium">{user.name}</span>
             <button
-              onClick={() => setOpen(true)}
-              className="text-text transition"
+              onClick={handleLogout}
+              className="py-[6px] px-3 rounded-md bg-gray-300 dark:bg-gray-700 text-black dark:text-white font-semibold transition"
             >
-              <RiMenu2Line className="block sm:hidden" size={20} />
-              <RiMenu2Line className="hidden sm:block" size={28} />
+              Logout
             </button>
-
-            {/* Logo */}
-            <Link to="/" className="text-2xl font-bold text-primary">
-              <img src={logo} />
-            </Link>
-
-            {/* Delivery / Pickup Buttons */}
-            <div className="flex items-center gap-2 ml-4">
-              <Dpbtn
-                img={delivery}
-                text="Delivey"
-                active={activeBtn === "car1"}
-                onClick={() => setActiveBtn("car1")}
-              />
-              <Dpbtn
-                img={pickup}
-                text="Pickup"
-                active={activeBtn === "car2"}
-                onClick={() => setActiveBtn("car2")}
-              />
-            </div>
           </div>
+        )}
+      </div>
+    </div>
 
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-4">
-            {/* Cart */}
-            <button className="relative text-text dark:text-white hover:text-primary transition">
-              <img
-                onClick={handleBucket}
-                className="w-[40px] h-[40px]"
-                src={cartimg}
-                alt=""
-              />
-              <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                {cartItems.reduce((total, item) => total + item.quantity, 0)}
-              </span>
-            </button>
+    {/* ===== Mobile Layout ===== */}
+    <div className="flex flex-col sm:hidden gap-2">
+      {/* Top Row: Menu + Logo */}
+      <div className="flex items-center justify-between">
+        {/* Hamburger */}
+        <button onClick={() => setOpen(true)} className="text-text transition">
+          <RiMenu2Line size={22} />
+        </button>
 
-            {/* Login */}
-            {!user ? (
-              <button
-                onClick={handleLoginClick}
-                className="py-[6px] w-[64px] rounded-md bg-primary text-white font-semibold transition hidden sm:block"
-              >
-                Login
-              </button>
-            ) : (
-              <div className="flex items-center gap-2 hidden sm:block">
-                <span className="text-sm font-medium">{user.name}</span>
-                <button
-                  onClick={handleLogout}
-                  className="py-[6px] px-3 rounded-md bg-gray-300 dark:bg-gray-700 text-black dark:text-white font-semibold transition"
-                >
-                  Logout
-                </button>
-              </div>
-            )}
-          </div>
-        </nav>
-      </header>
+        {/* Logo on right */}
+        <Link to="/" className="text-2xl font-bold text-primary">
+          <img src={logo} alt="Logo" className="w-[60px]" />
+        </Link>
+      </div>
+
+      {/* Second Row: Delivery/Pickup + Cart */}
+      <div className="flex items-center justify-between mt-2">
+        {/* Delivery/Pickup */}
+        <div className="flex items-center gap-2">
+          <Dpbtn
+            img={delivery}
+            text="Delivery"
+            active={activeBtn === "car1"}
+            onClick={() => setActiveBtn("car1")}
+          />
+          <Dpbtn
+            img={pickup}
+            text="Pickup"
+            active={activeBtn === "car2"}
+            onClick={() => setActiveBtn("car2")}
+          />
+        </div>
+
+        {/* Cart */}
+        <button className="relative text-text dark:text-white hover:text-primary transition">
+          <img
+            onClick={handleBucket}
+            className="w-[36px] h-[36px]"
+            src={cartimg}
+            alt="Cart"
+          />
+          <span className="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
+            {cartItems.reduce((total, item) => total + item.quantity, 0)}
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
 
       {/* 🧾 Overlay Background */}
       {open && (
