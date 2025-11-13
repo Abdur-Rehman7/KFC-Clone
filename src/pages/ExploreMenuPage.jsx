@@ -678,7 +678,7 @@ export default function ExploreMenuPage() {
   };
 
   return (
-    <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px]">
+    <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px] mb-20">
       {/* 🔝 Scroll-Tracking Header */}
       <div className="fixed top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
         {/* ↓ Adjusted position so it sits below layout Navbar */}
@@ -804,7 +804,7 @@ export default function ExploreMenuPage() {
       </nav>
 
       {/* 📱 Accordion */}
-      <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md">
+      <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md z-10">
         <button
           onClick={handleGoToBucket}
           className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
