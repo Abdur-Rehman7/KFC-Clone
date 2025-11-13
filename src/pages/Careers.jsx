@@ -89,11 +89,11 @@ const Careers = () => {
   ];
   return (
     <>
-      <section className="text-center mx-[32px] px-[12px]">
+      <section className="text-center mx-[0px] lg:mx-[32px] md:mx-[12px] px-[12px]">
         <video width="100%" className="mt-[30px]" controls src={kfcvideo} />
 
         <div>
-          <p className="text-[40px] mt-[100px] mb-[8px] font-semibold">
+          <p className="text-[40px] mt-[40px] lg:mt-[100px] md:mt-[100px] mb-[8px] font-semibold">
             Our Values
           </p>
           <OurValue />
