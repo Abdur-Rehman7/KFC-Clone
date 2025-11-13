@@ -683,7 +683,7 @@ export default function ExploreMenuPage() {
       <div className="fixed top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
         {/* ↓ Adjusted position so it sits below layout Navbar */}
         <div className="flex flex-wrap justify-between items-center gap-3">
-          <h1 className="font-bold text-lg text-text"> Explore Menu</h1>
+          <h1 className="font-bold text-lg text-text hidden sm:block"> Explore Menu</h1>
 
           <div className="flex  overflow-x-auto no-scrollbar gap-2 ">
             {sections.map((section, index) => (
@@ -750,7 +750,7 @@ export default function ExploreMenuPage() {
             </p>
           </div>
         ) : (
-          <div className="flex flex-col gap-3 m-4 h-[409px] overflow-y-auto">
+          <div className="flex flex-col gap-3 m-4 h-[310px] overflow-y-auto custom-scrollbar">
             {cartItems.map((item, i) => (
               <div
                 key={i}
@@ -790,7 +790,7 @@ export default function ExploreMenuPage() {
             onClick={handleGoToBucket}
             className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
           >
-            <p className="text-white ">
+            <p className="text-white">
               {cartItems.reduce((total, item) => total + item.quantity, 0)} Item <span className="font-bold text-[22px]"> | Rs {totalPrice.toLocaleString()}</span>
             </p>
             <p className="flex gap-2 font-bold text-[22px] text-white">
