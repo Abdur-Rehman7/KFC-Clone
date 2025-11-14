@@ -710,7 +710,7 @@ export default function ExploreMenuPage() {
       {/* 📰 Main Content */}
       <article className="p-5 overflow-auto mt-[30px]">
         {/* ↑ 64px navbar + ~76px header = 140px */}
-        <div className="mt-8 space-y-12">
+        <div className="mt-10 space-y-12">
           {sections.map((section, index) => (
             <div
               key={section.id}

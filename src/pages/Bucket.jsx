@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import { addToCart } from "../redux/slices/cartSlice";
 import { useState, useEffect } from "react";
+import PaymentMethod from "./PaymentMethod";
 
 const Bucket = () => {
   const navigate = useNavigate();
@@ -34,6 +35,11 @@ const Bucket = () => {
   const handleGoToexploremenu = () => {
     navigate("/exploremenu"); // 👈 navigates to the Contact page
   };
+
+  const handleGoToPaymentMethod = () => {
+    navigate("/paymentmethod"); // 👈 navigates to the Contact page
+  };
+
   const [suggestedItems, setSuggestedItems] = useState([]);
 
   useEffect(() => {
@@ -278,7 +284,7 @@ const Bucket = () => {
               </div>
             </div>
             <div className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md">
-              <button className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
+              <button onClick={handleGoToPaymentMethod} className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
                 <p className="text-white ">
                   {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
                   Item{" "}
@@ -299,7 +305,7 @@ const Bucket = () => {
 
           {/* 📱 Accordion */}
           <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md">
-            <button className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
+            <button onClick={handleGoToPaymentMethod} className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
               <p className="text-white ">
                 {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
                 Item{" "}

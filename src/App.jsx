@@ -13,6 +13,7 @@ import MitaoBhookScholership from "./pages/MitaoBhookScholership";
 import Careers from "./pages/Careers";
 import Bucket from "./pages/Bucket";
 import Login from "./pages/Login";
+import PaymentMethod from "./pages/PaymentMethod";
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/exploremenu" element={<ExploreMenuPage />} />
         <Route path="/bucket" element={<Bucket />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/paymentmethod" element={<PaymentMethod />} />
       </Route>
     </Routes>
   );
