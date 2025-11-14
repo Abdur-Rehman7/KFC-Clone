@@ -15,7 +15,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import { addToCart } from "../redux/slices/cartSlice";
 import { useState, useEffect } from "react";
-import PaymentMethod from "./PaymentMethod";
 
 const Bucket = () => {
   const navigate = useNavigate();

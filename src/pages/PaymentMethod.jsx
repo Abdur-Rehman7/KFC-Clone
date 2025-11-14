@@ -6,8 +6,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import Pickup from "../assets/pickup.png";
 import { LuPhone } from "react-icons/lu";
+import { useState } from "react";
+import card from "../assets/card-payment.jpg";
+import jazzcash from "../assets/jazzcash.png";
+import cod from "../assets/cod.jpg";
+import { useNavigate } from "react-router-dom";
 
 const PaymentMethod = () => {
+  const navigate = useNavigate(); // This line is missing in your current code
+
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = cartItems.reduce(
@@ -16,6 +23,37 @@ const PaymentMethod = () => {
   );
   const tax = totalPrice * 0.16; // 16% tax
   // const grandTotal = totalPrice + tax;
+  const [showPopup, setShowPopup] = useState(false);
+  const [error, setError] = useState("");
+
+  const [selected, setSelected] = useState("online");
+
+  const handleSelect = (id) => {
+    if (id === "COD") {
+      navigate("/addaddress"); // replace with your desired route
+    } else {
+      setError("This service is not available now");
+      setSelected(id);
+    }
+  };
+
+  const options = [
+    {
+      id: "online",
+      label: "Online Payment",
+      img: card,
+    },
+    {
+      id: "jazzcash",
+      label: "Jazz Cash Wallet",
+      img: jazzcash,
+    },
+    {
+      id: "COD",
+      label: "Cash On Delivery",
+      img: cod,
+    },
+  ];
 
   return (
     <>
@@ -49,7 +87,7 @@ const PaymentMethod = () => {
                   <img className="w-[50px] h-[50px]" src={Pickup} />
                   <div>
                     <p className="text-[18px] font-bold">Pickup From</p>
-                    <p>Sargodha</p>
+                    <p className="font-semibold">Sargodha</p>
                   </div>
                 </div>
               </div>
@@ -130,7 +168,10 @@ const PaymentMethod = () => {
               </div>
             </div>
 
-            <div className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md">
+            <div
+              onClick={() => setShowPopup(true)}
+              className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md"
+            >
               <button className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
                 <p className="text-white">
                   {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
@@ -152,7 +193,10 @@ const PaymentMethod = () => {
 
           {/* 📱 Accordion */}
           <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md">
-            <button className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
+            <button
+              onClick={() => setShowPopup(true)}
+              className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
+            >
               <p className="text-white ">
                 {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
                 Item{" "}
@@ -169,6 +213,61 @@ const PaymentMethod = () => {
               </p>
             </button>
           </div>
+
+          {showPopup && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+              <div className="bg-white rounded-xl p-6 w-[80%] lg:w-[40%] md:w-[60%] shadow-xl">
+                <h2 className="text-xl font-semibold mb-4 text-center">
+                  Select Payment Mode
+                </h2>
+
+                <div className="space-y-4">
+                  {options.map((opt) => (
+                    <div
+                      key={opt.id}
+                      onClick={() => handleSelect(opt.id)}
+                      className="flex items-center justify-between bg-gray-100 p-4 rounded-xl cursor-pointer hover:bg-gray-200 transition"
+                    >
+                      <div className="flex items-center gap-4">
+                        <img
+                          src={opt.img}
+                          alt={opt.label}
+                          className="w-14 h-14 rounded-lg object-cover"
+                        />
+                        <p className="text-lg font-semibold">{opt.label}</p>
+                      </div>
+
+                      <div
+                        className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                          selected === opt.id
+                            ? "border-red-600"
+                            : "border-red-400"
+                        }`}
+                      >
+                        {selected === opt.id && (
+                          <div className="w-3 h-3 bg-red-600 rounded-full"></div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {error && (
+                  <p className="text-red-600 mt-4 text-center">{error}</p>
+                )}
+
+                <button
+                  onClick={() => {
+                    setShowPopup(false);
+                    setError("");
+                  }}
+                  className="mt-6 w-full py-2 bg-gray-300 rounded-lg font-medium hover:bg-gray-400 transition"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

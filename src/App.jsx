@@ -14,6 +14,7 @@ import Careers from "./pages/Careers";
 import Bucket from "./pages/Bucket";
 import Login from "./pages/Login";
 import PaymentMethod from "./pages/PaymentMethod";
+import AddAddress from "./pages/AddAddress";
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/bucket" element={<Bucket />} />
         <Route path="/login" element={<Login />} />
         <Route path="/paymentmethod" element={<PaymentMethod />} />
+        <Route path="/addaddress" element={<AddAddress />} />
       </Route>
     </Routes>
   );
