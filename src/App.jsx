@@ -15,6 +15,11 @@ import Bucket from "./pages/Bucket";
 import Login from "./pages/Login";
 import PaymentMethod from "./pages/PaymentMethod";
 import AddAddress from "./pages/AddAddress";
+import EditProfile from "./pages/EditProfile";
+import OrderHistory from "./pages/OrderHistory";
+import MyAddress from "./pages/MyAddress";
+import MyCard from "./pages/MyCard";
+import Favorites from "./pages/Favorites";
 
 export default function App() {
   return (
@@ -42,6 +47,11 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/paymentmethod" element={<PaymentMethod />} />
         <Route path="/addaddress" element={<AddAddress />} />
+        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/orderhistory" element={<OrderHistory />} />
+        <Route path="/myaddress" element={<MyAddress />} />
+        <Route path="/mycard" element={<MyCard />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Route>
     </Routes>
   );
