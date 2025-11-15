@@ -12,7 +12,10 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/slices/userSlice";
 import profile from "./assets/profile.png";
-import EditProfile from "../../pages/EditProfile";
+import orderhistoryicon from "./assets/order-history-icon.png";
+import myaddressicon from "./assets/my-address-icon.png";
+import mycardsicon from "./assets/my-cards-icon.png";
+import favoriteicon from "./assets/favorite-icon.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -60,6 +63,13 @@ export default function Navbar() {
   };
 
   const [showPopup, setShowPopup] = useState(false);
+  const menuItems = [
+  { icon: orderhistoryicon , label: "Order History", onClick: handleOrderHistory },
+  { icon: myaddressicon , label: "My Address", onClick: handleMyAddress },
+  { icon: mycardsicon , label: "My Cards", onClick: handleMyCard },
+  { icon: favoriteicon , label: "My Favorites", onClick: handleFavorites },
+];
+
 
   return (
     <>
@@ -287,37 +297,16 @@ export default function Navbar() {
 
             {/* Navigation Menu */}
             <div className="flex flex-col divide-y">
-              <div
-                onClick={handleOrderHistory}
-                className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-100 transition"
-              >
-                <span>📋</span>
-                <span>Order History</span>
-              </div>
-
-              <div
-                onClick={handleMyAddress}
-                className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-100 transition"
-              >
-                <span>📍</span>
-                <span>My Address</span>
-              </div>
-
-              <div
-                onClick={handleMyCard}
-                className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-100 transition"
-              >
-                <span>💳</span>
-                <span>My Cards</span>
-              </div>
-
-              <div
-                onClick={handleFavorites}
-                className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-100 transition"
-              >
-                <span>❤️</span>
-                <span>My Favorites</span>
-              </div>
+              {menuItems.map((item, index) => (
+                <div
+                  key={index}
+                  onClick={item.onClick}
+                  className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-100 transition"
+                >
+                  <img className="w-[25px] h-[25px]" src={item.icon} />
+                  <span>{item.label}</span>
+                </div>
+              ))}
             </div>
 
             {/* Logout Button */}
