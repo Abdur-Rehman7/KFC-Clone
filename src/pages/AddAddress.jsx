@@ -7,21 +7,19 @@ import { logout } from "../redux/slices/userSlice";
 
 const AddAddress = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  const user = useSelector((state) => state.user.user);
 
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
   const tax = totalPrice * 0.16;
-  const grandTotal = totalPrice + tax;
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
       <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-lg text-center">
         <h1 className="text-2xl font-bold text-green-600 mb-4">
-          ✅ Thank You {user.name} for Your Order!
+          ✅ Thank You {user?.name || ""} for Your Order!
         </h1>
         <p className="text-gray-700 mb-6">
           Your payment will be collected on delivery.
