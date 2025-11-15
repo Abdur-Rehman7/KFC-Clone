@@ -2,6 +2,10 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pickup from "../assets/pickup.png";
 import { LuPhone } from "react-icons/lu";
+import { useDispatch } from "react-redux";
+import { addOrder } from "../redux/slices/orderSlice";
+import { useEffect } from "react";
+
 
 const AddAddress = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -12,6 +16,26 @@ const AddAddress = () => {
     0
   );
   const tax = totalPrice * 0.16;
+
+  const dispatch = useDispatch();
+  
+
+useEffect(() => {
+  if (cartItems.length > 0) {
+    const orderData = {
+      id: Date.now(), // unique order id
+      items: cartItems,
+      total: totalPrice,
+      tax: tax,
+      customerName: `${user.firstName} ${user.lastName}`,
+      phone: user.phoneNumber,
+      date: new Date().toLocaleString(),
+    };
+
+    dispatch(addOrder(orderData));
+  }
+}, []);
+
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
