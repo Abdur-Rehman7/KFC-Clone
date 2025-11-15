@@ -2,8 +2,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pickup from "../assets/pickup.png";
 import { LuPhone } from "react-icons/lu";
-import { useDispatch } from "react-redux";
-import { logout } from "../redux/slices/userSlice";
 
 const AddAddress = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -19,7 +17,7 @@ const AddAddress = () => {
     <section className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
       <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-lg text-center">
         <h1 className="text-2xl font-bold text-green-600 mb-4">
-          ✅ Thank You {user?.name || ""} for Your Order!
+          ✅ Thank You {user ? `${user.firstName} ${user.lastName}` : ""}for Your Order!
         </h1>
         <p className="text-gray-700 mb-6">
           Your payment will be collected on delivery.

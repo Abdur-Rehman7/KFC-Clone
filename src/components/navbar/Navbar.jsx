@@ -51,7 +51,6 @@ export default function Navbar() {
   };
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -64,12 +63,15 @@ export default function Navbar() {
 
   const [showPopup, setShowPopup] = useState(false);
   const menuItems = [
-  { icon: orderhistoryicon , label: "Order History", onClick: handleOrderHistory },
-  { icon: myaddressicon , label: "My Address", onClick: handleMyAddress },
-  { icon: mycardsicon , label: "My Cards", onClick: handleMyCard },
-  { icon: favoriteicon , label: "My Favorites", onClick: handleFavorites },
-];
-
+    {
+      icon: orderhistoryicon,
+      label: "Order History",
+      onClick: handleOrderHistory,
+    },
+    { icon: myaddressicon, label: "My Address", onClick: handleMyAddress },
+    { icon: mycardsicon, label: "My Cards", onClick: handleMyCard },
+    { icon: favoriteicon, label: "My Favorites", onClick: handleFavorites },
+  ];
 
   return (
     <>
@@ -143,7 +145,9 @@ export default function Navbar() {
                       alt="profile"
                     />
                   </div>
-                  <span className="text-sm font-medium">{user.name}</span>
+                  <span className="text-sm font-medium">
+                    {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+                  </span>
                 </div>
               )}
             </div>
@@ -237,7 +241,10 @@ export default function Navbar() {
                     alt="profile"
                   />
                 </div>
-                <span className="text-sm font-medium">{user.name}</span>
+                <span className="text-sm font-medium">
+                  {" "}
+                  {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+                </span>
               </div>
 
               <button
@@ -266,7 +273,9 @@ export default function Navbar() {
           <div className="bg-white rounded-xl w-[90%] md:w-[60%] lg:w-[40%] shadow-xl overflow-hidden">
             {/* Header */}
             <div className="flex justify-between items-center p-4 border-b">
-              <h2 className="text-xl font-bold">{user.name}</h2>
+              <h2 className="text-xl font-bold">
+                {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+              </h2>
               <button
                 onClick={() => setShowPopup(false)}
                 className="text-red-600 text-xl font-bold"
@@ -279,12 +288,14 @@ export default function Navbar() {
             <div className="flex items-center gap-4 p-4 border-b bg-gray-50">
               <img
                 src={profile}
-                alt={user.name}
+                alt={user ? `${user.firstName} ${user.lastName}` : "Guest"}
                 className="w-12 h-12 rounded-full object-cover"
               />
               <div>
-                <p className="font-semibold">{user.name}</p>
-                <p className="text-sm">{user.phone}</p>
+                <p className="font-semibold">
+                  {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+                </p>
+                <p className="text-sm">{user.phoneNumber}</p>
                 <p className="text-sm">{user.email}</p>
               </div>
               <button

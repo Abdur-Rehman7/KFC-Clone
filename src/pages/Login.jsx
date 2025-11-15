@@ -20,22 +20,22 @@ const Login = () => {
     dispatch(
       login({
         name: "Abdur Rehman",
-        phone: `+92${phone}`,
+        PhoneNumber: `+92${phone}`,
       })
     );
 
-    navigate("/");
+    navigate("/editprofile");
   };
 
   const handleGoogleLogin = () => {
     dispatch(
       login({
         name: "Abdur Rehman",
-        email: "kabdurrehman111@gmail.com",
+        email: "",
       })
     );
 
-    navigate("/");
+    navigate("/editprofile");
   };
 
   return (
