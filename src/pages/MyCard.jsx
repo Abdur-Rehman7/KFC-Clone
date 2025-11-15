@@ -3,7 +3,7 @@ const MyCard = () => {
   return (
     <>
       <section className="text-center w-[80%] mx-auto">
-        <p>Welcome to my Edit Profile Page!</p>
+        <p>Welcome to My card Page!</p>
       </section>
     </>
   );
