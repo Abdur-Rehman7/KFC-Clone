@@ -1,11 +1,44 @@
 import React, { useState } from "react";
 import { Heart } from "lucide-react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { addFavorite } from "../../redux/slices/favoriteSlice";
+import toast from "react-hot-toast";
 
 const TopDeal = (props) => {
-  const [isFav, setIsFav] = useState(false);
   const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.items);
+
+  const isFav = favorites.some((item) => item.id === props.id);
+
+  const handleFavorite = () => {
+    if (!isFav) {
+      dispatch(
+        addFavorite({
+          id: props.id,
+          name: props.name,
+          price: props.price,
+          img: props.img,
+          description: props.description,
+        })
+      );
+
+      // Show toast
+      toast.success(`${props.name} added to favorites ❤️`, {
+        style: {
+          border: "1px solid #f87171",
+          padding: "16px",
+          color: "#b91c1c",
+          background: "#fff0f0",
+          fontWeight: "bold",
+        },
+        iconTheme: {
+          primary: "#b91c1c",
+          secondary: "#fff0f0",
+        },
+      });
+    }
+  };
 
   return (
     <div className={props.cardsize}>
@@ -31,7 +64,7 @@ const TopDeal = (props) => {
           <p className="text-[20px] font-bold">{props.name}</p>
           {/* ❤️ Favorite button */}
           <button
-            onClick={() => setIsFav(!isFav)}
+            onClick={handleFavorite}
             className="absolute top-2 right-2 z-10 p-2 transition"
           >
             <Heart
