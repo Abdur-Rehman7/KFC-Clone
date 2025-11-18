@@ -10,9 +10,6 @@ const TopDeal = (props) => {
   const favorites = useSelector((state) => state.favorites.items);
   const isFav = favorites.some((item) => item.id === props.id);
 
-  const getCSSVar = (name) =>
-    getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-
   const handleFavorite = () => {
     if (!isFav) {
       dispatch(
@@ -74,7 +71,7 @@ const TopDeal = (props) => {
           <button
             onClick={() => {
               // debug log to confirm id and props
-              console.log("Add clicked for:", props.id, props.name);
+              showToast(`${props.name} added to bucket`, "success");
               if (typeof props.id === "undefined") {
                 console.error(
                   "TopDeal: missing props.id — provide a unique id for each item."

@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import { addToCart } from "../redux/slices/cartSlice";
 import { useState, useEffect } from "react";
+import { showToast } from "../utils/showToast";
 
 const Bucket = () => {
   const navigate = useNavigate();
@@ -119,7 +120,13 @@ const Bucket = () => {
                         </div>
                         <div className="flex items-center gap-3">
                           <button
-                            onClick={() => dispatch(removeFromCart(item.id))}
+                            onClick={() => {
+                              dispatch(removeFromCart(item.id));
+                              showToast(
+                                `${item.name} removed from cart `,
+                                "error"
+                              );
+                            }}
                             className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
                           >
                             🗑️
@@ -283,7 +290,10 @@ const Bucket = () => {
               </div>
             </div>
             <div className="fixed bottom-0  w-1/3 bg-primary border-t rounded-t-lg shadow-md">
-              <button onClick={handleGoToPaymentMethod} className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
+              <button
+                onClick={handleGoToPaymentMethod}
+                className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
+              >
                 <p className="text-white ">
                   {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
                   Item{" "}
@@ -304,7 +314,10 @@ const Bucket = () => {
 
           {/* 📱 Accordion */}
           <div className="block lg:hidden fixed bottom-0 left-0 w-full bg-primary border-t shadow-md">
-            <button onClick={handleGoToPaymentMethod} className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center">
+            <button
+              onClick={handleGoToPaymentMethod}
+              className="w-full text-left px-5 py-3 font-semibold flex justify-between items-center"
+            >
               <p className="text-white ">
                 {cartItems.reduce((total, item) => total + item.quantity, 0)}{" "}
                 Item{" "}

@@ -70,7 +70,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import SectionName from "../components/home/SectionName";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
-
+import { showToast } from "../utils/showToast";
 export default function ExploreMenuPage() {
   const [activeSection, setActiveSection] = useState("");
   const sectionRefs = useRef([]);
@@ -774,7 +774,10 @@ export default function ExploreMenuPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <button
-                    onClick={() => dispatch(removeFromCart(item.id))}
+                    onClick={() => {
+                      dispatch(removeFromCart(item.id));
+                      showToast(`${item.name} removed from cart `, "error");
+                    }}
                     className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
                   >
                     🗑️
