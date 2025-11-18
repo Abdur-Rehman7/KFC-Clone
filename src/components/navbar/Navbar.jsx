@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
 import logo from "./assets/logo.png";
-import delivery from "./assets/delivery.png"
+import Delivery from "./assets/Delivery.png"
 import pickup from "./assets/pickup.png";
 import cartimg from "./assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
@@ -99,7 +99,7 @@ export default function Navbar() {
               {/* Delivery / Pickup */}
               <div className="flex items-center gap-2 ml-4">
                 <Dpbtn
-                  img={delivery}
+                  img={Delivery}
                   text="Delivery"
                   active={activeBtn === "car1"}
                   onClick={() => {
