@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
 import logo from "./assets/logo.png";
-import delivery from "./assets/delivery.png";
+import delivery from "./assets/delivery.png"
 import pickup from "./assets/pickup.png";
 import cartimg from "./assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
