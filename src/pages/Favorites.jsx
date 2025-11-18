@@ -1,9 +1,7 @@
-// Favorites.jsx
-
 import { useSelector, useDispatch } from "react-redux";
 import { removeFavorite } from "../redux/slices/favoriteSlice";
-import toast from "react-hot-toast";
 import PageName from "../components/reuseable/PageName";
+import { showToast } from "../utils/showToast";
 
 const Favorites = () => {
   const dispatch = useDispatch();
@@ -20,23 +18,16 @@ const Favorites = () => {
     );
   }
 
-  const handleRemove = (id, name) => {
-    dispatch(removeFavorite(id));
 
-    toast.error(`${name} removed from favorites ❌`, {
-      style: {
-        border: "1px solid #f87171",
-        padding: "16px",
-        color: "#b91c1c",
-        background: "#fff0f0",
-        fontWeight: "bold",
-      },
-      iconTheme: {
-        primary: "#b91c1c",
-        secondary: "#fff0f0",
-      },
-    });
-  };
+const handleRemove = (id, name) => {
+  dispatch(removeFavorite(id));
+
+ 
+
+  showToast(`${name} removed from favorites ❌`, "error");
+};
+
+
   return (
     <>
       <section className="text-center w-[80%] mx-auto">

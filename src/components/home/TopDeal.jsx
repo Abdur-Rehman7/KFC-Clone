@@ -3,13 +3,15 @@ import { Heart } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 import { addFavorite } from "../../redux/slices/favoriteSlice";
-import toast from "react-hot-toast";
+import { showToast } from "../../utils/showToast";
 
 const TopDeal = (props) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.items);
-
   const isFav = favorites.some((item) => item.id === props.id);
+
+  const getCSSVar = (name) =>
+    getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
   const handleFavorite = () => {
     if (!isFav) {
@@ -23,20 +25,7 @@ const TopDeal = (props) => {
         })
       );
 
-      // Show toast
-      toast.success(`${props.name} added to favorites ❤️`, {
-        style: {
-          border: "1px solid #f87171",
-          padding: "16px",
-          color: "#b91c1c",
-          background: "#fff0f0",
-          fontWeight: "bold",
-        },
-        iconTheme: {
-          primary: "#b91c1c",
-          secondary: "#fff0f0",
-        },
-      });
+      showToast(`${props.name} added to favorites ❤️`, "success");
     }
   };
 
