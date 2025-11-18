@@ -1,4 +1,4 @@
-import { createSlice } from "/node_modules/.vite/deps/@reduxjs_toolkit.js?v=9783249c";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Load existing addresses from localStorage
 const savedAddresses = JSON.parse(localStorage.getItem("addresses")) || [];
