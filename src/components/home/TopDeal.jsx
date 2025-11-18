@@ -71,7 +71,7 @@ const TopDeal = (props) => {
           <button
             onClick={() => {
               // debug log to confirm id and props
-              showToast(`${props.name} added to bucket`, "success");
+              showToast(`${props.name} added to bucket  🛒`, "success");
               if (typeof props.id === "undefined") {
                 console.error(
                   "TopDeal: missing props.id — provide a unique id for each item."

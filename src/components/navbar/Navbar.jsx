@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import ThemeToggle from "./ThemeToggle";
 import logo from "./assets/logo.png";
-import delivery from "./assets/Delivery.png";
+import delivery from "./assets/delivery.png";
 import pickup from "./assets/pickup.png";
 import cartimg from "./assets/cart-bucket.png";
 import Dpbtn from "./Dpbtn";
@@ -16,6 +16,7 @@ import orderhistoryicon from "./assets/order-history-icon.png";
 import myaddressicon from "./assets/my-address-icon.png";
 import mycardsicon from "./assets/my-cards-icon.png";
 import favoriteicon from "./assets/favorite-icon.png";
+import { setDeliveryType } from "../../redux/slices/cartSlice";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -101,13 +102,19 @@ export default function Navbar() {
                   img={delivery}
                   text="Delivery"
                   active={activeBtn === "car1"}
-                  onClick={() => setActiveBtn("car1")}
+                  onClick={() => {
+                    setActiveBtn("car1");
+                    dispatch(setDeliveryType("delivery"));
+                  }}
                 />
                 <Dpbtn
                   img={pickup}
                   text="Pickup"
                   active={activeBtn === "car2"}
-                  onClick={() => setActiveBtn("car2")}
+                  onClick={() => {
+                    setActiveBtn("car2");
+                    dispatch(setDeliveryType("pickup"));
+                  }}
                 />
               </div>
             </div>

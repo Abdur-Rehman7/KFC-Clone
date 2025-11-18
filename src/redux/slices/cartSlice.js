@@ -15,6 +15,7 @@ const save = (items) => {
 
 const initialState = {
   items: load(),
+  deliveryType: "delivery", // default value
 };
 
 
@@ -48,8 +49,12 @@ const cartSlice = createSlice({
       state.items = [];
       localStorage.removeItem("cartItems");
     },
+     // ✅ New reducer to set delivery type
+    setDeliveryType: (state, action) => {
+      state.deliveryType = action.payload; // "delivery" or "pickup"
+    },
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, setDeliveryType } = cartSlice.actions;
 export default cartSlice.reducer;

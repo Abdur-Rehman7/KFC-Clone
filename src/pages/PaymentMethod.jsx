@@ -1,19 +1,18 @@
-import { Link } from "react-router-dom";
 import { MdArrowForwardIos } from "react-icons/md";
 import sidenav from "../assets/sidenav-img.png";
-import { IoIosArrowBack } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
-import Pickup from "../assets/pickup.png";
-import { LuPhone } from "react-icons/lu";
 import { useState } from "react";
 import card from "../assets/card-payment.jpg";
 import jazzcash from "../assets/jazzcash.png";
 import cod from "../assets/cod.jpg";
 import { useNavigate } from "react-router-dom";
+import PickupSection from "../paymentmethod/Pickup";
+import DeliverySection from "../paymentmethod/Delivery";
 
 const PaymentMethod = () => {
   const navigate = useNavigate(); // This line is missing in your current code
+  const deliveryType = useSelector((state) => state.cart.deliveryType);
 
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
@@ -61,37 +60,8 @@ const PaymentMethod = () => {
         <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] gap-10 md:mx-[24px]">
           {/* 📰 Main Content */}
           <article className="p-3  mt-[30px]">
-            <div className="bg-card rounded-[5px] p-2 h-auto overflow-hidden flex flex-col">
-              <div className="flex border-b border-text gap-3 p-3">
-                <div className="">
-                  <Link
-                    to="/exploremenu"
-                    className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary"
-                  >
-                    <IoIosArrowBack size={20} />
-                  </Link>
-                </div>
-
-                <p className="font-semibold text-[20px]">Your Information</p>
-              </div>
-              <div>
-                <div className="flex justify-between bg-body font-semibold text-[20px] mt-[20px] p-[10px]">
-                  <p>Abdur Rehman</p>
-                  <p className="flex items-center gap-3">
-                    <LuPhone /> 03377763915
-                  </p>
-                </div>
-              </div>
-              <div>
-                <div className="flex text-left bg-body mt-[20px] p-[10px] gap-3">
-                  <img className="w-[50px] h-[50px]" src={Pickup} />
-                  <div>
-                    <p className="text-[18px] font-bold">Pickup From</p>
-                    <p className="font-semibold">Sargodha</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {deliveryType === "delivery" && <DeliverySection />}
+            {deliveryType === "pickup" && <PickupSection />}
           </article>
 
           {/* 🧭 Sidebar */}

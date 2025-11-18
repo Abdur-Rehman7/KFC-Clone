@@ -30,6 +30,7 @@ const Bucket = () => {
   const handleAddToBucket = (item) => {
     dispatch(addToCart(item));
     // The list will auto-update from useEffect when cartItems change
+     showToast(`${item.name} added to cart 🛒`, "success");
   };
 
   const handleGoToexploremenu = () => {
@@ -103,7 +104,7 @@ const Bucket = () => {
                     {cartItems.map((item) => (
                       <div
                         key={item.id}
-                        className="flex justify-between items-center bg-gray-100 p-3 rounded-md shadow"
+                        className="flex justify-between items-center bg-card p-3 rounded-md shadow"
                       >
                         <div className="flex items-center gap-4">
                           <img
@@ -113,7 +114,7 @@ const Bucket = () => {
                           />
                           <div className="text-left">
                             <p className="font-semibold">{item.name}</p>
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-text">
                               Rs {item.price} × {item.quantity}
                             </p>
                           </div>

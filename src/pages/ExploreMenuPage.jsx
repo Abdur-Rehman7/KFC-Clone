@@ -71,6 +71,7 @@ import SectionName from "../components/home/SectionName";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import { showToast } from "../utils/showToast";
+
 export default function ExploreMenuPage() {
   const [activeSection, setActiveSection] = useState("");
   const sectionRefs = useRef([]);
