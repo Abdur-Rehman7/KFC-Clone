@@ -17,6 +17,7 @@ import myaddressicon from "./assets/my-address-icon.png";
 import mycardsicon from "./assets/my-cards-icon.png";
 import favoriteicon from "./assets/favorite-icon.png";
 import { setDeliveryType } from "../../redux/slices/cartSlice";
+import { showToast } from "../../utils/showToast";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -103,6 +104,13 @@ export default function Navbar() {
                   text="Delivery"
                   active={activeBtn === "car1"}
                   onClick={() => {
+                    if (!user) {
+                      showToast(
+                        "You must be logged in to select delivery/pickup!",
+                        "error"
+                      );
+                      return;
+                    }
                     setActiveBtn("car1");
                     dispatch(setDeliveryType("delivery"));
                   }}
@@ -112,6 +120,13 @@ export default function Navbar() {
                   text="Pickup"
                   active={activeBtn === "car2"}
                   onClick={() => {
+                    if (!user) {
+                      showToast(
+                        "You must be logged in to select delivery/pickup!",
+                        "error"
+                      );
+                      return;
+                    }
                     setActiveBtn("car2");
                     dispatch(setDeliveryType("pickup"));
                   }}
@@ -153,7 +168,9 @@ export default function Navbar() {
                     />
                   </div>
                   <span className="text-sm font-medium">
-                    {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+                    {user?.firstName && user?.lastName
+                      ? `${user.firstName} ${user.lastName}`
+                      : "Guest"}
                   </span>
                 </div>
               )}
