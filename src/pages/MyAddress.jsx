@@ -30,7 +30,7 @@ const MyAddress = () => {
         addresses.map((item) => (
           <div
             key={item.id}
-            className="border-b-[3px] border-primary p-[15px] mb-[8px] rounded-[5px] text-left bg-white shadow relative"
+            className="border-b-[3px] border-primary p-[15px] mb-[8px] rounded-[5px] text-left bg-card shadow relative"
           >
             <div>
               <div className="flex justify-between ">

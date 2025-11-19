@@ -56,7 +56,7 @@ const TopDealsSectionMap = () => {
             <TopDeal
               key={i}
               id={deal.id}
-              cardsize="w-[186px] lg:w-[300px] lg:h-[450px] md:w-[212px] md:h-[340px] bg-card relative rounded-lg shadow-sm group"
+              cardsize="w-[186px] lg:w-[300px] lg:h-auto md:w-[212px] md:h-[340px] bg-card mt-8 relative rounded-lg shadow-sm group"
               img={deal.img}
               name={deal.name}
               discription={deal.discription}
