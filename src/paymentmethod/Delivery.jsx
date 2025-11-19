@@ -3,6 +3,7 @@ import { LuPhone } from "react-icons/lu";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import delivery from "./assets/delivery.png";
+import addressicon from "../assets/address-icon.png";
 
 const Delivery = () => {
   const selectedAddress = useSelector((state) => state.address.selectedAddress);
@@ -36,14 +37,23 @@ const Delivery = () => {
       </div>
 
       <div className="mt-4 bg-body p-4 rounded-md shadow">
-        <p className="text-[18px] font-bold mb-2">Delivery Address</p>
-
         {selectedAddress ? (
           <div>
-            <p><strong>House:</strong> {selectedAddress.house}</p>
-            <p><strong>Street:</strong> {selectedAddress.street}</p>
-            <p><strong>Area:</strong> {selectedAddress.countryOfBirth}</p>
-            <p><strong>Type:</strong> {selectedAddress.type}</p>
+            <p className="text-[20px] pb-[16px] text-left font-semibold">
+              We'll deliver your order here
+            </p>
+            <div className="flex text-left gap-3">
+              <div>
+                <img src={addressicon} className="w-[30px] h-[30px]" />
+              </div>
+
+              <div>
+                <button className="bg-primary py-[3px] px-[6px] rounded text-white">Address</button>
+                <p>
+                  {selectedAddress.house} / {selectedAddress.street} /  {selectedAddress.mainArea}
+                </p>
+              </div>
+            </div>
           </div>
         ) : (
           <p className="text-gray-500">No address selected...</p>

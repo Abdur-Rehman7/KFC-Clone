@@ -1,9 +1,9 @@
 import { IoLocate } from "react-icons/io5";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveAddress } from "../../redux/slices/addressSlice";
 
-function AddressField(props) {
+function AddressField({ onSaveDone, editingAddress }) {
   const dispatch = useDispatch();
   const selectedAddress = useSelector((state) => state.address.selectedAddress);
 
@@ -23,7 +23,7 @@ function AddressField(props) {
             "Block / Sector / Street / Building / Floor Name or Number *",
         },
         {
-          id: "countryOfBirth",
+          id: "mainArea",
           placeholder: "Main Area / Town / Nearest Landmark *",
         },
       ],
@@ -39,9 +39,15 @@ function AddressField(props) {
   const [formValues, setFormValues] = useState({
     house: "",
     street: "",
-    countryOfBirth: "",
-    type: "", // radio button
+    mainArea: "",
+    type: "",
   });
+
+  useEffect(() => {
+    if (editingAddress) {
+      setFormValues(editingAddress);
+    }
+  }, [editingAddress]);
 
   // Handle input change
   const handleChange = (e) => {
@@ -58,35 +64,49 @@ function AddressField(props) {
   const isFormValid =
     formValues.house.trim() &&
     formValues.street.trim() &&
-    formValues.countryOfBirth.trim() &&
+    formValues.mainArea.trim() &&
     formValues.type;
 
   // Handle Save
   const handleSave = () => {
     if (!isFormValid) return;
 
-    // Save in Redux
-    dispatch(saveAddress({ ...formValues, id: Date.now() }));
+    if (editingAddress) {
+      // UPDATE
+      dispatch({
+        type: "address/updateAddress",
+        payload: formValues,
+      });
 
-    // Save in localStorage
-    const existing = JSON.parse(localStorage.getItem("addresses")) || [];
-    localStorage.setItem(
-      "addresses",
-      JSON.stringify([...existing, formValues])
-    );
+      const existing = JSON.parse(localStorage.getItem("addresses")) || [];
+      const updated = existing.map((addr) =>
+        addr.id === formValues.id ? formValues : addr
+      );
+      localStorage.setItem("addresses", JSON.stringify(updated));
+    } else {
+      // ADD NEW
+      const newAddress = { ...formValues, id: Date.now() };
+      dispatch({
+        type: "address/saveAddress",
+        payload: newAddress,
+      });
 
-    // RESET FORM (optional)
+      const existing = JSON.parse(localStorage.getItem("addresses")) || [];
+      localStorage.setItem(
+        "addresses",
+        JSON.stringify([...existing, newAddress])
+      );
+    }
+
+    // RESET FORM
     setFormValues({
       house: "",
       street: "",
-      countryOfBirth: "",
+      mainArea: "",
       type: "",
     });
 
-    // CLOSE FORM
-    if (props.onSaveDone) {
-      props.onSaveDone();
-    }
+    if (onSaveDone) onSaveDone();
   };
 
   return (
@@ -128,7 +148,7 @@ function AddressField(props) {
                       type="radio"
                       name={`option-${section.id}`}
                       value={option.value}
-                      checked={formValues.type === option.value} // ✅ FIXED
+                      checked={formValues.type === option.value}
                       onChange={handleRadioChange}
                       className="accent-red-500"
                     />
@@ -148,7 +168,7 @@ function AddressField(props) {
                       : "bg-gray-300 text-gray-500 cursor-not-allowed"
                   }`}
                 >
-                  + SAVE ADDRESS
+                  {editingAddress ? "UPDATE ADDRESS" : "+ SAVE ADDRESS"}
                 </button>
               </div>
             </div>
