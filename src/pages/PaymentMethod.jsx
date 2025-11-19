@@ -188,7 +188,7 @@ const PaymentMethod = () => {
 
           {showPopup && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-              <div className="bg-white rounded-xl p-6 w-[80%] lg:w-[40%] md:w-[60%] shadow-xl">
+              <div className="bg-card rounded-xl p-6 w-[80%] lg:w-[40%] md:w-[60%] shadow-xl">
                 <h2 className="text-xl font-semibold mb-4 text-center">
                   Select Payment Mode
                 </h2>
@@ -198,7 +198,7 @@ const PaymentMethod = () => {
                     <div
                       key={opt.id}
                       onClick={() => handleSelect(opt.id)}
-                      className="flex items-center justify-between bg-gray-100 p-4 rounded-xl cursor-pointer hover:bg-gray-200 transition"
+                      className="flex items-center justify-between bg-body p-4 rounded-xl cursor-pointer transition"
                     >
                       <div className="flex items-center gap-4">
                         <img
