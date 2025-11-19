@@ -204,6 +204,13 @@ export default function Navbar() {
                   text="Delivery"
                   active={activeBtn === "car1"}
                   onClick={() => {
+                    if (!user) {
+                      showToast(
+                        "You must be logged in to select delivery/pickup!",
+                        "error"
+                      );
+                      return;
+                    }
                     setActiveBtn("car1");
                     dispatch(setDeliveryType("delivery"));
                   }}
@@ -213,6 +220,13 @@ export default function Navbar() {
                   text="Pickup"
                   active={activeBtn === "car2"}
                   onClick={() => {
+                    if (!user) {
+                      showToast(
+                        "You must be logged in to select delivery/pickup!",
+                        "error"
+                      );
+                      return;
+                    }
                     setActiveBtn("car2");
                     dispatch(setDeliveryType("pickup"));
                   }}
@@ -299,8 +313,8 @@ export default function Navbar() {
       </aside>
 
       {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-xl w-[90%] md:w-[60%] lg:w-[40%] shadow-xl overflow-hidden">
+        <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-card rounded-xl w-[90%] md:w-[60%] lg:w-[40%] shadow-xl overflow-hidden">
             {/* Header */}
             <div className="flex justify-between items-center p-4 border-b">
               <h2 className="text-xl font-bold">
@@ -308,14 +322,14 @@ export default function Navbar() {
               </h2>
               <button
                 onClick={() => setShowPopup(false)}
-                className="text-red-600 text-xl font-bold"
+                className="text-primary text-xl font-bold"
               >
                 ✕
               </button>
             </div>
 
             {/* User Info */}
-            <div className="flex items-center gap-4 p-4 border-b bg-gray-50">
+            <div className="flex items-center gap-4 p-4 border-b bg-body">
               <img
                 src={profile}
                 alt={user ? `${user.firstName} ${user.lastName}` : "Guest"}
@@ -337,19 +351,18 @@ export default function Navbar() {
             </div>
 
             {/* Navigation Menu */}
-            <div className="flex flex-col divide-y">
+            <div className="flex flex-col">
               {menuItems.map((item, index) => (
                 <div
                   key={index}
                   onClick={item.onClick}
-                  className="flex items-center gap-3 p-4 cursor-pointer hover:bg-gray-100 transition"
+                  className="flex items-center gap-3 p-4 cursor-pointer hover:bg-[#A3A3A3] cursor-pointer transition-all duration-300 ease-in-out"
                 >
                   <img className="w-[25px] h-[25px]" src={item.icon} />
                   <span>{item.label}</span>
                 </div>
               ))}
             </div>
-
             {/* Logout Button */}
             <button
               onClick={handlePopupLogout}

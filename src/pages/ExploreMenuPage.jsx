@@ -758,7 +758,7 @@ export default function ExploreMenuPage() {
             {cartItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between bg-light p-2 rounded-md shadow-sm"
+                className="flex items-center justify-between bg-body p-2 rounded-md shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <img
@@ -779,7 +779,7 @@ export default function ExploreMenuPage() {
                       dispatch(removeFromCart(item.id));
                       showToast(`${item.name} removed from cart `, "error");
                     }}
-                    className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-md"
+                    className="p-2 bg-primary hover:bg-red-700 text-white rounded-md"
                   >
                     🗑️
                   </button>

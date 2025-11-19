@@ -7,6 +7,7 @@ import addressicon from "../assets/address-icon.png";
 
 const Delivery = () => {
   const selectedAddress = useSelector((state) => state.address.selectedAddress);
+  const user = useSelector((state) => state.user.user);
 
   return (
     <div className="bg-card rounded-[5px] p-2 h-auto overflow-hidden flex flex-col">
@@ -22,9 +23,9 @@ const Delivery = () => {
       </div>
 
       <div className="flex justify-between bg-body font-semibold text-[20px] mt-[20px] p-[10px]">
-        <p>Abdur Rehman</p>
+        <p> {user ? <p>{user.firstName} {user.lastName}</p> : "Guest"}</p>
         <p className="flex items-center gap-3">
-          <LuPhone /> 03377763915
+          <LuPhone /> {user ? <p>{user.phoneNumber}</p> : "Please update your profile and add phone Number"}
         </p>
       </div>
 
@@ -48,9 +49,12 @@ const Delivery = () => {
               </div>
 
               <div>
-                <button className="bg-primary py-[3px] px-[6px] rounded text-white">Address</button>
+                <button className="bg-primary py-[3px] px-[6px] rounded text-white">
+                  Address
+                </button>
                 <p>
-                  {selectedAddress.house} / {selectedAddress.street} /  {selectedAddress.mainArea}
+                  {selectedAddress.house} / {selectedAddress.street} /{" "}
+                  {selectedAddress.mainArea}
                 </p>
               </div>
             </div>

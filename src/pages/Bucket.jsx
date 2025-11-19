@@ -30,7 +30,7 @@ const Bucket = () => {
   const handleAddToBucket = (item) => {
     dispatch(addToCart(item));
     // The list will auto-update from useEffect when cartItems change
-     showToast(`${item.name} added to cart 🛒`, "success");
+    showToast(`${item.name} added to cart 🛒`, "success");
   };
 
   const handleGoToexploremenu = () => {
@@ -104,7 +104,7 @@ const Bucket = () => {
                     {cartItems.map((item) => (
                       <div
                         key={item.id}
-                        className="flex justify-between items-center bg-card p-3 rounded-md shadow"
+                        className="flex justify-between items-center bg-body p-3 rounded-md shadow"
                       >
                         <div className="flex items-center gap-4">
                           <img
@@ -179,7 +179,7 @@ const Bucket = () => {
             </div>
 
             <div className="block lg:hidden mb-20">
-              <div>
+              <div className="bg-body">
                 <div className="flex flex-col justify-center bg-gray-200 m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
                   <p className="font-semibold text-left">
                     Special Instructions (Optional)
@@ -241,18 +241,20 @@ const Bucket = () => {
                 <span className="w-[15px] h-[22px] bg-primary rounded-[1px]"></span>
               </div>
             </div>
-            <div className="mb-0  lg:mb-80">
-              <div className="flex flex-col justify-center bg-gray-200 m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
-                <p className="font-semibold text-left">
-                  Special Instructions (Optional)
-                </p>
-                <textarea
-                  placeholder="Add Cooking / Delivery Instructions (Optional)"
-                  className="resize-y border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full h-14"
-                />
+            <div className="mb-0 lg:mb-80">
+              <div className="flex flex-col justify-center bg-body m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
+                <div>
+                  <p className="font-semibold text-left">
+                    Special Instructions (Optional)
+                  </p>
+                  <textarea
+                    placeholder="Add Cooking / Delivery Instructions (Optional)"
+                    className="resize-y mt-2 bg-card rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full h-14"
+                  />
+                </div>
 
                 <div className="">
-                  <div key={1} className="relative bg-gray-300 pt-6 rounded-md">
+                  <div key={1} className="relative bg-card pt-6 rounded-md">
                     <span className="absolute left-2 top-10 -translate-y-3 font-bold text-black pointer-events-none text-[18px]">
                       +92&nbsp;|
                     </span>
@@ -260,7 +262,7 @@ const Bucket = () => {
                       type="text"
                       id={1}
                       placeholder=""
-                      className="pl-14 peer bg-gray-300 py-2 block w-full border-0 border-b-2 border-gray-300 text-current text-inherit leading-[1.4375em] font-inherit outline-none focus:border-red-500 transition-colors duration-200"
+                      className="pl-14 peer bg-card py-2 block w-full border-0 border-b-2 text-current text-inherit leading-[1.4375em] font-inherit outline-none focus:border-red-500 transition-colors duration-200"
                     />
                     <label
                       htmlFor={1}
@@ -273,7 +275,7 @@ const Bucket = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center bg-gray-200 m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
+              <div className="flex flex-col justify-center bg-body m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
                 <p className="text-[31px] font-bold">Your Order</p>
                 <div className="flex justify-between">
                   <p>Sub Total :</p>

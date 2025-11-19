@@ -1,8 +1,10 @@
 import { LuPhone } from "react-icons/lu";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import pickup from "./assets/pickup.png"
+import pickup from "./assets/pickup.png";
+import { useSelector } from "react-redux";
 const Pickup = (props) => {
+  const user = useSelector((state) => state.user.user);
   return (
     <>
       <div className="bg-card rounded-[5px] p-2 h-auto overflow-hidden flex flex-col">
@@ -20,9 +22,23 @@ const Pickup = (props) => {
         </div>
         <div>
           <div className="flex justify-between bg-body font-semibold text-[20px] mt-[20px] p-[10px]">
-            <p>Abdur Rehman</p>
+            <p>
+              {" "}
+              {user ? (
+                <p>
+                  {user.firstName} {user.lastName}
+                </p>
+              ) : (
+                "Guest"
+              )}
+            </p>
             <p className="flex items-center gap-3">
-              <LuPhone /> 03377763915
+              <LuPhone />{" "}
+              {user ? (
+                <p>{user.phoneNumber}</p>
+              ) : (
+                "Please update your profile and add phone Number"
+              )}
             </p>
           </div>
         </div>

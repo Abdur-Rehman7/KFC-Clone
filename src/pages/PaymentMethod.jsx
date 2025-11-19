@@ -10,9 +10,11 @@ import { useNavigate } from "react-router-dom";
 import PickupSection from "../paymentmethod/Pickup";
 import DeliverySection from "../paymentmethod/Delivery";
 
+
 const PaymentMethod = () => {
   const navigate = useNavigate(); // This line is missing in your current code
   const deliveryType = useSelector((state) => state.cart.deliveryType);
+ 
 
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
@@ -87,7 +89,7 @@ const PaymentMethod = () => {
                   {cartItems.map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-between bg-light p-2 rounded-md shadow-sm"
+                      className="flex items-center justify-between bg-body p-2 rounded-md shadow-sm"
                     >
                       <div className="flex items-center gap-3">
                         <img
@@ -99,7 +101,7 @@ const PaymentMethod = () => {
                           <p className="font-semibold text-[15px]">
                             {item.name}
                           </p>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-text">
                             Rs {item.price} x {item.quantity}
                           </p>
                         </div>
@@ -120,7 +122,7 @@ const PaymentMethod = () => {
                 </div>
               )}
 
-              <div className="flex flex-col justify-center bg-gray-200 m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
+              <div className="flex flex-col justify-center bg-body m-4 shadow-md rounded p-[16px] pb-[48px] px-[10px] gap-4">
                 <p className="text-[31px] font-bold">Your Order</p>
                 <div className="flex justify-between">
                   <p>Sub Total :</p>
