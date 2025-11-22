@@ -125,14 +125,16 @@ const Careers = () => {
                       <input
                         type="text"
                         id={field.id}
-                        placeholder=" "
-                        className="peer bg-surface py-2 pl-3 block w-full border-0 border-b-2 border-gray-300 text-current text-inherit leading-[1.4375em] font-inherit outline-none focus:border-red-500 transition-colors duration-200"
+                        required
+                        className="peer bg-surface py-2 pl-3 block w-full border-0 border-b-2 border-gray-300 
+  text-current leading-[1.4375em] outline-none focus:border-red-500 transition-colors duration-200"
                       />
+
                       <label
                         htmlFor={field.id}
-                        className="absolute left-3 top-6 text-text text-sm transition-all duration-200 
-                    peer-placeholder-shown:top-6 peer-placeholder-shown:text-text peer-placeholder-shown:text-base
-                    peer-focus:top-1 peer-focus:text-text peer-focus:text-sm"
+                        className="absolute left-3 top-6 text-text text-sm transition-all duration-200
+  peer-focus:top-1 peer-focus:text-sm
+  peer-valid:top-1 peer-valid:text-sm"
                       >
                         {field.label}
                       </label>

@@ -102,12 +102,15 @@ const EditProfile = () => {
                   id={field.id}
                   value={formData[field.id]}
                   onChange={handleChange}
-                  placeholder=" "
                   className="peer bg-surface py-2 pl-3 w-full border-0 border-b-2 border-gray-300 focus:border-red-500 outline-none"
                 />
+
                 <label
                   htmlFor={field.id}
-                  className="absolute left-3 top-6 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-placeholder-shown:text-base peer-placeholder-shown:top-6"
+                  className={`absolute left-3 transition-all duration-200
+      ${formData[field.id] ? "top-1 text-sm" : "top-6 text-base"}
+      peer-focus:top-1 peer-focus:text-sm
+    `}
                 >
                   {field.label}
                 </label>

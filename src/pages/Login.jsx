@@ -4,6 +4,9 @@ import { login } from "../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 import PageName from "../components/reuseable/PageName";
 import animation from "../assets/login-animation.gif";
+import { FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -41,9 +44,16 @@ const Login = () => {
   return (
     <section className="bg-card text-left grid grid-cols-1 md:grid-cols-2 mx-auto my-20 w-[90%] lg:w-[70%] md:w-[80%] rounded-md">
       {/* Left side */}
-      <div>
-        <PageName style="ml-[10px] mt-[10px]" />
-        <div className="flex justify-center  ">
+      <div className="relative">
+        <div className="absolute left-3 top-3">
+          <Link
+            to="/"
+            className="w-[30px] h-[30px] flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary"
+          >
+            <IoIosArrowBack size={20} />
+          </Link>
+        </div>
+        <div className="flex justify-center">
           <img
             src={animation}
             alt="Login Animation"
@@ -53,8 +63,8 @@ const Login = () => {
       </div>
 
       {/* Right side */}
-      <div className="grid py-[30px] px-[40px]">
-        <p className="text-[32px] md:text-[40px] font-semibold mb-4 text-center md:text-left">
+      <div className="grid py-[30px] px-[20px] lg:px-[40px] md:px-[40px]">
+        <p className="text-[32px] md:text-[40px] font-semibold mb-4 text-left lg:text-center md:text-left">
           Welcome!
         </p>
 
@@ -75,7 +85,7 @@ const Login = () => {
               htmlFor="phone"
               className="absolute left-3 top-2 text-text transition-all duration-200 
             peer-placeholder-shown:top-2 peer-placeholder-shown:text-text peer-placeholder-shown:text-base
-            peer-focus:top-2 peer-focus:text-text"
+            peer-focus:top-2 peer-focus:text-text text-[13px] lg:text-[16px] md:text-[16px]"
             >
               Alternate Phone Number (3XXXXXXX)
             </label>
@@ -84,16 +94,20 @@ const Login = () => {
           {/* Buttons */}
           <button
             onClick={handleLogin}
-            className="bg-red-300 w-full mt-[24px] py-[10px] rounded-[2px] font-semibold hover:bg-red-400 transition"
+            className="bg-[#f8bac6] w-full mt-[24px] py-[10px] rounded-[2px] font-semibold hover:bg-red-400 transition"
           >
             LOGIN
           </button>
 
           <button
             onClick={handleGoogleLogin}
-            className="bg-primary w-full mt-[8px] py-[10px] rounded-[2px] text-white font-bold hover:bg-red-700 transition"
+            className="relative bg-primary w-full mt-[8px] py-[10px] rounded-[2px] text-white font-bold hover:bg-red-700 transition"
           >
-            LOGIN WITH GOOGLE
+            {/* Icon on left fixed */}
+            <FaGoogle className="absolute left-4 top-1/2 -translate-y-1/2" />
+
+            {/* Text perfectly centered */}
+            <span className="w-full block text-center">LOGIN WITH GOOGLE</span>
           </button>
         </div>
       </div>
