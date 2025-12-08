@@ -40,7 +40,7 @@ const ExploreMenuSlider = () => {
     <div className="relative justify-items-between w-full max-w-[1200px] mx-auto my-8">
       <IoChevronBackCircleSharp
         onClick={scrollLeft}
-        className="hidden lg:block absolute -left-8 top-1/2 -translate-y-1/2 z-10 text-red-400 cursor-pointer hover:text-primary"
+        className="hidden lg:block absolute left-8 top-1/2 translate-y-1/2 z-10 text-red-400 cursor-pointer hover:text-primary"
         size={22}
       />
 
@@ -57,7 +57,6 @@ const ExploreMenuSlider = () => {
       </div>
 
       {/* Right Arrow (outside) */}
-
       <IoChevronForwardCircleSharp
         onClick={scrollRight}
         className="hidden lg:block absolute -right-8 top-1/2 -translate-y-1/2 z-10 text-red-400 cursor-pointer hover:text-primary"

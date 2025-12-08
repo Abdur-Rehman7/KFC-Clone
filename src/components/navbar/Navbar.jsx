@@ -78,10 +78,10 @@ export default function Navbar() {
   return (
     <>
       {/* 🌍 Main Navbar */}
-      <header className="sticky top-0 z-50 border-b border-borderTheme bg-light dark:bg-second/95 backdrop-blur-lg transition-all">
-        <nav className="container mx-auto py-3 px-4">
+      <header className="sticky top-0 z-50 py-[8px] bg-body transition-all">
+        <nav className="container">
           {/* ===== Desktop / Tablet Layout ===== */}
-          <div className="hidden sm:flex items-center justify-between">
+          <div className="hidden h-[80px] mx-[60px] sm:flex items-center justify-between">
             {/* LEFT SIDE */}
             <div className="flex items-center gap-4">
               {/* Hamburger Button */}
@@ -144,7 +144,7 @@ export default function Navbar() {
                   src={cartimg}
                   alt="Cart"
                 />
-                <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                <span className="absolute top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                   {cartItems.reduce((total, item) => total + item.quantity, 0)}
                 </span>
               </button>
