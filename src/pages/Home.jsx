@@ -17,7 +17,7 @@ const Home = function () {
           REORDER
         </button>
       </div>
-        <div>
+        <div className="mx-[60px]">
           {/* Section Header */}
           <SectionName sectionname="EXPLORE MENU" viewall="VIEW ALL" />
 
@@ -32,21 +32,21 @@ const Home = function () {
           </div>
         </div>
 
-        <div className="my-[40px]">
+        <div className="my-[40px] mx-[60px]">
           <SectionName sectionname="BEST SELLERS" />
           <div className="mt-[16px]">
             <BestSellerSlider />
           </div>
         </div>
 
-        <div className="my-[40px]">
+        <div className="my-[40px] mx-[60px]">
           <SectionName sectionname="TOP DEALS" />
           <div className="mt-[16px]">
             <TopDealsSectionMap />
           </div>
         </div>
       </div>
-      <div>
+      <div className="mx-[60px]">
         <LastSection />
       </div>
     </section>
