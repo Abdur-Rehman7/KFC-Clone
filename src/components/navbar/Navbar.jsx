@@ -78,7 +78,7 @@ export default function Navbar() {
   return (
     <>
       {/* 🌍 Main Navbar */}
-      <header className="sticky top-0 z-50 py-[8px] bg-body transition-all">
+      <header className="w-full sticky top-0 z-50 py-[8px] bg-body transition-all">
         <nav className="container">
           {/* ===== Desktop  ===== */}
           <div className="hidden lg:flex h-[80px] mx-[60px] items-center justify-between">
@@ -176,9 +176,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="hidden sm:flex lg:hidden flex-col gap-2">
+          <div className="w-full hidden sm:flex lg:hidden flex-col gap-2">
             {/* === Top Row: Menu + Logo + Cart === */}
-            <div className="flex items-center justify-between px-[16px]">
+            <div className="flex items-center justify-between px-[16px] w-full">
               <div className="flex gap-2">
                 <button onClick={() => setOpen(true)}>
                   <RiMenu2Line size={26} />
