@@ -12,7 +12,7 @@ const Home = function () {
       <HeroSlider interval={4000} />
 
       <div className="mx-[10px]">
-      <div className="flex justify-center items-center h-full w-[100%] lg:w-[50%] md:w-[50%] mt-4 mx-auto">
+      <div className="flex justify-center items-center h-full w-[100%] lg:w-[50%] md:w-[40%] mt-4 mx-auto">
         <button className="bg-primary text-white font-semibold w-full py-[6px] px-[16px] rounded">
           REORDER
         </button>
