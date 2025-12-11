@@ -4,9 +4,11 @@ import hero1 from "./assets/banner-1.jpg";
 import hero2 from "./assets/banner-2.jpg";
 import hero3 from "./assets/banner-3.jpg";
 import hero4 from "./assets/banner-4.jpg";
+import hero5 from "./assets/banner-5.jpg";
+import hero6 from "./assets/banner-6.jpg";
 
 const HeroSlider = (props) => {
-  const images = [hero1, hero2, hero3, hero4];
+  const images = [hero6, hero2, hero3, hero5];
   const interval = props.interval || 5000;
 
   const [current, setCurrent] = useState(0);
