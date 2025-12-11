@@ -10,6 +10,7 @@
   --text-color: #000000;
   --primary: #ea002a;
   --border-color: #e5e7eb;
+  --btn-color: #F5FAFF;
 }
 
 /* 🌙 Dark Theme */
@@ -20,6 +21,7 @@
   --text-color: #ffffff;
   --primary: #ea002a;
   --border-color: #2c2c2c; /* Softer border */
+  --btn-color: #2c2c2c;
 }
 
 body {

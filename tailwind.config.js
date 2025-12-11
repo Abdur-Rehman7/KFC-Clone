@@ -1,9 +1,6 @@
 export default {
   darkMode: "class",
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -13,6 +10,7 @@ export default {
         text: "var(--text-color)",
         primary: "var(--primary)",
         border: "var(--border-color)",
+        btn: "var(--btn-color)",
       },
     },
   },

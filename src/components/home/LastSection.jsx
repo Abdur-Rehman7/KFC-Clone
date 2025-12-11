@@ -29,9 +29,9 @@ const LastSection = () => {
         {/* second div (card) */}
         <div
           className="w-full md:w-[49%] mt-[16px] inline-block align-top text-center bg-white rounded-[8px] shadow-sm border border-gray-200
-                     " // keeps consistent height baseline
+                     "
           style={{
-            minHeight: "100%", // ensures consistency when text wraps
+            minHeight: "100%",
           }}
         >
           <div className="pt-[16px] pb-[48px] px-[10px] h-full flex flex-col justify-between">
@@ -39,15 +39,15 @@ const LastSection = () => {
               <img
                 src={lastsection4}
                 alt="Section 2"
-                className="inline-block mt-4 h-[140px] rounded-[8px] shadow-sm"
+                className="inline-block mt-4 h-[100px] lg:h-[140px] rounded-[8px] shadow-sm"
               />
-              <p className="my-5 leading-[20px] text-black text-[22px] font-bold">
+              <p className="lg:my-5 my-3 leading-[20px] text-black text-[22px] font-bold">
                 Adding 11 herbs and spices, explore our menu and add items to
                 your cart.
               </p>
             </div>
 
-            <button className=" inline-block mx-auto bg-primary py-[8px] px-[16px] rounded-[4px] font-bold text-white mt-[20px] mb-4 ">
+            <button className=" inline-block mx-auto bg-primary py-[8px] px-[16px] rounded-[4px] font-bold text-white mt-[12px] lg:mt-[20px] lg:mb-4 mb-2 ">
               EXPLORE MENU
             </button>
           </div>

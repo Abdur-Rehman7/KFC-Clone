@@ -180,7 +180,7 @@ export default function Navbar() {
           {/* ===== Mobile Layout ===== */}
           <div className="flex flex-col sm:hidden gap-2">
             {/* Top Row: Menu + Logo */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between px-[16px]">
               {/* Hamburger */}
               <button
                 onClick={() => setOpen(true)}
@@ -196,7 +196,7 @@ export default function Navbar() {
             </div>
 
             {/* Second Row: Delivery/Pickup + Cart */}
-            <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center justify-between mt-2 px-[16px]">
               {/* Delivery/Pickup */}
               <div className="flex items-center gap-2">
                 <Dpbtn
@@ -241,6 +241,13 @@ export default function Navbar() {
                   src={cartimg}
                   alt="Cart"
                 />
+
+                {/* <div
+                  onClick={handleBucket}
+                  className="w-[36px] h-[36px] bg-cover bg-center cursor-pointer"
+                  style={{ backgroundImage: `url(${cartimg})` }}
+                ></div> */}
+
                 <span className="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
                   {cartItems.reduce((total, item) => total + item.quantity, 0)}
                 </span>
