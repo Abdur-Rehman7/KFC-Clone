@@ -34,23 +34,22 @@ const LastSection = () => {
             minHeight: "100%",
           }}
         >
-          <div className="pt-[16px] pb-[48px] px-[10px] h-full flex flex-col justify-between">
+          <div className="pt-[16px] pb-[15px] lg:pb-[20px] px-[10px] lg:h-full h-[245px] flex flex-col justify-between">
             <div>
               <img
                 src={lastsection4}
                 alt="Section 2"
-                className="inline-block mt-4 h-[100px] lg:h-[140px] rounded-[8px] shadow-sm"
+                className="inline-block mt-4 h-[100px] lg:h-[120px] md:h-[100px] rounded-[8px] shadow-sm"
               />
               <p className="lg:my-5 my-3 leading-[20px] text-black text-[22px] font-bold">
                 Adding 11 herbs and spices, explore our menu and add items to
                 your cart.
               </p>
             </div>
-
-            <button className=" inline-block mx-auto bg-primary py-[8px] px-[16px] rounded-[4px] font-bold text-white mt-[12px] lg:mt-[20px] lg:mb-4 mb-2 ">
-              EXPLORE MENU
-            </button>
           </div>
+          <button className=" inline-block mx-auto bg-primary py-[8px] px-[16px] rounded-[4px] font-bold text-white mt-[12px] lg:mt-[20px] lg:mb-4 mb-2 ">
+            EXPLORE MENU
+          </button>
         </div>
       </div>
     </div>

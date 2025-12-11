@@ -17,7 +17,7 @@ const Home = function () {
           REORDER
         </button>
       </div>
-        <div className="sm:p-[12px] mx-[0px] lg:mx-[60px] md:mx-[24px]">
+        <div className="sm:p-[12px] mx-[0px] lg:mx-[60px] md:mx-[24px] mt-[25px]">
           {/* Section Header */}
           <SectionName sectionname="EXPLORE MENU" viewall="VIEW ALL" />
 

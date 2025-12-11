@@ -681,7 +681,7 @@ export default function ExploreMenuPage() {
   return (
     <div className="min-h-screen relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] mx-[5px] lg:mx-[32px] md:mx-[24px] mb-20">
       {/* 🔝 Scroll-Tracking Header */}
-      <div className="fixed top-[115px] lg:top-[64px] md:top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
+      <div className="fixed top-[115px] lg:top-[90px] md:top-[64px] left-0 w-full bg-card shadow-md z-40 p-4 ">
         {/* ↓ Adjusted position so it sits below layout Navbar */}
         <div className="flex flex-wrap justify-between items-center gap-3">
           <h1 className="font-bold text-lg text-text hidden sm:block">
