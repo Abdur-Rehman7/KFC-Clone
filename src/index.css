@@ -52,6 +52,10 @@ body {
   scrollbar-width: thin;
   scrollbar-color: black white;
 }
+.popup-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: black transparent;
+}
 
 @layer utilities {
   .numbered-list {

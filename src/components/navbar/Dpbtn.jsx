@@ -7,7 +7,7 @@ const Dpbtn = ({ img, text, active, onClick }) => {
         ${active ? "border-primary" : "border-gray-300"}`}
     >
       <img className="w-[25px] h-[25px]" src={img} alt="" />
-      <span>{text}</span>
+      <span className="font-bold">{text}</span>
     </button>
   );
 };
