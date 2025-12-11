@@ -21,7 +21,7 @@ const HeroSlider = (props) => {
   }, [current, interval]);
 
   return (
-    <div className="relative w-full h-[35vh] lg:h-[78vh] md:h-[56vh] overflow-hidden">
+    <div className="relative w-full h-[32vh] lg:h-[78vh] md:h-[50vh] overflow-hidden">
       {images.map((images, index) => (
         <div
           key={index}
