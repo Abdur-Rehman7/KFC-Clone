@@ -24,29 +24,28 @@ const HeroSlider = (props) => {
 
   return (
     <div className="relative w-full overflow-hidden">
-  <img
-    src={images[current]}
-    alt={`slide-${current}`}
-    className="w-full h-auto object-contain transition-opacity duration-1000"
-  />
+      <img
+        src={images[current]}
+        alt={`slide-${current}`}
+        className="w-full h-auto object-contain transition-opacity duration-1000"
+      />
 
-  {/* Left arrow */}
-  <button
-    onClick={prevSlide}
-    className="absolute top-1/2 -translate-y-1/2 left-4 bg-red-500 hover:bg-primary text-white p-1 rounded-full transition"
-  >
-    <ChevronLeft size={18} />
-  </button>
+      {/* Left arrow */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 -translate-y-1/2 left-4 bg-red-500 hover:bg-primary text-white p-1 rounded-full transition"
+      >
+        <ChevronLeft size={18} className="text-text" />
+      </button>
 
-  {/* Right arrow */}
-  <button
-    onClick={nextSlide}
-    className="absolute top-1/2 -translate-y-1/2 right-4 bg-red-500 hover:bg-primary text-white p-1 rounded-full transition"
-  >
-    <ChevronRight size={18} />
-  </button>
-</div>
-
+      {/* Right arrow */}
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 -translate-y-1/2 right-4 bg-red-500 hover:bg-primary text-white p-1 rounded-full transition"
+      >
+        <ChevronRight size={18} className="text-text" />
+      </button>
+    </div>
   );
 };
 
