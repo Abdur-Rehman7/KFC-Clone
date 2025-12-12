@@ -4,13 +4,13 @@ const SectionName = (props) => {
   return (
     <>
       <div className="flex justify-between mt-[25px]">
-        <div className="mb-[8px] text-[25px] lg:text-[32px] md:text-[28px] font-semibold">
+        <div className="mb-[8px] text-[25px] lg:text-[30px] md:text-[28px] font-bold">
           <p>{props.sectionname}</p>
           <hr className="w-[70px] h-[3px] bg-primary border-0" />
         </div>
 
         {props.viewall && (
-          <div className="mb-[8px] font-semibold">
+          <div className="mb-[8px] font-bold">
             <p>{props.viewall}</p>
             <hr className="w-[70px] h-[3px] bg-primary border-0" />
           </div>
