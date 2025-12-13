@@ -39,7 +39,7 @@ const TopDeal = (props) => {
         {/* Image with hover zoom effect */}
         <div className="rounded-md">
           <img
-            className="w-full mx-auto sm:w-[200px] object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
+            className="w-full mx-auto object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
             src={props.img}
             alt={props.name}
           />
